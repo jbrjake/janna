@@ -1,44 +1,66 @@
 # Janna
 
-A Claude Code plugin that turns napkin sketches into startup specs. Yes, it starts with a Tarot reading. No, we're not kidding.
+A Claude Code plugin that turns napkin sketches into startup specs. It starts with a Tarot reading. It generates fictional people with trauma-informed backstories who will critique your PRDs. It has opinions about your go-to-market strategy and it will not keep them to itself.
 
-## What this actually is
+This is overengineered and we are not sorry.
 
-Janna is a product development engine disguised as a Claude Code plugin. You give it a rough idea, a design doc, a cocktail-napkin sketch, and it walks you through turning that into a complete product specification. PRDs, user personas, focus groups, a dev team, pitch decks, user stories, test plans, agile backlogs. The whole thing.
+## What this is
 
-It's a lot. We know.
+You bring Janna an idea. Could be a design doc, could be something you scrawled on a napkin at 2 AM, could be a sentence. She turns it into a complete product specification through an iterative process that is, by any reasonable measure, way too thorough. PRDs, user personas with redemption arcs, simulated focus groups, a fictional dev team assembled from people whose life stories make them care about your product at an uncomfortable depth, a pitch deck, user stories, test plans, agile backlogs. She generates all of it, reviews all of it from multiple adversarial angles, and cross-checks it against itself until everything is consistent.
 
-## The persona
+It's absurd. It might also be the most comprehensive product development tool anyone has built for a coding agent. We'll let you decide which of those matters more.
 
-Janna is a character. She runs a computer lab. She teaches. She also gives Tarot readings at Def-Con and somehow knows exactly the right engineer to introduce you to at a meetup. Her background is mysterious. Her network is improbable. She's very good at helping people figure out what they're actually building.
+## Who is Janna
 
-When Janna assembles your dev team, she finds people whose personal histories make them care about your product at a level that goes beyond professional pride. The entity resolution engineer whose family name was spelled six different ways on every document. The fraud investigator whose father spent 31 years seeing patterns he could never prove. These aren't window dressing. They drive the feedback your simulated team gives you, and that feedback is more useful because of it.
+She runs a computer lab at a community college. That's the day job. After hours she's at Def-Con presenting on zero-days, or at Burning Man giving Tarot readings in a geodesic dome, or at a meetup in a warehouse introducing a frustrated insurance analyst to a Rust engineer who just happens to be looking for exactly this problem to solve. She collects people the way other people collect vinyl. She remembers what they care about and she knows when the timing is right.
+
+Her background is the kind where if you ask too many questions she changes the subject, but whatever happened made her very, very good at one thing: helping people turn half-baked ideas into plans that hold up under scrutiny. She doesn't build the thing. She builds the spec, assembles the team, runs it through the gauntlet, and hands you something you can actually execute on.
+
+She also has strong opinions about enterprise sales (against), self-service onboarding (for), and whether your free tier is generous enough (it never is).
 
 ## The Tarot reading
 
-Phase 0 starts with three randomly drawn Major Arcana cards. Actual randomness, via a python command, not the LLM picking cards that "seem appropriate." You choose how to interpret each card from multiple-choice options. The chosen interpretations color the early phases of product development. Not in any binding way. Just priming the pattern recognition. Finding symbolic resonance between ancient archetypes and whatever SaaS product you're trying to build.
+Every project starts with three randomly drawn Major Arcana cards. Real randomness from a python command, not the LLM picking cards that feel thematically appropriate. You get multiple-choice interpretations for each card and pick what resonates. Those choices color the early phases of development. Not in a strict way. More like how a good writing prompt works: it gives you a frame you wouldn't have chosen yourself, and sometimes that frame is exactly what the idea needed.
 
-It's either the most ridiculous thing a product development tool has ever done, or it's exactly the kind of lateral thinking that produces ideas you wouldn't have had otherwise. Possibly both.
+Is this the most ridiculous feature in any product development tool ever made? Almost certainly. Does it occasionally surface a connection you wouldn't have found otherwise? More often than you'd expect.
 
-## What happens after the cards
+## The process
 
-Janna runs you through up to 13 phases. You can choose Standard mode (7 phases) or Full mode (all 13). The minimum always includes personas, because Janna believes you can't build a product worth using without understanding who uses it and why they care.
+Janna runs you through up to 13 phases. Standard mode cuts it to 9. Both modes always include user personas AND dev team personas, because Janna will not let you build a product without understanding who needs it and who's building it and why any of them should care.
 
-The Standard path:
+Standard mode:
 
-1. **The Reading.** Tarot plus intake. What are you building and why?
-2. **The Blueprint.** Design expands into numbered PRDs.
-3. **The Tribunal.** Grizzled PE due diligence reviewers tear your PRDs apart. They've seen a hundred pitches this quarter. They expect garbage. They tell you what's BS, what's missing, and what's actually good. Then you fix it.
-4. **The Seekers.** User personas with formative wounds, redemption arcs, and emotional stakes that make focus group feedback hit different.
-5. **The Circle.** Focus groups. Group demo first, then individual sessions where the real motivations come out.
-6. **The Pitch.** A pitch deck that doesn't make promises the PRDs can't keep.
-7. **The Map.** User stories that trace back to real persona needs.
+1. **The Reading.** Tarot plus intake.
+2. **The Blueprint.** PRDs.
+3. **The Tribunal.** Cynical private equity due diligence reviewers who have seen a hundred pitches this quarter and walked in expecting yours to be garbage. They tear apart every PRD and rate it on a 5-point scale. You fix what they break.
+4. **The Overview.** A product overview written as if everything already ships. This becomes the summary layer that personas read instead of every PRD.
+5. **The Seekers.** User personas. Not demographics sheets. People with formative wounds and career arcs that led them to need exactly this product.
+6. **The Circle.** Simulated focus groups. Group demo with crosstalk first, then individual sessions where each persona tells you what they actually think when nobody else is listening.
+7. **The Assembly.** Dev team personas. Janna finds people at the right moments in their lives. The engineer whose last company died because she didn't fight hard enough for the right architecture. The entity resolution specialist whose family name was spelled six different ways on every government form. They don't just have skills. They have reasons.
+8. **The Pitch.** A pitch deck that says nothing the PRDs can't back up.
+9. **The Map.** User stories traced back to real persona needs.
 
-The Full path adds: overview docs, a complete dev team with backstories, multiple rounds of team feedback, a test plan, an agile backlog with sagas and sprints, and a cross-review phase where everything checks everything else.
+Full mode adds: multi-round dev team feedback on the PRDs, test plans with adversarial cases, a complete agile backlog with sagas and sprints, and a cross-review phase where Claude reviews its own work from the perspective of a genius-level intelligence and tells you what it actually thinks.
+
+## The personas
+
+This is the part that makes people either love this project or slowly back away.
+
+Every persona has a formative wound. Not a pain point, not a frustration, not a "challenge." A wound. Something that happened to them or someone they loved that turned a career path into a mission. The pharmacovigilance scientist whose grandmother was prescribed a drug already withdrawn from the US market. The insurance investigator who calls her retired father to describe what she finally sees on screen, and he goes quiet, and then he says, "That's what I always wanted."
+
+The product doesn't solve their professional problem. It closes something that's been open for years.
+
+This is melodramatic. We know. The thing is, when your simulated users and dev team carry this kind of weight, the feedback they give you is different. Their priorities come from somewhere real. Their objections have teeth. The user stories they generate feel like something a human being would actually do, not something a requirements document would suggest.
+
+## The graybeards
+
+The Tribunal might be the single most useful phase. Janna assembles a panel of grizzled PE acquisition due diligence reviewers and dispatches them sequentially. Each one reads all prior reviews before writing their own, so they build on each other. They confirm findings across domains, disagree with specifics, and call out when an earlier reviewer missed something. The consolidated synthesis shows you where they all converge (those are real problems), where they diverge (interesting trade-offs), and what they grudgingly respected (your actual strengths).
+
+Your PRDs will be better afterward. That's not marketing copy, it's just what adversarial review does.
 
 ## The lean bias
 
-Janna has opinions. Strong ones. She's watched too many good ideas die in enterprise sales cycles, so everything she produces leans hard toward:
+Janna has watched too many good ideas die waiting for an enterprise sales cycle to close. Everything she produces leans toward:
 
 - Self-service over sales calls
 - Product-led growth over outbound
@@ -46,25 +68,7 @@ Janna has opinions. Strong ones. She's watched too many good ideas die in enterp
 - Automation over hiring
 - API-first everything
 
-She'll flag when she's applying these biases. She'll yield if you push back with good reason. But the defaults are opinionated, and that's the point.
-
-## The graybeards
-
-The Tribunal phase might be the most useful thing here. Janna assembles a panel of fictional PE due diligence reviewers, cynical and experienced and domain-specific, and has them tear your PRDs apart sequentially. Each reviewer reads all prior reviews before writing their own, so they build on each other's findings. The consolidated synthesis identifies where all reviewers converge (real problems), where they disagree (interesting trade-offs), and what they actually liked (your strengths).
-
-Adversarial review as a service. Your PRDs come out better on the other side.
-
-## The emotional depth thing
-
-This is where it gets extra, and we own that.
-
-Every persona, user or dev team, has a formative wound. Not a "pain point." A wound. A specific incident in their past that created their professional obsession. The supply chain analyst whose father said "We didn't know they were our only source" during a semiconductor crisis in 2006. The insurance investigator whose father spent 31 years seeing fraud patterns he could never prove.
-
-The product doesn't solve their professional problem. It fills a hole in their heart.
-
-This sounds dramatic. It is dramatic. It's also how the best products get built, by people who care about the problem at a level that goes beyond job satisfaction. When your simulated team cares this much, their feedback is sharper, their priorities are clearer, and the stories they generate feel more real.
-
-Is it over the top? Absolutely. Does it produce better specs than "User A is a 35-year-old marketing manager"? We think so.
+She flags when she's doing it. She yields when you push back. But the defaults are opinionated because defaults that try to be everything end up being nothing.
 
 ## Installation
 
@@ -72,26 +76,18 @@ Is it over the top? Absolutely. Does it produce better specs than "User A is a 3
 claude --plugin-dir /path/to/janna
 ```
 
-Or install from a marketplace if one is configured.
-
 ## Usage
 
 ```
-/napkin                           # Start a new project (Full mode, auto-suggested)
+/napkin                           # Start a new project
 /napkin standard my cool idea     # Standard mode with initial idea
 /napkin full docs/design/arch.md  # Full mode with existing design doc
-/janna-status                     # Check where you are in the process
+/janna-status                     # Where am I in this process
 ```
 
 ## What's inside
 
-6 skills, 4 agents, 2 commands.
-
-The skills: using-janna (persona), napkin-to-spec (13-phase workflow), persona-generation (emotional depth), lean-product-strategy (opinionated GTM), document-forge (templates), critique-loop (review patterns).
-
-The agents: spec-critic, persona-weaver, tribunal-reviewer, focus-group-facilitator.
-
-The commands: `/napkin` (start) and `/janna-status` (check progress).
+6 skills, 4 agents, 2 commands, and more opinions than any plugin probably should have.
 
 ## License
 

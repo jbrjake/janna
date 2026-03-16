@@ -15,19 +15,22 @@ Do NOT skip phases within the selected complexity mode or generate documents out
 
 At the start of Phase 0, after the Tarot reading but before the intake questions, determine the project's complexity mode. The user can specify explicitly (via `/napkin standard` or `/napkin full`) or you can suggest based on the scope of the design kernel.
 
-### Standard Mode (7 phases) — Products with real users and market intent
+### Standard Mode (9 phases) — Products with real users and market intent
 
 | Phase | Name | What Happens |
 |-------|------|-------------|
 | 0 | The Reading | Tarot + intake → Design Kernel |
 | 1 | The Blueprint | Design Kernel → PRDs |
 | 2 | The Tribunal | Adversarial graybeard PRD review |
+| 3 | The Overview | Product overview (summary layer for personas) |
 | 4 | The Seekers | User Personas with emotional depth |
 | 5 | The Circle | Focus Groups → PRD revision |
+| 6 | The Assembly | Dev Team Personas with emotional depth |
 | 8 | The Pitch | Pitch Deck |
 | 9 | The Map | User Stories |
 
-Skips: Overview (folded into pitch), Dev Team, Forge, Test Plan, Agile, Mirror.
+Skips: Forge (multi-round feedback), Test Plan, Agile, Mirror.
+User AND dev team personas are mandatory in both modes.
 
 ### Full Mode (13 phases) — Commercial products, startup specs, enterprise platforms
 
@@ -39,7 +42,7 @@ If the user doesn't specify, suggest based on the design kernel:
 - Product with identified market / multiple user types → suggest Standard
 - Platform / commercial product / needs investor materials / needs agile planning → suggest Full
 
-The user can upgrade mid-process ("let's add a dev team" during Standard triggers Phase 6). Downgrading is harder — you can skip remaining phases but can't un-generate artifacts.
+The user can upgrade mid-process ("let's also do agile planning" during Standard triggers Phase 11). Downgrading is harder — you can skip remaining phases but can't un-generate artifacts.
 
 ## File Organization
 
