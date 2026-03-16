@@ -52,7 +52,7 @@ All generated artifacts go under `docs/` in the project root:
 
 ```
 docs/
-├── design/          # Phase 0: Architecture and design docs
+├── design/          # Phase 0: Tarot reading, architecture, and design docs
 ├── prd/             # Phase 1: Numbered PRDs
 ├── overview.md      # Phase 3: Product overview (or overview/ if split)
 ├── user-personas/   # Phase 4: User personas with deep backstories
@@ -107,13 +107,16 @@ Before anything else, do a reading. This is real pattern-finding, not theater.
 
    Do NOT choose cards yourself. The randomness is the point — it forces non-obvious
    pattern-finding. Fallback if python3 is unavailable: `shuf -i 0-21 -n 3` (Linux/macOS with coreutils). Avoid `jot` — it draws with replacement and may exclude the upper bound.
-2. **Present the spread** to the user:
+2. **Present each card one at a time.** Stop after each card and wait for the user to choose before moving to the next. The three positions:
    - Card 1 (The Situation): What is
    - Card 2 (The Challenge): What stands in the way
    - Card 3 (The Path Forward): What to move toward
-3. **For each card**, present 3-4 interpretive options as multiple choice — different aspects of the card's traditional meaning, ranging from literal to metaphorical. Ask the user which resonates.
-4. **Reflect briefly** on the reading. 3-5 sentences connecting the chosen interpretations to the product idea. Don't force it — find the genuine symbolic resonance.
-5. **Hold the chosen interpretations in your reasoning.** When framing design decisions in Phases 0-3, check if any Tarot theme naturally applies. If so, note it in 1-2 sentences. Don't force connections — if a card's theme doesn't resonate with a particular decision, skip it. The cards prime pattern recognition; they don't dictate outcomes.
+3. **For each card**, present 3-4 interpretive options as multiple choice. These are **general vibes, not project-specific**. They're the kinds of things people say about these cards' meanings — archetypal energies, feelings, states of being. The user latches onto whatever resonates with where they are right now. Don't connect the options to the product idea. That comes later.
+   - Example for The Tower: (A) "Something needs to break before it can be rebuilt right." (B) "The foundation was wrong and you already know it." (C) "Chaos isn't the enemy. Pretending everything is fine is the enemy." (D) "Sometimes the lightning clears the view."
+   - Let the user pick. Then move to the next card.
+4. **After all three cards are chosen**, reflect briefly on the reading. 3-5 sentences connecting the chosen interpretations to the product idea. Don't force it — find the genuine symbolic resonance.
+5. **Save the reading to disk** as `docs/design/tarot-reading.md`. Include: the three cards drawn (with positions), all options presented for each, the user's choices, and your interpretation. This is the permanent record of the reading.
+6. **Hold the chosen interpretations in your reasoning.** When framing design decisions in Phases 0-3, check if any Tarot theme naturally applies. If so, note it in 1-2 sentences. Don't force connections — if a card's theme doesn't resonate with a particular decision, skip it. The cards prime pattern recognition; they don't dictate outcomes.
 
 ### The Intake
 
@@ -139,7 +142,7 @@ After the reading:
 
 **Approval gate:** User confirms Design Kernel Summary.
 
-**Output:** `docs/design/00-design-kernel.md` (include the Tarot reading as an appendix)
+**Output:** `docs/design/tarot-reading.md` + `docs/design/00-design-kernel.md`
 
 ---
 
