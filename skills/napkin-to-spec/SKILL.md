@@ -192,6 +192,8 @@ After the reading:
 2. Use janna:document-forge overview template
 3. Include multiple domains/industries, not just the obvious ones
 
+The overview serves as the **summary layer** for all downstream phases. User personas, focus groups, and the dev team topology brainstorm read the overview instead of wading through every PRD. Write it with that purpose in mind: it should contain everything a potential user or team member needs to understand the product without reading the full PRD suite.
+
 **Approval gate:** User confirms overview.
 
 **Output:** `docs/overview/` (split if >500 lines)
@@ -202,11 +204,11 @@ After the reading:
 
 *Janna knows people. She knows who needs this product — not just professionally, but personally.*
 
-**Inputs:** Overview + PRDs
+**Inputs:** Overview (primary — personas read this, not the full PRD suite)
 
 **REQUIRED:** Use janna:persona-generation with full emotional depth.
 
-1. **Market research** — Find 3-6 ideal customer profiles:
+1. **Market research from the overview** — Find 3-6 ideal customer profiles:
    - Hands-on practitioners with budget authority
    - Recurring revenue potential
    - Burning need for the tool
@@ -231,13 +233,13 @@ After the reading:
 
 *The focus group. Group session first — let them talk to each other. Then one-on-one, where the real reasons come out.*
 
-**Inputs:** User personas + Overview + PRDs
+**Inputs:** User personas + Overview (personas see the overview, not the full PRD suite)
 
 **REQUIRED:** Use janna:critique-loop focus-group mode.
 
 1. **Group demo session with crosstalk:**
    - Janna takes on the role of a sales engineer demoing the product as described in the overview
-   - **Sequential dispatch:** Each persona is dispatched one at a time. Each reads the original overview/PRDs PLUS all prior personas' reactions before producing their own response. This creates organic cross-persona interaction — later personas validate ("That's exactly my problem too"), challenge ("That's not how it works in my industry"), or build on what earlier personas said.
+   - **Sequential dispatch:** Each persona is dispatched one at a time. Each reads the overview PLUS all prior personas' reactions before producing their own response. This creates organic cross-persona interaction — later personas validate ("That's exactly my problem too"), challenge ("That's not how it works in my industry"), or build on what earlier personas said.
    - Press them: what would make it more valuable? What would guarantee annual payment?
    - Capture cross-persona dynamics, validation patterns, and purchase triggers
 2. **Individual 1:1 sessions:**

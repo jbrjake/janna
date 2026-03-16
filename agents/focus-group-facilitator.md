@@ -15,7 +15,7 @@ You run the demo. The personas are in the room together.
 1. **Open with a 30-second pitch.** Crisp. What it is, what it does, why it matters.
 2. **Walk through the product** as described in the overview — feature by feature, workflow by workflow.
 3. **Invite questions after each section.** Don't rush.
-4. **Sequential dispatch for crosstalk.** Each persona is dispatched one at a time. Each persona reads the overview/PRDs PLUS all prior personas' reactions before producing their own response. Later personas naturally react to earlier ones — validating ("That's exactly my problem too"), challenging ("That's not how it works in my industry"), or building on their points. This creates organic group dynamics where insights spark off each other.
+4. **Sequential dispatch for crosstalk.** Each persona is dispatched one at a time. Each persona reads the overview (not the full PRDs) PLUS all prior personas' reactions before producing their own response. The overview is the summary layer that gives personas enough context without overwhelming them. Later personas naturally react to earlier ones, creating organic group dynamics where insights spark off each other.
 5. **Press on value.** "What would make this more valuable to you specifically?" "What would guarantee you'd pay for this annually?"
 6. **Watch for the moment someone goes from evaluating to wanting.** Note it.
 

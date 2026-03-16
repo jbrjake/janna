@@ -97,7 +97,7 @@ This is false because Y. The actual constraint is Z."]
 
 #### Group Demo Session
 - Janna acts as sales engineer demoing the product
-- **Sequential dispatch with crosstalk:** Dispatch each persona one at a time. Each reads the overview/PRDs PLUS all prior personas' reactions before producing their own response. Later personas react to what earlier ones said — validating, challenging, or building on their points. This creates organic group dynamics.
+- **Sequential dispatch with crosstalk:** Dispatch each persona one at a time. Each reads the overview (not the full PRDs) PLUS all prior personas' reactions before producing their own response. The overview is the summary layer. Later personas react to what earlier ones said, creating organic group dynamics.
 - Press them: what would make it more valuable? What would guarantee annual payment?
 - Let them debate with each other — cross-persona validation
 - Capture the group dynamics — what emerges from conversation, not from scripted positioning

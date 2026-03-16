@@ -179,6 +179,8 @@ Generate as separate files per section for easy reordering:
 
 **Voice:** Direct, confident, no superlatives. Let the idea speak. Use humanizer skill on final text.
 
+**Output formats:** Always generate the markdown files above. If the `pptx` skill is available, also generate a PPTX slide deck from the same content. The markdown is the source of truth; the PPTX is a presentation artifact derived from it.
+
 ---
 
 ## User Stories Template
