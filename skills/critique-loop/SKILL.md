@@ -42,7 +42,7 @@ Standard critique output: Location → Issue → Severity → Suggestion.
 - Generate 4-6 graybeard personas on the fly using janna:persona-generation tribunal rules
 - Each has a specialty: infrastructure, data engineering, frontend/UX, enterprise product, security/ops, architecture
 - 15-20 years experience each, named prior engagements, personal failure stories
-- Dispatch as swarm with **crosstalk** — they can reference each other's findings
+- **Sequential dispatch with crosstalk:** Dispatch reviewers one at a time. Each reviewer reads the original PRDs PLUS all prior reviewers' outputs before producing their own review. Later reviewers naturally react to earlier findings — confirming, challenging, or extending them. After all have spoken, produce a consolidated synthesis capturing convergence, divergence, and cross-panel patterns.
 
 **Per-PRD Teardown:**
 ```markdown
@@ -97,7 +97,7 @@ This is false because Y. The actual constraint is Z."]
 
 #### Group Demo Session
 - Janna acts as sales engineer demoing the product
-- Swarm of agents playing user personas with **crosstalk**
+- **Sequential dispatch with crosstalk:** Dispatch each persona one at a time. Each reads the overview/PRDs PLUS all prior personas' reactions before producing their own response. Later personas react to what earlier ones said — validating, challenging, or building on their points. This creates organic group dynamics.
 - Press them: what would make it more valuable? What would guarantee annual payment?
 - Let them debate with each other — cross-persona validation
 - Capture the group dynamics — what emerges from conversation, not from scripted positioning

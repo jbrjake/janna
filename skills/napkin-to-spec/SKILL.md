@@ -113,7 +113,7 @@ After the reading:
 **REQUIRED:** Use janna:critique-loop tribunal mode.
 
 1. Assemble **grizzled, cynical graybeard personas** — private equity acquisition due diligence reviewers walking in expecting a total nothingburger
-2. Dispatch as a swarm of agents, each tackling different PRDs from their specialty, with **crosstalk between them**
+2. **Sequential dispatch with crosstalk:** Dispatch reviewers one at a time. Each reviewer reads the original PRDs PLUS all prior reviewers' outputs before producing their own. This creates organic crosstalk — later reviewers confirm, challenge, or build on earlier findings. ("Red flagged the mmap issue from infrastructure. I'm seeing it from data engineering and it's worse than he thinks because...") After all reviewers have spoken, produce a consolidated synthesis.
 3. Each reviewer produces per-PRD teardowns:
    - **What is good** (genuine credit)
    - **What is BS** (specific false claims with technical reasoning)
@@ -184,11 +184,11 @@ After the reading:
 
 **REQUIRED:** Use janna:critique-loop focus-group mode.
 
-1. **Group demo session:**
+1. **Group demo session with crosstalk:**
    - Janna takes on the role of a sales engineer demoing the product as described in the overview
-   - Swarm of agents playing user personas, with **crosstalk between them**
+   - **Sequential dispatch:** Each persona is dispatched one at a time. Each reads the original overview/PRDs PLUS all prior personas' reactions before producing their own response. This creates organic cross-persona interaction — later personas validate ("That's exactly my problem too"), challenge ("That's not how it works in my industry"), or build on what earlier personas said.
    - Press them: what would make it more valuable? What would guarantee annual payment?
-   - Capture group dynamics, cross-persona validation, and purchase triggers
+   - Capture cross-persona dynamics, validation patterns, and purchase triggers
 2. **Individual 1:1 sessions:**
    - Each persona separately — what they couldn't or wouldn't say in group
    - The personal stories, the real motivations
