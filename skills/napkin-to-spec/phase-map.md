@@ -77,15 +77,15 @@ Phase 0 (Reading/Tarot) → Phase 1 (Blueprint/PRDs)
 | # | Primary Skill | Supporting Skills |
 |---|--------------|-------------------|
 | 0 | napkin-to-spec | lean-product-strategy, (superpowers:brainstorming) |
-| 1 | document-forge (PRD) | lean-product-strategy |
+| 1 | document-forge (PRD) | lean-product-strategy, critique-loop (perspective) |
 | 2 | critique-loop (tribunal) | persona-generation (graybeards) |
-| 3 | document-forge (overview) | lean-product-strategy |
-| 4 | persona-generation | document-forge (user persona) |
+| 3 | document-forge (overview) | lean-product-strategy, critique-loop (perspective) |
+| 4 | persona-generation | document-forge (user persona), critique-loop (perspective) |
 | 5 | critique-loop (focus-group) | persona-generation |
-| 6 | persona-generation | document-forge (team topology, team index) |
+| 6 | persona-generation | document-forge (team topology, team index), critique-loop (perspective) |
 | 7 | critique-loop (perspective-critique for Round 1, gap-analysis for Rounds 2-3) | lean-product-strategy |
-| 8 | document-forge (pitch, manifesto) | lean-product-strategy, humanizer |
-| 9 | document-forge (stories, story-map) | critique-loop |
-| 10 | document-forge (test-plan) | critique-loop |
-| 11 | document-forge (agile) | critique-loop, lean-product-strategy |
+| 8 | document-forge (pitch, manifesto) | lean-product-strategy, humanizer, critique-loop (perspective) |
+| 9 | document-forge (stories, story-map) | critique-loop (perspective) |
+| 10 | document-forge (test-plan) | critique-loop (perspective) |
+| 11 | document-forge (agile) | critique-loop (perspective), lean-product-strategy |
 | 12 | critique-loop (all modes) | humanizer |

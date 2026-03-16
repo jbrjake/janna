@@ -219,7 +219,7 @@ Re-run on changed sections only → If no new Critical/Important → DONE
 
 **Max iterations:** 3 per round. After 3, surface remaining issues to user.
 
-**Never fix silently.** The user is the navigator.
+**Never fix silently.** The user is the navigator. Exception: pre-presentation perspective critiques (the "Before presenting to user" steps in napkin-to-spec) are quality gates — fix Critical/Important issues inline and note what changed, but don't run the full iteration loop.
 
 ## Synthesizing Multi-Perspective Feedback
 

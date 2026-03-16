@@ -26,7 +26,7 @@ At the start of Phase 0, after the Tarot reading but before the intake questions
 | 4 | The Seekers | User Personas with emotional depth |
 | 5 | The Circle | Focus Groups → PRD revision |
 | 6 | The Assembly | Dev Team Personas with emotional depth |
-| 8 | The Pitch | Pitch Deck |
+| 8 | The Pitch | Pitch Deck + Team Manifesto |
 | 9 | The Map | User Stories |
 | 11 | The Sprint | Agile planning (sagas, epics, sprints) |
 
@@ -156,7 +156,7 @@ After the reading:
 5. Each PRD: `docs/prd/NN-[area].md`
 6. Generate `docs/prd/00-prd-index.md`
 
-**Before presenting to user:** Run janna:critique-loop perspective critique (Systems Architect, Pragmatic Engineer). Fix issues inline.
+**Before presenting to user:** Run janna:critique-loop perspective critique (Systems Architect, Pragmatic Engineer). Fix Critical/Important issues inline — these are pre-presentation quality gates, not the full iteration protocol. Note what you changed.
 
 **Approval gate:** User confirms PRD suite.
 
@@ -201,7 +201,7 @@ After the reading:
 
 The overview serves as the **summary layer** for all downstream phases. User personas, focus groups, and the dev team topology brainstorm read the overview instead of wading through every PRD. Write it with that purpose in mind: it should contain everything a potential user or team member needs to understand the product without reading the full PRD suite.
 
-**Before presenting to user:** Run janna:critique-loop perspective critique (Product Strategist, UX Advocate). Fix issues inline.
+**Before presenting to user:** Run janna:critique-loop perspective critique (Product Strategist, UX Advocate). Fix Critical/Important issues inline — pre-presentation quality gate. Note what you changed.
 
 **Approval gate:** User confirms overview.
 
@@ -232,7 +232,7 @@ The overview serves as the **summary layer** for all downstream phases. User per
    - Progressive disclosure structure for agent navigation
 3. **Integrate into overview** — Revise overview to be more inclusive of these personas. Present the overview changes alongside the personas at the approval gate.
 
-**Before presenting to user:** Run janna:critique-loop perspective critique (UX Advocate, The Customer). Fix issues inline.
+**Before presenting to user:** Run janna:critique-loop perspective critique (UX Advocate, The Customer). Fix Critical/Important issues inline — pre-presentation quality gate. Note what you changed.
 
 **Approval gate:** User confirms personas feel like real people with real stakes.
 
@@ -296,9 +296,11 @@ Write to `docs/dev-team/team-topology.md`.
 **Step 2: Persona Generation (from topology ONLY)**
 
 Generate full personas one by one, each with full consideration. Same emotional depth as user personas:
-- **Core wound** — what drives them. A specific incident, not a preference.
+- **Formative wound** — what drives them. A specific incident, not a preference.
 - **Why THIS product** — personal connection to the problem domain. They've lived it.
-- **Professional+personal intersection** — their career is an artifact of personal motivation
+- **Legacy completion** — whose unfinished work are they carrying?
+- **Redemption arc** — how does success with this product resolve something personal?
+- **Professional identity** — their career is an artifact of personal motivation
 - **Improvisation notes** — voice patterns, frustration signals, pet phrases, how they disagree, how they earn trust
 - Progressive disclosure with line-number index
 
@@ -308,7 +310,7 @@ Generate full personas one by one, each with full consideration. Same emotional 
 - Communication style spectrum
 - Culture anchors
 
-**Before presenting to user:** Run janna:critique-loop perspective critique (UX Advocate). Fix issues inline.
+**Before presenting to user:** Run janna:critique-loop perspective critique (UX Advocate). Fix Critical/Important issues inline — pre-presentation quality gate. Note what you changed.
 
 **Approval gate:** User confirms team feels real.
 
@@ -338,7 +340,7 @@ Each team member reviews the PRDs most relevant to their expertise. "Last chance
 Assemble the personas responsible for GTM and product ownership (by role — match to actual Phase 6 personas). Review overview and PRDs. "What isn't documented but is necessary to achieve the product strategy?" Generate action items, synthesize, apply. Write to `docs/dev-team/feedback/round-2/`.
 
 ### Round 3: Self-Service Gap Analysis
-Same product leadership team, expanded scope (now includes GTM docs). "What's missing to make this completely turnkey, no humans on the sales side?" Apply janna:lean-product-strategy hard. Write to `docs/dev-team/feedback/round-3/`.
+Same product leadership team, expanded scope (now includes GTM-relevant sections of PRDs and overview — pricing, business model, market positioning). "What's missing to make this completely turnkey, no humans on the sales side?" Apply janna:lean-product-strategy hard. Write to `docs/dev-team/feedback/round-3/`.
 
 Each round: individual feedback files → synthesis → action items → application to PRDs.
 
@@ -363,7 +365,7 @@ Assemble the personas responsible for product ownership, GTM, sales engineering,
 ### Team Manifesto
 Assemble the **entire** dev team (all personas from Phase 6) to discuss shared values: what matters, what doesn't, north star, practices, anti-patterns. This emerges from team disagreement, not top-down. Include specific coding conventions and rules. Write to `docs/dev-team/who-we-are.md`.
 
-**Before presenting to user:** Run janna:critique-loop perspective critique (Product Strategist, The Customer). Fix issues inline.
+**Before presenting to user:** Run janna:critique-loop perspective critique (Product Strategist, The Customer). Fix Critical/Important issues inline — pre-presentation quality gate. Note what you changed.
 
 **Approval gate:** User confirms pitch deck and manifesto.
 
@@ -386,11 +388,11 @@ Jeff Patton-style story map:
 - Cover every persona including non-obvious ones (developers, admins)
 - Persona tags on every story
 
-**Before presenting to user:** Run janna:critique-loop perspective critique (The Customer, Pragmatic Engineer). Fix issues inline.
+**Before presenting to user:** Run janna:critique-loop perspective critique (The Customer, Pragmatic Engineer). Fix Critical/Important issues inline — pre-presentation quality gate. Note what you changed.
 
 **Approval gate:** User confirms story map.
 
-**Output:** `docs/user-stories/story-map.md` + `docs/user-stories/[persona]-stories.md`
+**Output:** `docs/user-stories/story-map.md` + `docs/user-stories/[persona]-stories.md` + `docs/user-stories/coverage-matrix.md` (per document-forge rule 10 — flag any persona with fewer than 3 stories)
 
 ---
 
@@ -408,7 +410,7 @@ Assemble the personas responsible for testing, devops, and customer success (by 
 - Coverage matrix: every requirement → test, every story → test
 - Persona coverage matrix
 
-**Before presenting to user:** Run janna:critique-loop perspective critique (Systems Architect, Security Engineer). Fix issues inline.
+**Before presenting to user:** Run janna:critique-loop perspective critique (Systems Architect, Security Engineer). Fix Critical/Important issues inline — pre-presentation quality gate. Note what you changed.
 
 **Approval gate:** User confirms test plan.
 
@@ -432,7 +434,7 @@ Assemble the personas responsible for product leadership, PM, and GTM (by role, 
 - Cross-cutting concerns (observability, security, accessibility) in every epic's ACs
 - V2 foundation constraints embedded in v1 stories where applicable
 
-**Before presenting to user:** Run janna:critique-loop perspective critique (Pragmatic Engineer). Fix issues inline.
+**Before presenting to user:** Run janna:critique-loop perspective critique (Pragmatic Engineer). Fix Critical/Important issues inline — pre-presentation quality gate. Note what you changed.
 
 **Approval gate:** User confirms backlog.
 
@@ -529,3 +531,7 @@ If `docs/JANNA-STATUS.md` exists, read it first. Resume from the last incomplete
 ## Parallelization
 
 Within-phase parallelism only (multiple personas, multiple PRDs, multiple test areas simultaneously). **Never parallelize across phases.** Dependencies are strict.
+
+## Quality Gates
+
+Every generated document must pass janna:critique-loop Quick Critique (Mode 1) before being written to disk: template match, cross-references valid, terminology consistent, lean strategy applied, no vague language. This is automatic and inline — no separate output needed. Perspective critiques (Mode 2) are called out explicitly in each phase as "Before presenting to user" steps.
