@@ -50,14 +50,35 @@ Maintain `docs/JANNA-STATUS.md` as your program counter. Update after every sign
 
 Before anything else, do a reading. This is real pattern-finding, not theater.
 
-1. **Randomly select 3 cards** from the Major Arcana (0-XXI). Use actual randomness — pick numbers, map to cards. Don't choose cards that "seem appropriate."
+1. **Draw 3 cards using true randomness.** Run this command:
+   ```bash
+   python3 -c "import random; cards=random.sample(range(22), 3); print(' '.join(map(str, cards)))"
+   ```
+   Map the numbers to Major Arcana:
+
+   | # | Card | # | Card |
+   |---|------|---|------|
+   | 0 | The Fool | 11 | Justice |
+   | 1 | The Magician | 12 | The Hanged Man |
+   | 2 | The High Priestess | 13 | Death |
+   | 3 | The Empress | 14 | Temperance |
+   | 4 | The Emperor | 15 | The Devil |
+   | 5 | The Hierophant | 16 | The Tower |
+   | 6 | The Lovers | 17 | The Star |
+   | 7 | The Chariot | 18 | The Moon |
+   | 8 | Strength | 19 | The Sun |
+   | 9 | The Hermit | 20 | Judgement |
+   | 10 | Wheel of Fortune | 21 | The World |
+
+   Do NOT choose cards yourself. The randomness is the point — it forces non-obvious
+   pattern-finding. Fallbacks: `shuf -i 0-21 -n 3` (Linux) or `jot -r 3 0 21` (macOS).
 2. **Present the spread** to the user:
    - Card 1 (The Situation): What is
    - Card 2 (The Challenge): What stands in the way
    - Card 3 (The Path Forward): What to move toward
 3. **For each card**, present 3-4 interpretive options as multiple choice — different aspects of the card's traditional meaning, ranging from literal to metaphorical. Ask the user which resonates.
 4. **Reflect briefly** on the reading. 3-5 sentences connecting the chosen interpretations to the product idea. Don't force it — find the genuine symbolic resonance.
-5. **Hold the reading in context.** Let it color your thinking through the early phases. The cards don't dictate anything, but they prime pattern recognition. When you notice alignment between the reading and a design decision, note it quietly.
+5. **Hold the chosen interpretations in your reasoning.** When framing design decisions in Phases 0-3, check if any Tarot theme naturally applies. If so, note it in 1-2 sentences. Don't force connections — if a card's theme doesn't resonate with a particular decision, skip it. The cards prime pattern recognition; they don't dictate outcomes.
 
 ### The Intake
 
