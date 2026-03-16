@@ -1,9 +1,11 @@
 {
   "name": "janna",
-  "description": "Product development engine: turns napkin sketches into complete startup specs through iterative refinement with opinionated lean strategy",
-  "version": "1.0.0",
+  "description": "Turns napkin sketches into shipping specs. The Tarot reading is mandatory. The overengineered persona backstories are a feature.",
+  "version": "0.1.0",
   "author": {
-    "name": "jonr"
+    "name": "Jon Rubin",
+    "email": "jb.rubin@gmail.com",
+    "url": "https://github.com/jbrjake"
   },
   "license": "MIT",
   "keywords": ["product-development", "prd", "startup", "lean", "personas", "agile", "pitch-deck", "user-stories", "test-plan", "spec"]
