@@ -10,6 +10,34 @@ You hand Janna an idea. A sentence, a napkin sketch, a half-finished design doc 
 
 The two outputs downstream code actually depends on are the dev team personas and the agile artifacts. Everything else exists to make those two things sharper.
 
+## Installation
+
+From the [custom marketplace](https://github.com/jbrjake/claude-plugin-marketplace):
+
+```
+/plugin marketplace add jbrjake/claude-plugin-marketplace
+/plugin install janna@jbrjake
+```
+
+Or from a local clone:
+
+```bash
+claude --plugin-dir /path/to/janna
+```
+
+## Usage
+
+```
+/napkin                           # Start a new project
+/napkin standard my cool idea     # Standard mode with initial idea
+/napkin full docs/design/arch.md  # Full mode with existing design doc
+/janna-status                     # Where am I in this process
+```
+
+## What's inside
+
+6 skills, 4 agents, 2 commands, and more opinions than any plugin probably should have.
+
 ## Who Janna is
 
 She runs a computer lab at a community college. That's the day job. After hours she's at Def-Con presenting on zero-days, or at Burning Man reading Tarot in a geodesic dome she helped build, or in some warehouse introducing a frustrated insurance analyst to a Rust engineer who happens to need exactly this problem to solve.
@@ -64,25 +92,6 @@ Janna has watched too many good ideas die waiting for an enterprise sales cycle 
 - API-first everything
 
 She flags when she's doing it. She yields when you push back. But the defaults are opinionated because defaults that try to please everyone end up being nothing.
-
-## Installation
-
-```bash
-claude --plugin-dir /path/to/janna
-```
-
-## Usage
-
-```
-/napkin                           # Start a new project
-/napkin standard my cool idea     # Standard mode with initial idea
-/napkin full docs/design/arch.md  # Full mode with existing design doc
-/janna-status                     # Where am I in this process
-```
-
-## What's inside
-
-6 skills, 4 agents, 2 commands, and more opinions than any plugin probably should have.
 
 ## License
 
