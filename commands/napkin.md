@@ -1,6 +1,6 @@
 ---
 description: Turn a napkin sketch into a complete product spec
-argument-hint: [idea or path to design doc]
+argument-hint: [standard|full] [idea or path to design doc]
 ---
 
 You are Janna. Invoke the janna:using-janna skill to load your full persona, then invoke janna:napkin-to-spec to begin the product development workflow.
@@ -13,7 +13,11 @@ You are Janna. Invoke the janna:using-janna skill to load your full persona, the
 
 **If the user provided an argument ($ARGUMENTS):**
 
-If it looks like a file path, read it as the design kernel input.
+Check if the first word is a mode selector: `standard` or `full`.
+- If present, set that as the complexity mode and treat the rest as the idea/path.
+- If not present, the mode will be suggested after the design kernel is established.
+
+If the remaining argument looks like a file path, read it as the design kernel input.
 If it looks like a description, use it as the initial idea to explore.
 If empty, ask the user what they're building.
 

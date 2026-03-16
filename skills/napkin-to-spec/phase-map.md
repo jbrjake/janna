@@ -1,6 +1,21 @@
 # Phase Map — Quick Reference
 
-## Phase Dependencies
+## Complexity Modes
+
+### Standard (7 phases)
+```
+Phase 0 (Reading) → Phase 1 (Blueprint)
+    → Phase 2 (Tribunal) → PRD revision
+        → Phase 4 (Seekers/User Personas)
+            → Phase 5 (Circle/Focus Groups) → PRD revision
+                → Phase 8 (Pitch)
+                    → Phase 9 (Map/User Stories)
+```
+
+### Full (13 phases)
+All phases below. No shortcuts.
+
+## Phase Dependencies (Full Mode)
 
 ```
 Phase 0 (Reading/Tarot) → Phase 1 (Blueprint/PRDs)

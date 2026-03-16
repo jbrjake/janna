@@ -8,8 +8,38 @@ description: "Use when developing a product idea into a complete specification �
 Turn a design kernel into a complete, self-aligned product specification through thirteen phases of iterative expansion, adversarial review, and human alignment.
 
 <HARD-GATE>
-Do NOT skip phases or generate documents out of order. Each phase builds on the previous. The user approves each phase before proceeding. This is not negotiable.
+Do NOT skip phases within the selected complexity mode or generate documents out of order. Each phase builds on the previous. The user approves each phase before proceeding. The user CAN select which mode to run (Standard or Full).
 </HARD-GATE>
+
+## Complexity Modes
+
+At the start of Phase 0, after the Tarot reading but before the intake questions, determine the project's complexity mode. The user can specify explicitly (via `/napkin standard` or `/napkin full`) or you can suggest based on the scope of the design kernel.
+
+### Standard Mode (7 phases) — Products with real users and market intent
+
+| Phase | Name | What Happens |
+|-------|------|-------------|
+| 0 | The Reading | Tarot + intake → Design Kernel |
+| 1 | The Blueprint | Design Kernel → PRDs |
+| 2 | The Tribunal | Adversarial graybeard PRD review |
+| 4 | The Seekers | User Personas with emotional depth |
+| 5 | The Circle | Focus Groups → PRD revision |
+| 8 | The Pitch | Pitch Deck |
+| 9 | The Map | User Stories |
+
+Skips: Overview (folded into pitch), Dev Team, Forge, Test Plan, Agile, Mirror.
+
+### Full Mode (13 phases) — Commercial products, startup specs, enterprise platforms
+
+All phases. No shortcuts.
+
+### Selecting a Mode
+
+If the user doesn't specify, suggest based on the design kernel:
+- Product with identified market / multiple user types → suggest Standard
+- Platform / commercial product / needs investor materials / needs agile planning → suggest Full
+
+The user can upgrade mid-process ("let's add a dev team" during Standard triggers Phase 6). Downgrading is harder — you can skip remaining phases but can't un-generate artifacts.
 
 ## File Organization
 
