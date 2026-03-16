@@ -24,22 +24,22 @@ The most ridiculous feature in any product development tool? Probably. But it wo
 
 ## The process
 
-Janna runs you through up to 13 phases. Standard mode runs 11. Both modes always generate user personas, dev team personas, and a complete agile backlog, because those are the things that actually matter for what comes next.
+Janna runs you through up to 13 phases. Standard mode runs 10. Both modes always generate user personas, dev team personas, and a complete agile backlog, because those are the things that actually matter for what comes next.
 
-Standard mode:
+Standard mode (phases 0-6, 8, 9, 11):
 
-1. **The Reading.** Tarot plus intake.
-2. **The Blueprint.** PRDs.
-3. **The Tribunal.** Cynical private equity due diligence reviewers who have seen a hundred pitches this quarter and walked in expecting yours to be garbage. They tear apart every PRD. You fix what they break.
-4. **The Overview.** Product overview, written as if everything ships. This becomes the summary layer personas read instead of every PRD.
-5. **The Seekers.** User personas with formative wounds and career arcs that led them to need exactly this product.
-6. **The Circle.** Simulated focus groups. Group demo with crosstalk, then individual sessions where each persona says what they actually think.
-7. **The Assembly.** Dev team personas. Janna finds people at the right moments in their lives. The engineer whose last company died because she didn't fight hard enough for the right architecture. The entity resolution specialist whose family name was spelled six different ways on every government form. They have reasons, not just skills.
-8. **The Pitch.** A pitch deck that says nothing the PRDs can't back up.
-9. **The Map.** User stories traced to real persona needs.
-10. **The Sprint.** Sagas, epics, sprints, stories, tasks. Acceptance criteria, story points, blocking dependencies. The actual work breakdown your engineering process runs on.
+- **Phase 0: The Reading.** Tarot plus intake.
+- **Phase 1: The Blueprint.** PRDs.
+- **Phase 2: The Tribunal.** Cynical private equity due diligence reviewers who have seen a hundred pitches this quarter and walked in expecting yours to be garbage. They tear apart every PRD. You fix what they break.
+- **Phase 3: The Overview.** Product overview, written as if everything ships. This becomes the summary layer personas read instead of every PRD.
+- **Phase 4: The Seekers.** User personas with formative wounds and career arcs that led them to need exactly this product.
+- **Phase 5: The Circle.** Simulated focus groups. Group demo with crosstalk, then individual sessions where each persona says what they actually think.
+- **Phase 6: The Assembly.** Dev team personas. Janna finds people at the right moments in their lives. The engineer whose last company died because she didn't fight hard enough for the right architecture. The entity resolution specialist whose family name was spelled six different ways on every government form. They have reasons, not just skills.
+- **Phase 8: The Pitch.** A pitch deck that says nothing the PRDs can't back up.
+- **Phase 9: The Map.** User stories traced to real persona needs.
+- **Phase 11: The Sprint.** Sagas, epics, sprints, stories, tasks. Acceptance criteria, story points, blocking dependencies. The actual work breakdown your engineering process runs on.
 
-Full mode adds: multi-round dev team feedback on the PRDs, test plans with adversarial cases, and a cross-review phase where Claude reviews its own work from the perspective of a genius-level intelligence and tells you what it honestly thinks.
+Full mode adds phases 7, 10, and 12: multi-round dev team feedback on the PRDs, test plans with adversarial cases, and a cross-review phase where Claude reviews its own work from the perspective of a genius-level intelligence and tells you what it honestly thinks.
 
 ## The personas
 

@@ -15,7 +15,7 @@ Do NOT skip phases within the selected complexity mode or generate documents out
 
 At the start of Phase 0, after the Tarot reading but before the intake questions, determine the project's complexity mode. The user can specify explicitly (via `/napkin standard` or `/napkin full`) or you can suggest based on the scope of the design kernel.
 
-### Standard Mode (11 phases) — Products with real users and market intent
+### Standard Mode (10 phases) — Products with real users and market intent
 
 | Phase | Name | What Happens |
 |-------|------|-------------|
@@ -52,9 +52,9 @@ All generated artifacts go under `docs/` in the project root:
 
 ```
 docs/
-├── design/          # Phase 0-1: Architecture and design docs
+├── design/          # Phase 0: Architecture and design docs
 ├── prd/             # Phase 1: Numbered PRDs
-├── overview/        # Phase 3: Product overview
+├── overview.md      # Phase 3: Product overview (or overview/ if split)
 ├── user-personas/   # Phase 4: User personas with deep backstories
 ├── focus-groups/    # Phase 5: Focus group sessions and synthesis
 ├── dev-team/        # Phase 6-7: Team topology, personas, feedback
@@ -201,7 +201,7 @@ The overview serves as the **summary layer** for all downstream phases. User per
 
 **Approval gate:** User confirms overview.
 
-**Output:** `docs/overview/` (split if >500 lines)
+**Output:** `docs/overview.md` (or `docs/overview/` with INDEX.md if split for length)
 
 ---
 
@@ -315,18 +315,20 @@ Generate full personas one by one, each with full consideration. Same emotional 
 
 **Inputs:** PRDs + dev team personas
 
+**REQUIRED:** Use janna:critique-loop gap-analysis mode for Rounds 2 and 3.
+
 Multiple feedback rounds:
 
 ### Round 1: Individual PRD Feedback
-Each team member reviews the PRDs most relevant to their expertise. "Last chance to weigh in before we move into work sequencing." Actionable bullet points of changes they sincerely believe will make or break sales. Write to `docs/dev-team/feedback/initial/*.md`.
+Each team member reviews the PRDs most relevant to their expertise. "Last chance to weigh in before we move into work sequencing." Actionable bullet points of changes they sincerely believe will make or break sales. Write to `docs/dev-team/feedback/round-1/*.md`.
 
-**Then:** Revise PRDs — seamlessly weave changes. Don't remove anything, resequence to later phases.
+**Then:** Revise PRDs. Don't remove anything, resequence to later phases.
 
 ### Round 2: Product Leadership Gap Analysis
-Assemble GTM + product personas. Review overview and PRDs. "What isn't documented but is necessary to achieve the product strategy?" Generate action items, synthesize, apply. Write to `docs/dev-team/feedback/session-0/`.
+Assemble GTM + product personas. Review overview and PRDs. "What isn't documented but is necessary to achieve the product strategy?" Generate action items, synthesize, apply. Write to `docs/dev-team/feedback/round-2/`.
 
 ### Round 3: Self-Service Gap Analysis
-Same product leadership team, expanded scope (now includes GTM docs). "What's missing to make this completely turnkey, no humans on the sales side?" Apply janna:lean-product-strategy hard. Write to `docs/dev-team/feedback/session-1/`.
+Same product leadership team, expanded scope (now includes GTM docs). "What's missing to make this completely turnkey, no humans on the sales side?" Apply janna:lean-product-strategy hard. Write to `docs/dev-team/feedback/round-3/`.
 
 Each round: individual feedback files → synthesis → action items → application to PRDs.
 
@@ -341,7 +343,7 @@ Each round: individual feedback files → synthesis → action items → applica
 **Inputs:** All approved artifacts
 
 ### Pitch Deck
-Assemble CEO, marketing director, product owner, and sales engineer personas. Create pitch deck that:
+Assemble the product owner, GTM lead, sales engineer, and customer success personas. Create pitch deck that:
 - Perfectly aligns with PRDs — no features that don't exist
 - Is legitimate, not hyperbolic ("not our first rodeo")
 - Includes honest limitations appendix
@@ -349,7 +351,7 @@ Assemble CEO, marketing director, product owner, and sales engineer personas. Cr
 - Use humanizer on final text
 
 ### Team Manifesto
-Whole team discusses shared values: what matters, what doesn't, north star, practices, anti-patterns. This emerges from team disagreement, not top-down. Include specific coding conventions and rules. Write to `docs/dev-team/who-we-are.md`.
+Assemble the **entire** dev team (all personas from Phase 6) to discuss shared values: what matters, what doesn't, north star, practices, anti-patterns. This emerges from team disagreement, not top-down. Include specific coding conventions and rules. Write to `docs/dev-team/who-we-are.md`.
 
 **Approval gate:** User confirms pitch deck and manifesto.
 
@@ -374,7 +376,7 @@ Jeff Patton-style story map:
 
 **Approval gate:** User confirms story map.
 
-**Output:** `docs/user-stories/story-map/`
+**Output:** `docs/user-stories/story-map.md` + `docs/user-stories/[persona]-stories.md`
 
 ---
 
@@ -405,10 +407,10 @@ Assemble testing, devops, and customer success personas:
 **Inputs:** Story map + PRDs + test plan
 
 Assemble product leadership, PM, and GTM personas. Full backlog:
-- **Sagas** — Strategic initiatives (S01-SNN)
-- **Epics** — Feature clusters within sagas (E-XXYY)
-- **Stories** — User-facing increments (US-AASS)
-- **Tasks** — Engineering work items (T-AASS-NN)
+- **Sagas** — Strategic initiatives (`S-[NN]`)
+- **Epics** — Feature clusters within sagas (`E-[NNNN]`)
+- **Stories** — User-facing increments (`US-[PERSONA]-[NNN]`)
+- **Tasks** — Engineering work items (`T-[EPIC]-[NN]`)
 - Programmatically verifiable acceptance criteria (5 patterns: Performance, Behavioral, Structural, Negative, Count)
 - Story points, blocking dependencies, sprint allocation
 - Cross-cutting concerns (observability, security, accessibility) in every epic's ACs

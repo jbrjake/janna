@@ -28,9 +28,11 @@ At phase transitions, dispatch subagent(s) adopting specific expert perspectives
 |-------|-------------|
 | 1 (Blueprint) | Systems Architect, Pragmatic Engineer |
 | 3 (Overview) | Product Strategist, UX Advocate |
+| 6 (Assembly) | UX Advocate (are personas diverse and grounded?) |
 | 8 (Pitch) | Product Strategist, The Customer |
 | 9 (Map) | The Customer, Pragmatic Engineer |
 | 10 (Gauntlet) | Systems Architect, Security Engineer |
+| 11 (Sprint) | Pragmatic Engineer (are sprints realistic?) |
 
 Standard critique output: Location → Issue → Severity → Suggestion.
 
@@ -176,7 +178,7 @@ Product leadership personas review all docs asking: "What ISN'T documented but i
 
 **Output per round:**
 ```markdown
-## Gap Analysis — Session [N]
+## Gap Analysis — Round [2 or 3]
 
 ### [Persona Name]
 
@@ -192,6 +194,14 @@ Product leadership personas review all docs asking: "What ISN'T documented but i
 ### Action Items
 - [ ] [specific new doc or PRD section needed]
 ```
+
+### 6. Cross-Review Mode (Phase 12)
+
+Full alignment audit across the entire artifact set. Three sub-steps:
+
+1. **Full team cross-review:** Dispatch all dev team personas sequentially, each reviewing documents outside their primary area. Write to `docs/dev-team/feedback/cross-review/`.
+2. **Cross-document tracing:** Verify every PRD requirement maps to a user story, every story maps to an agile task, every task has test coverage. Flag orphans.
+3. **AI self-review:** Review the entire spec corpus from your own perspective. What would make this more interesting, more internally consistent, more complete? Write to `docs/archive/feedback/`.
 
 ---
 

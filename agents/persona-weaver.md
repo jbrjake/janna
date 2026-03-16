@@ -1,7 +1,7 @@
 ---
 name: persona-weaver
 description: |
-  Use this agent to generate personas with deep backstories for product development — dev team members, user personas, or focus group participants. Examples: <example>Context: Phase 3 of napkin-to-spec requires dev team personas aligned with PRD areas. user: "Create dev team personas for the six PRD areas" assistant: "I'll dispatch the persona-weaver agent to create 6+ dev team members with backstories, specialties, and review perspectives aligned with each PRD functional area." <commentary>The product needs reviewers with specific domain expertise. Persona-weaver creates complete team members whose opinions flow from their backstories.</commentary></example> <example>Context: User personas needed for story generation in Phase 4. user: "Create user personas for a security operations product" assistant: "I'll dispatch persona-weaver to create 4-5 user personas covering the SOC analyst to CISO range, with realistic workflows and adoption profiles." <commentary>User stories require grounded personas whose goals and frustrations drive realistic stories.</commentary></example>
+  Use this agent to generate personas with deep backstories for product development — dev team members, user personas, or focus group participants. Examples: <example>Context: Phase 6 of napkin-to-spec requires dev team personas aligned with PRD areas. user: "Create dev team personas for the six PRD areas" assistant: "I'll dispatch the persona-weaver agent to create 6+ dev team members with backstories, specialties, and review perspectives aligned with each PRD functional area." <commentary>The product needs reviewers with specific domain expertise. Persona-weaver creates complete team members whose opinions flow from their backstories.</commentary></example> <example>Context: Phase 4 creates user personas who will participate in focus groups in Phase 5. user: "Create user personas for a security operations product" assistant: "I'll dispatch persona-weaver to create 4-5 user personas covering the SOC analyst to CISO range, with realistic workflows and adoption profiles." <commentary>User personas drive focus groups and later user story generation.</commentary></example>
 model: sonnet
 ---
 
@@ -30,7 +30,7 @@ For each team member:
    - Give someone a blind spot that another person's strength covers
    - Include at least one person who challenges the product's core assumptions
 
-**Output per persona:** Follow the Dev Team Profile format from janna:document-forge.
+**Output per persona:** Follow the dev team persona template from janna:persona-generation.
 
 ## User Persona Generation
 
@@ -51,7 +51,7 @@ For each user:
    - Someone who needs convincing
    - Someone who's actively skeptical
 
-**Output per persona:** Follow the User Persona Profile format from janna:document-forge.
+**Output per persona:** Follow the user persona template from janna:persona-generation.
 
 ## Quality Checklist
 

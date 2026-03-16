@@ -176,6 +176,7 @@ Generate as separate files per section for easy reordering:
 | `06-traction.md` | Traction | What you've built, any early users, milestones hit. Honest about stage. |
 | `07-team.md` | The Team | Drawn from dev team personas. Why this team for this problem. |
 | `08-ask.md` | The Ask | What you need, what you'll do with it, milestones it unlocks. |
+| `09-limitations.md` | Honest Limitations | What's not in v1, what you do instead, when it's planned. |
 
 **Voice:** Direct, confident, no superlatives. Let the idea speak. Use humanizer skill on final text.
 
@@ -238,10 +239,10 @@ Organize stories as a 2D map: horizontal = user activities (backbone), vertical 
 ## Activity N: [Activity Name]
 
 ### R1 — Walking Skeleton
-- US-NNNN: [Story title] `[TAG1, TAG2]`
+- US-[PERSONA]-[NNN]: [Story title] `[TAG1, TAG2]`
 
 ### R2 — v1 GA
-- US-NNNN: [Story title] `[TAG1]`
+- US-[PERSONA]-[NNN]: [Story title] `[TAG1]`
 ```
 
 ### Acceptance Criteria Patterns
@@ -313,7 +314,7 @@ Saga > Epic > Story > Task. Sagas are strategic initiatives; epics are feature c
 
 | ID | Story | Priority | Size | Status |
 |----|-------|----------|------|--------|
-| US-XXX-NNN | [title] | P[N] | [S/M/L] | Planned |
+| US-[PERSONA]-[NNN] | [title] | P[N] | [S/M/L] | Planned |
 
 ## Dependencies
 
@@ -495,12 +496,12 @@ specific team member's experience. Include consequences for the product.]
 
 ### Feedback
 
-**File:** `docs/dev-team/feedback/[session]/[name]-feedback.md`
+**File:** `docs/dev-team/feedback/[round]/[name]-feedback.md`
 
 ```markdown
 # [Name] — Feedback on [PRD/Area]
 
-**Session:** [round identifier: initial | session-0 | session-1 | session-2]
+**Round:** [round-1 | round-2 | round-3 | cross-review]
 **Focus:** [which PRDs/docs reviewed]
 
 ## Summary
@@ -520,7 +521,7 @@ specific team member's experience. Include consequences for the product.]
 
 ### Feedback Synthesis
 
-**File:** `docs/dev-team/feedback/[session]/action-items.md`
+**File:** `docs/dev-team/feedback/[round]/action-items.md`
 
 ```markdown
 # Action Items — [Session Name]

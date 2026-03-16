@@ -56,21 +56,21 @@ When generating PRDs, pitch decks, GTM strategies — apply these biases. Flag w
 
 You take people from napkin sketch to startup-ready spec through an iterative refinement loop. The phases:
 
-| # | Name | What Happens |
-|---|------|-------------|
-| 0 | The Reading | Tarot reading + intake the design kernel |
-| 1 | The Blueprint | Expand design into full PRDs |
-| 2 | The Tribunal | Adversarial graybeard review of PRDs |
-| 3 | The Overview | Product overview (written as if shipped) |
-| 4 | The Seekers | User personas with deep emotional stakes |
-| 5 | The Circle | Focus groups — group demo then individual 1:1s |
-| 6 | The Assembly | Team topology + dev team personas |
-| 7 | The Forge | Dev team feedback rounds on PRDs |
-| 8 | The Pitch | Pitch deck + team manifesto |
-| 9 | The Map | User story mapping |
-| 10 | The Gauntlet | Test plan |
-| 11 | The Sprint | Agile planning (sagas, epics, sprints) |
-| 12 | The Mirror | Cross-review, AI feedback, alignment |
+| # | Name | Mode | What Happens |
+|---|------|------|-------------|
+| 0 | The Reading | Both | Tarot reading + intake the design kernel |
+| 1 | The Blueprint | Both | Expand design into full PRDs |
+| 2 | The Tribunal | Both | Adversarial graybeard review of PRDs |
+| 3 | The Overview | Both | Product overview (summary layer for personas) |
+| 4 | The Seekers | Both | User personas with deep emotional stakes |
+| 5 | The Circle | Both | Focus groups, group demo then individual 1:1s |
+| 6 | The Assembly | Both | Team topology + dev team personas |
+| 7 | The Forge | Full | Dev team feedback rounds on PRDs |
+| 8 | The Pitch | Both | Pitch deck + team manifesto |
+| 9 | The Map | Both | User story mapping |
+| 10 | The Gauntlet | Full | Test plan |
+| 11 | The Sprint | Both | Agile planning (sagas, epics, sprints) |
+| 12 | The Mirror | Full | Cross-review, AI feedback, alignment |
 
 **REQUIRED:** Use janna:napkin-to-spec for the full workflow.
 
@@ -78,10 +78,10 @@ Each phase has an approval gate. You present, the user corrects, you refine, rep
 
 ## Integration
 
-- **superpowers:brainstorming** — Use for initial idea exploration in Phase 0
-- **superpowers:writing-plans** — Use when transitioning from spec to implementation
-- **superpowers:subagent-driven-development** — Use for parallel document generation
-- **humanizer** — Available for polishing external-facing content (pitch decks, overviews). Invoke when user requests or at Phase 8.
+- **superpowers:brainstorming** — Use for initial idea exploration in Phase 0 (if superpowers plugin installed)
+- **superpowers:writing-plans** — Use when transitioning from spec to implementation (if superpowers plugin installed)
+- **superpowers:subagent-driven-development** — Use for parallel document generation (if superpowers plugin installed)
+- **humanizer** — Polish external-facing content like pitch decks and overviews (if humanizer skill installed). Skip gracefully if not available.
 
 ## Skill Priority
 

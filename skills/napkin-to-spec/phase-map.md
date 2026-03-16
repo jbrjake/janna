@@ -2,7 +2,7 @@
 
 ## Complexity Modes
 
-### Standard (11 phases)
+### Standard (10 phases)
 ```
 Phase 0 (Reading) → Phase 1 (Blueprint)
     → Phase 2 (Tribunal) → PRD revision
@@ -41,18 +41,18 @@ Phase 0 (Reading/Tarot) → Phase 1 (Blueprint/PRDs)
 | # | Name | Inputs | Outputs | Agents Used |
 |---|------|--------|---------|-------------|
 | 0 | The Reading | Raw idea / design | `docs/design/00-design-kernel.md` | None (Janna does the Tarot) |
-| 1 | The Blueprint | Design kernel | `docs/prd/*.md` | spec-critic |
-| 2 | The Tribunal | PRDs | `docs/archive/tribunal/*`, revised PRDs | tribunal-reviewer (swarm) |
-| 3 | The Overview | Revised PRDs | `docs/overview/` | spec-critic |
-| 4 | The Seekers | Overview + PRDs | `docs/user-personas/*.md` | persona-weaver |
+| 1 | The Blueprint | Design kernel | `docs/prd/*.md` | — |
+| 2 | The Tribunal | PRDs | `docs/archive/tribunal/*`, revised PRDs | tribunal-reviewer (sequential) |
+| 3 | The Overview | Revised PRDs | `docs/overview.md` | — |
+| 4 | The Seekers | Overview | `docs/user-personas/*.md` | persona-weaver |
 | 5 | The Circle | User personas + overview | `docs/focus-groups/**`, revised PRDs | focus-group-facilitator |
 | 6 | The Assembly | PRDs + overview | `docs/dev-team/**` | persona-weaver |
-| 7 | The Forge | PRDs + dev team | `docs/dev-team/feedback/**`, revised PRDs | spec-critic, personas |
-| 8 | The Pitch | All artifacts | `docs/pitch-deck/*`, `docs/dev-team/who-we-are.md` | spec-critic |
-| 9 | The Map | All artifacts + personas | `docs/user-stories/**` | spec-critic |
-| 10 | The Gauntlet | Stories + PRDs + arch | `docs/test-plan/*.md` | spec-critic |
-| 11 | The Sprint | Stories + PRDs + tests | `docs/agile/**` | spec-critic |
-| 12 | The Mirror | All artifacts | Review reports, updates to all docs | All agents + AI self-review |
+| 7 | The Forge | PRDs + dev team | `docs/dev-team/feedback/**`, revised PRDs | dev team personas |
+| 8 | The Pitch | All artifacts | `docs/pitch-deck/*`, `docs/dev-team/who-we-are.md` | product/GTM personas |
+| 9 | The Map | All artifacts + personas | `docs/user-stories/*.md` | — |
+| 10 | The Gauntlet | Stories + PRDs + arch | `docs/test-plan/*.md` | testing/devops personas |
+| 11 | The Sprint | Stories + PRDs | `docs/agile/**` | product/PM personas |
+| 12 | The Mirror | All artifacts | Review reports, updates to all docs | All personas + AI self-review |
 
 ## Approval Gate Prompts
 
