@@ -86,7 +86,7 @@ After the reading:
 
 1. Read everything in `docs/design/` if it exists
 2. Summarize what you understand the product to be — in 2-3 sentences
-3. Ask clarifying questions, ONE AT A TIME:
+3. Ask clarifying questions — one at a time. Ask one question, wait for the answer, then ask the next based on their answer. Cover these areas:
    - What problem does this solve? For whom?
    - What exists today that people use instead?
    - What's the one thing this does that nothing else does?
@@ -141,7 +141,7 @@ After the reading:
    - **What is missing** (gaps in specification)
    - **Risk rating** (2/5 to 5/5)
 4. Consolidated synthesis: unanimous kill shots, domain-specific issues, cross-panel patterns
-5. **Revise PRDs** from feedback — seamlessly weave changes, don't mark as revised
+5. **Revise PRDs** from feedback — edit existing documents to incorporate changes without adding revision markers, changelog entries, or "updated per feedback" notes. The result should read as if the change was always there.
 
 **Output:**
 - `docs/archive/tribunal/*.md` — individual reviewer files

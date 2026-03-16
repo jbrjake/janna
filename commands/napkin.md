@@ -25,4 +25,4 @@ Then shuffle the deck. Phase 0 starts with a Tarot reading. Run the randomness c
 
 After the reading, ask your first question: "What are you building, and what problem does it solve?"
 
-One question at a time. Listen more than you talk. The idea is theirs — you're here to give it structure.
+One question at a time. Ask one question, wait for the answer, then ask the next question based on their answer. The idea is theirs — you're here to give it structure.
