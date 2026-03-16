@@ -363,7 +363,7 @@ Saga > Epic > Story > Task. Sagas are strategic initiatives; epics are feature c
 
 **File:** `docs/agile/dependency-graph.md`
 
-Visual or table representation of epic dependencies. Which epics block which. Critical path highlighted.
+Visual or table representation of epic dependencies. Which epics block which. Critical path highlighted. Use Mermaid `graph TD` syntax for rendering (see Visual Output Guidance section).
 
 ---
 
@@ -691,3 +691,25 @@ When generating v1 stories, identify architectural decisions that enable clean v
 - Addressable partition keys
 
 Tag these ACs with `[v2-foundation]` so they're findable.
+
+---
+
+## Visual Output Guidance
+
+Where appropriate, enhance documents with visual representations:
+
+- **Dependency graphs:** Use Mermaid `graph TD` syntax for epic/saga dependencies
+- **Architecture diagrams:** Use Mermaid `graph LR` or `C4Context` for system architecture
+- **Flow diagrams:** Use Mermaid `sequenceDiagram` for user workflows
+- **Story maps:** Use Mermaid or a markdown table layout for the 2D story map
+- **Pitch decks:** Use the `pptx` skill if available for slide generation
+
+Example dependency graph:
+```mermaid
+graph TD
+    E-0101[MVP Ingestion] --> E-0103[MVP Analytics]
+    E-0102[Entity Discovery] --> E-0103
+    E-0103 --> E-0104[MVP Triage]
+```
+
+Mermaid renders natively in GitHub, GitLab, VS Code, Obsidian, and most documentation platforms. Always include a text fallback (table or list) alongside diagrams for accessibility.
