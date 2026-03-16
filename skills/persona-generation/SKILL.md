@@ -232,3 +232,34 @@ Created on-the-fly for Phase 2 (The Tribunal). NOT written to persistent files �
 - **Stereotype personas:** "The millennial who loves craft beer"
 - **Uniform depth:** Everyone equally detailed — vary the depth by centrality
 - **Missing conflict:** The most interesting personas disagree with each other
+
+---
+
+## Worked Example: The Generative Process
+
+This shows HOW to generate a persona from a product description — the thinking, not just the output.
+
+### Given: "We're building a supply chain risk visibility platform"
+
+**Step 1: Identify the role archetype.**
+Supply chain risk analyst. Someone who maps dependencies between suppliers, components, and facilities. They need to see concentration risk and single points of failure.
+
+**Step 2: Find the career path that creates obsession.**
+Who becomes a supply chain risk analyst? Someone who saw a supply chain fail. Not in the abstract — personally. A disruption that affected their family, their community, or a company they cared about. The career choice has to feel inevitable in retrospect.
+
+**Step 3: Invent the formative incident.**
+A semiconductor plant fire in Japan in 2006 disrupted auto production globally. Imagine a teenager whose father was a quality engineer at an auto parts manufacturer. The father worked 18-hour days for weeks because nobody had mapped the supply network past the first tier. The teenager heard his father say: "We didn't know they were our only source." That sentence becomes the seed of a career.
+
+**Step 4: Trace the wound to the present.**
+The teenager studies industrial engineering. Takes every supply chain course. Writes a thesis on multi-tier supply network visibility — literally his father's problem formalized. Gets a job at an engine manufacturer. Builds his first supply network maps with Python scripts. Discovers that 47 components all source from three facilities in one Chinese province. Nobody knew. He's now doing what his father couldn't.
+
+**Step 5: Define the hole in their heart.**
+He wants the complete map. Not a conceptual diagram — a live, data-driven graph showing every supplier, every component, every route. He knows it's asymptotically impossible to fully map. The gap between the completeness he wants and what he has drives his frustration — and his evaluation criterion for any tool.
+
+**Step 6: Write the redemption arc.**
+He presents the graph to his leadership. For the first time, they can see what he's always built in his head. He calls his father and describes what he sees on screen. His father says: "That's what I always wanted."
+
+**Step 7: Add character texture.**
+He draws supply chain diagrams on whiteboards while explaining things. He carries a Moleskine notebook. He speaks slowly — people mistake it for uncertainty but he's choosing precise words. An ugly graph showing a real dependency he hasn't mapped is worth more to him than a pretty dashboard that shows nothing new.
+
+**The key insight:** Start with the wound, not the demographics. The wound generates the career, the career generates the opinions, the opinions generate useful product feedback. Work forward from the formative incident, not backward from a job description.
