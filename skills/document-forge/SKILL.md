@@ -14,7 +14,7 @@ Templates and quality standards for every document type in the napkin-to-spec pi
 3. **No vague language.** Ban: "various", "etc.", "and more", "as needed", "appropriate". Be specific or leave a `[TODO: specify]` marker.
 4. **Version awareness.** Tag features with their target version: `(v1)`, `(v1.1)`, `(future)`.
 5. **Lean bias.** Apply janna:lean-product-strategy to every document. Self-service is the default.
-6. **Team voices in ACs.** Embed perspective commentary in acceptance criteria: `[Role: concern]` — shows *why* priorities exist, not just what they are.
+6. **Team voices in ACs.** Embed perspective commentary in acceptance criteria: `[Role: concern]` — shows *why* priorities exist, not just what they are. (In Phase 1, use generic role labels like `[Security:]` or `[Ops:]`. After Phase 6, replace with actual team member names during Phase 7 feedback rounds.)
 7. **Cross-cutting concerns.** Every epic's ACs must include observability, security, and accessibility criteria — these are woven in, not bolted on.
 8. **Honest limitations.** For every feature deferred to a later version, generate a limitations entry: what's the gap, what's the workaround, when is it planned.
 9. **Release tiers as hard gates.** Release tiers (R1, R2, R3...) aren't just labels — all stories in R1 must complete before any R2 story starts. Generate blocking relationships accordingly.

@@ -5,7 +5,7 @@ description: "Use when reviewing documents, running adversarial reviews, conduct
 
 # Critique Loop
 
-Five modes of review, from quick self-check to full adversarial tribunal. Every generated artifact goes through at least one. Major artifacts get multiple rounds from different angles.
+Six modes of review, from quick self-check to full adversarial tribunal. Every generated artifact goes through at least one. Major artifacts get multiple rounds from different angles.
 
 ## The Five Modes
 
@@ -22,12 +22,13 @@ Fix inline. No separate output needed.
 
 ### 2. Perspective Critique (per-phase)
 
-At phase transitions, dispatch subagent(s) adopting specific expert perspectives:
+At phase transitions, dispatch the **spec-critic** agent adopting specific expert perspectives:
 
 | Phase | Perspectives |
 |-------|-------------|
 | 1 (Blueprint) | Systems Architect, Pragmatic Engineer |
 | 3 (Overview) | Product Strategist, UX Advocate |
+| 4 (Seekers) | UX Advocate, The Customer (are personas diverse, grounded, and representing real needs?) |
 | 6 (Assembly) | UX Advocate (are personas diverse and grounded?) |
 | 8 (Pitch) | Product Strategist, The Customer |
 | 9 (Map) | The Customer, Pragmatic Engineer |
@@ -60,8 +61,9 @@ This is false because Y. The actual constraint is Z."]
 ### What is missing
 [Gaps in specification. What would a developer need to ask?]
 
-### Risk Rating: [2-5]/5
-[Brief justification]
+### Risk Rating: [1-5]/5
+[Brief justification. 1/5 = solid, proceed with confidence. 2/5 = manageable, fixable gaps.
+3/5 = significant concerns. 4/5 = high risk, fundamental issues. 5/5 = unworkable.]
 ```
 
 **Consolidated Synthesis:**

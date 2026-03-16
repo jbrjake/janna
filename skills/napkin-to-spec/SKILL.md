@@ -5,7 +5,7 @@ description: "Use when developing a product idea into a complete specification �
 
 # Napkin to Spec: The Iterative Refinement Engine
 
-Turn a design kernel into a complete, self-aligned product specification through thirteen phases of iterative expansion, adversarial review, and human alignment.
+Turn a design kernel into a complete, self-aligned product specification through up to thirteen phases of iterative expansion, adversarial review, and human alignment.
 
 <HARD-GATE>
 Do NOT skip phases within the selected complexity mode or generate documents out of order. Each phase builds on the previous. The user approves each phase before proceeding. The user CAN select which mode to run (Standard or Full).
@@ -42,7 +42,7 @@ All phases. No shortcuts.
 
 If the user doesn't specify, suggest based on the design kernel:
 - Product with identified market / multiple user types → suggest Standard
-- Platform / commercial product / needs investor materials / needs agile planning → suggest Full
+- Platform / commercial product / needs multi-round dev team feedback, test plans, or a final cross-review pass → suggest Full
 
 The user can upgrade mid-process ("let's also do agile planning" during Standard triggers Phase 11). Downgrading is harder — you can skip remaining phases but can't un-generate artifacts.
 
@@ -106,7 +106,7 @@ Before anything else, do a reading. This is real pattern-finding, not theater.
    | 10 | Wheel of Fortune | 21 | The World |
 
    Do NOT choose cards yourself. The randomness is the point — it forces non-obvious
-   pattern-finding. Fallbacks: `shuf -i 0-21 -n 3` (Linux) or `jot -r 3 0 21` (macOS).
+   pattern-finding. Fallbacks: `shuf -i 0-21 -n 3` (Linux) or `python3 -c "import random; cards=random.sample(range(22), 3); print(' '.join(map(str, cards)))"` (universal). Avoid `jot` — it draws with replacement and may exclude the upper bound.
 2. **Present the spread** to the user:
    - Card 1 (The Situation): What is
    - Card 2 (The Challenge): What stands in the way
@@ -263,6 +263,8 @@ The overview serves as the **summary layer** for all downstream phases. User per
 - `docs/focus-groups/group-0/synthesis.md`
 - Updated `docs/prd/*.md`
 
+The `group-0` numbering supports running additional focus groups later (e.g., after major PRD revisions). Increment the group number for subsequent rounds.
+
 **Approval gate:** User confirms synthesis and PRD revisions.
 
 ---
@@ -315,12 +317,12 @@ Generate full personas one by one, each with full consideration. Same emotional 
 
 **Inputs:** PRDs + dev team personas
 
-**REQUIRED:** Use janna:critique-loop gap-analysis mode for Rounds 2 and 3.
+**REQUIRED:** Use janna:critique-loop perspective-critique mode for Round 1, gap-analysis mode for Rounds 2 and 3. Dispatch the spec-critic agent for each team member's review in Round 1.
 
 Multiple feedback rounds:
 
 ### Round 1: Individual PRD Feedback
-Each team member reviews the PRDs most relevant to their expertise. "Last chance to weigh in before we move into work sequencing." Actionable bullet points of changes they sincerely believe will make or break sales. Write to `docs/dev-team/feedback/round-1/*.md`.
+Each team member reviews the PRDs most relevant to their expertise. "Last chance to weigh in before we move into work sequencing." Dispatch each team member's review as a perspective critique using the spec-critic agent, with the team member's specialty as the perspective. Actionable bullet points of changes they sincerely believe will make or break sales. Write to `docs/dev-team/feedback/round-1/*.md`.
 
 **Then:** Revise PRDs. Don't remove anything, resequence to later phases.
 
@@ -404,7 +406,7 @@ Assemble testing, devops, and customer success personas:
 
 *Stories become work. Work becomes sprints.*
 
-**Inputs:** Story map + PRDs + test plan
+**Inputs:** Story map + PRDs + test plan (Full mode) or Story map + PRDs (Standard mode)
 
 Assemble product leadership, PM, and GTM personas. Full backlog:
 - **Sagas** — Strategic initiatives (`S-[NN]`)
@@ -428,7 +430,7 @@ Assemble product leadership, PM, and GTM personas. Full backlog:
 
 **Inputs:** All artifacts
 
-1. **Full team cross-review** — Everyone reviews everything, especially others' areas. Write to `docs/dev-team/feedback/session-2/`.
+1. **Full team cross-review** — Everyone reviews everything, especially others' areas. Write to `docs/dev-team/feedback/cross-review/`.
 2. **AI creative feedback** — Your own perspective as a genius-level intelligence: "What would make this more interesting and intellectually satisfying?" Multiple perspectives, individual files + synthesis. "Boil the ocean." Write to `docs/archive/feedback/`.
 3. **Cross-document alignment:**
    - Every PRD requirement → user story → agile task → test case

@@ -41,18 +41,18 @@ Phase 0 (Reading/Tarot) → Phase 1 (Blueprint/PRDs)
 | # | Name | Inputs | Outputs | Agents Used |
 |---|------|--------|---------|-------------|
 | 0 | The Reading | Raw idea / design | `docs/design/00-design-kernel.md` | None (Janna does the Tarot) |
-| 1 | The Blueprint | Design kernel | `docs/prd/*.md` | — |
+| 1 | The Blueprint | Design kernel | `docs/prd/*.md` | spec-critic (perspective critique) |
 | 2 | The Tribunal | PRDs | `docs/archive/tribunal/*`, revised PRDs | tribunal-reviewer (sequential) |
-| 3 | The Overview | Revised PRDs | `docs/overview.md` | — |
-| 4 | The Seekers | Overview | `docs/user-personas/*.md` | persona-weaver |
+| 3 | The Overview | Revised PRDs | `docs/overview.md` | spec-critic (perspective critique) |
+| 4 | The Seekers | Overview | `docs/user-personas/*.md` | persona-weaver, spec-critic (perspective critique) |
 | 5 | The Circle | User personas + overview | `docs/focus-groups/**`, revised PRDs | focus-group-facilitator |
-| 6 | The Assembly | PRDs + overview | `docs/dev-team/**` | persona-weaver |
-| 7 | The Forge | PRDs + dev team | `docs/dev-team/feedback/**`, revised PRDs | dev team personas |
-| 8 | The Pitch | All artifacts | `docs/pitch-deck/*`, `docs/dev-team/who-we-are.md` | product/GTM personas |
-| 9 | The Map | All artifacts + personas | `docs/user-stories/*.md` | — |
-| 10 | The Gauntlet | Stories + PRDs + arch | `docs/test-plan/*.md` | testing/devops personas |
-| 11 | The Sprint | Stories + PRDs | `docs/agile/**` | product/PM personas |
-| 12 | The Mirror | All artifacts | Review reports, updates to all docs | All personas + AI self-review |
+| 6 | The Assembly | PRDs + overview | `docs/dev-team/**` | persona-weaver, spec-critic (perspective critique) |
+| 7 | The Forge | PRDs + dev team | `docs/dev-team/feedback/**`, revised PRDs | spec-critic (Round 1 per team member) |
+| 8 | The Pitch | All artifacts | `docs/pitch-deck/*`, `docs/dev-team/who-we-are.md` | spec-critic (perspective critique) |
+| 9 | The Map | All artifacts + personas | `docs/user-stories/*.md` | spec-critic (perspective critique) |
+| 10 | The Gauntlet | Stories + PRDs + arch | `docs/test-plan/*.md` | spec-critic (perspective critique) |
+| 11 | The Sprint | Stories + PRDs (+ test plan in Full) | `docs/agile/**` | spec-critic (perspective critique) |
+| 12 | The Mirror | All artifacts | Review reports, updates to all docs | spec-critic (cross-review) |
 
 ## Approval Gate Prompts
 
