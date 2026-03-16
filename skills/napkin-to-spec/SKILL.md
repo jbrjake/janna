@@ -229,7 +229,7 @@ The overview serves as the **summary layer** for all downstream phases. User per
    - **Legacy completion** — whose unfinished work are they carrying?
    - **Redemption arc** — how does success with this product resolve something personal?
    - **Bio-psycho-social depth** sufficient for consistent roleplay
-   - Progressive disclosure structure for agent navigation
+   - Progressive disclosure structure with anchor slugs for agent navigation
 3. **Integrate into overview** — Revise overview to be more inclusive of these personas. Present the overview changes alongside the personas at the approval gate.
 
 **Before presenting to user:** Run janna:critique-loop perspective critique (UX Advocate, The Customer). Fix Critical/Important issues inline — pre-presentation quality gate. Note what you changed.
@@ -302,7 +302,7 @@ Generate full personas one by one, each with full consideration. Same emotional 
 - **Redemption arc** — how does success with this product resolve something personal?
 - **Professional identity** — their career is an artifact of personal motivation
 - **Improvisation notes** — voice patterns, frustration signals, pet phrases, how they disagree, how they earn trust
-- Progressive disclosure with line-number index
+- Progressive disclosure with anchor-slug section index
 
 **Step 3: Relationship Mapping**
 - Strongest bonds (and why)
@@ -456,7 +456,7 @@ Assemble the personas responsible for product leadership, PM, and GTM (by role, 
    - Version/timeline consistency
    - Pitch deck claims backed by PRD specs
 4. **TODO resolution** — Product leadership resolves remaining open questions
-5. **Progressive disclosure** — Ensure all docs have line-number indexes for agent navigation
+5. **Progressive disclosure** — Ensure all docs have anchor-slug section indexes for agent navigation (e.g., `[Origin Story](#origin-story)`)
 6. **Humanize** external-facing docs (overview, pitch deck) with humanizer skill
 
 **Approval gate:** User confirms final alignment. "Ready to build?"

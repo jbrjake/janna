@@ -150,9 +150,10 @@ People who will build the product. Created in Phase 6 (The Assembly).
 **Experience:** [N] years
 **Previously:** [1-2 notable prior roles]
 
-## Line Index
-[Line numbers for: Origin Story, Professional Identity, The Redemption Arc,
-As a Reviewer, Improvisation Notes — so agents can jump directly]
+## Section Index
+[Anchor slugs for quick navigation: [Origin Story](#origin-story),
+[Professional Identity](#professional-identity), [The Redemption Arc](#the-redemption-arc),
+[As a Reviewer](#as-a-reviewer), [Improvisation Notes](#improvisation-notes)]
 
 ## Origin Story
 
