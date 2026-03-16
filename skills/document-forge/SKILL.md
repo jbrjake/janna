@@ -31,7 +31,7 @@ Templates and quality standards for every document type in the napkin-to-spec pi
 
 **Status:** Draft | Review | Approved
 **Version:** v[X]
-**Owner:** [dev team persona name]
+**Owner:** [dev team persona name — TBD until Phase 6, assign during Phase 7]
 **Last Updated:** [date]
 
 ## Purpose
@@ -87,7 +87,9 @@ Templates and quality standards for every document type in the napkin-to-spec pi
 
 | PRD | Area | Owner | Status | Stories | Test Cases |
 |-----|------|-------|--------|---------|------------|
-| PRD-01 | [area] | [persona] | Draft | [count] | [count] |
+| PRD-01 | [area] | [TBD] | Draft | [TBD] | [TBD] |
+
+*(Owner is assigned during Phase 6-7. Stories and Test Cases counts are populated during Phases 9 and 10 respectively.)*
 
 ## Dependencies
 

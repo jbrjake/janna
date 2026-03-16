@@ -83,7 +83,7 @@ Phase 0 (Reading/Tarot) → Phase 1 (Blueprint/PRDs)
 | 4 | persona-generation | document-forge (user persona) |
 | 5 | critique-loop (focus-group) | persona-generation |
 | 6 | persona-generation | document-forge (team topology, team index) |
-| 7 | critique-loop (gap-analysis) | lean-product-strategy |
+| 7 | critique-loop (perspective-critique for Round 1, gap-analysis for Rounds 2-3) | lean-product-strategy |
 | 8 | document-forge (pitch, manifesto) | lean-product-strategy, humanizer |
 | 9 | document-forge (stories, story-map) | critique-loop |
 | 10 | document-forge (test-plan) | critique-loop |

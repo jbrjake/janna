@@ -44,7 +44,7 @@ If the user doesn't specify, suggest based on the design kernel:
 - Product with identified market / multiple user types → suggest Standard
 - Platform / commercial product / needs multi-round dev team feedback, test plans, or a final cross-review pass → suggest Full
 
-The user can upgrade mid-process ("let's also do agile planning" during Standard triggers Phase 11). Downgrading is harder — you can skip remaining phases but can't un-generate artifacts.
+The user can upgrade mid-process ("let's add a test plan" during Standard triggers Phase 10, upgrading to Full). Downgrading is harder — you can skip remaining phases but can't un-generate artifacts.
 
 ## File Organization
 
@@ -106,7 +106,7 @@ Before anything else, do a reading. This is real pattern-finding, not theater.
    | 10 | Wheel of Fortune | 21 | The World |
 
    Do NOT choose cards yourself. The randomness is the point — it forces non-obvious
-   pattern-finding. Fallbacks: `shuf -i 0-21 -n 3` (Linux) or `python3 -c "import random; cards=random.sample(range(22), 3); print(' '.join(map(str, cards)))"` (universal). Avoid `jot` — it draws with replacement and may exclude the upper bound.
+   pattern-finding. Fallback if python3 is unavailable: `shuf -i 0-21 -n 3` (Linux/macOS with coreutils). Avoid `jot` — it draws with replacement and may exclude the upper bound.
 2. **Present the spread** to the user:
    - Card 1 (The Situation): What is
    - Card 2 (The Challenge): What stands in the way
@@ -174,7 +174,7 @@ After the reading:
    - **What is good** (genuine credit)
    - **What is BS** (specific false claims with technical reasoning)
    - **What is missing** (gaps in specification)
-   - **Risk rating** (2/5 to 5/5)
+   - **Risk rating** (1/5 to 5/5)
 4. Consolidated synthesis: unanimous kill shots, domain-specific issues, cross-panel patterns
 5. **Revise PRDs** from feedback — edit existing documents to incorporate changes without adding revision markers, changelog entries, or "updated per feedback" notes. The result should read as if the change was always there.
 
@@ -345,7 +345,7 @@ Each round: individual feedback files → synthesis → action items → applica
 **Inputs:** All approved artifacts
 
 ### Pitch Deck
-Assemble the product owner, GTM lead, sales engineer, and customer success personas. Create pitch deck that:
+Assemble the personas responsible for product ownership, GTM, sales engineering, and customer success (by role, not by exact name — match to actual Phase 6 personas). Create pitch deck that:
 - Perfectly aligns with PRDs — no features that don't exist
 - Is legitimate, not hyperbolic ("not our first rodeo")
 - Includes honest limitations appendix

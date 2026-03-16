@@ -7,7 +7,7 @@ description: "Use when reviewing documents, running adversarial reviews, conduct
 
 Six modes of review, from quick self-check to full adversarial tribunal. Every generated artifact goes through at least one. Major artifacts get multiple rounds from different angles.
 
-## The Five Modes
+## The Six Modes
 
 ### 1. Quick Critique (per-artifact)
 
@@ -201,7 +201,7 @@ Product leadership personas review all docs asking: "What ISN'T documented but i
 
 Full alignment audit across the entire artifact set. Three sub-steps:
 
-1. **Full team cross-review:** Dispatch all dev team personas sequentially, each reviewing documents outside their primary area. Write to `docs/dev-team/feedback/cross-review/`.
+1. **Full team cross-review:** Dispatch each dev team persona sequentially using the **spec-critic** agent (with the persona's name and specialty as the perspective), each reviewing documents outside their primary area. Write to `docs/dev-team/feedback/cross-review/`.
 2. **Cross-document tracing:** Verify every PRD requirement maps to a user story, every story maps to an agile task, every task has test coverage. Flag orphans.
 3. **AI self-review:** Review the entire spec corpus from your own perspective. What would make this more interesting, more internally consistent, more complete? Write to `docs/archive/feedback/`.
 

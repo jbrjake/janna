@@ -21,11 +21,16 @@ For each team member:
    - What specific experience shaped their strongest opinions?
    - What did they ship that went wrong? What went right?
    - What's the thing they're irrationally passionate about?
-3. **Ground opinions in experience:**
+3. **Emotional depth (from janna:persona-generation — these are mandatory):**
+   - **Formative wound** — a specific incident, not a vague preference, that drives them
+   - **Why THIS product** — personal connection to the problem domain. They've lived it.
+   - **Legacy completion** — whose unfinished work are they carrying?
+   - **Redemption arc** — how does success with this product resolve something personal?
+4. **Ground opinions in experience:**
    - "She insists on..." → because of a specific incident
    - "He pushes back on..." → because he's seen it fail
    - "They always check for..." → because they missed it once
-4. **Create productive tension:**
+5. **Create productive tension:**
    - Pair personas who disagree on important topics
    - Give someone a blind spot that another person's strength covers
    - Include at least one person who challenges the product's core assumptions
@@ -42,7 +47,12 @@ For each user:
    - What tool do they currently use for this problem? Why do they hate it?
    - What would make them try something new? What would make them give up on it?
    - Who do they need to convince to buy it? What does that conversation sound like?
-3. **Ground adoption in reality:**
+3. **Emotional depth (from janna:persona-generation — these are mandatory):**
+   - **Formative wound** — a specific incident that created their professional obsession
+   - **The hole in their heart** — what this product fills that nothing else can
+   - **Legacy completion** — whose unfinished work are they carrying?
+   - **Redemption arc** — how does success with this product resolve something personal?
+4. **Ground adoption in reality:**
    - Early adopters have different motivations than pragmatists
    - Budget conversations are different at a startup vs. enterprise
    - Technical sophistication determines onboarding friction tolerance
