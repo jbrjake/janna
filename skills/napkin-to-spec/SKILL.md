@@ -66,7 +66,7 @@ docs/
 │   ├── epics/
 │   ├── sprints/
 │   └── dependency-graph.md
-└── archive/         # Phase 12: Review feedback, historical
+└── archive/         # Phases 2, 12: Tribunal reviews, cross-review feedback, historical
 ```
 
 ## Status Tracking
@@ -156,6 +156,8 @@ After the reading:
 5. Each PRD: `docs/prd/NN-[area].md`
 6. Generate `docs/prd/00-prd-index.md`
 
+**Before presenting to user:** Run janna:critique-loop perspective critique (Systems Architect, Pragmatic Engineer). Fix issues inline.
+
 **Approval gate:** User confirms PRD suite.
 
 ---
@@ -199,6 +201,8 @@ After the reading:
 
 The overview serves as the **summary layer** for all downstream phases. User personas, focus groups, and the dev team topology brainstorm read the overview instead of wading through every PRD. Write it with that purpose in mind: it should contain everything a potential user or team member needs to understand the product without reading the full PRD suite.
 
+**Before presenting to user:** Run janna:critique-loop perspective critique (Product Strategist, UX Advocate). Fix issues inline.
+
 **Approval gate:** User confirms overview.
 
 **Output:** `docs/overview.md` (or `docs/overview/` with INDEX.md if split for length)
@@ -226,7 +230,9 @@ The overview serves as the **summary layer** for all downstream phases. User per
    - **Redemption arc** — how does success with this product resolve something personal?
    - **Bio-psycho-social depth** sufficient for consistent roleplay
    - Progressive disclosure structure for agent navigation
-3. **Integrate into overview** — Revise overview to be more inclusive of these personas
+3. **Integrate into overview** — Revise overview to be more inclusive of these personas. Present the overview changes alongside the personas at the approval gate.
+
+**Before presenting to user:** Run janna:critique-loop perspective critique (UX Advocate, The Customer). Fix issues inline.
 
 **Approval gate:** User confirms personas feel like real people with real stakes.
 
@@ -302,6 +308,8 @@ Generate full personas one by one, each with full consideration. Same emotional 
 - Communication style spectrum
 - Culture anchors
 
+**Before presenting to user:** Run janna:critique-loop perspective critique (UX Advocate). Fix issues inline.
+
 **Approval gate:** User confirms team feels real.
 
 **Output:**
@@ -327,7 +335,7 @@ Each team member reviews the PRDs most relevant to their expertise. "Last chance
 **Then:** Revise PRDs. Don't remove anything, resequence to later phases.
 
 ### Round 2: Product Leadership Gap Analysis
-Assemble GTM + product personas. Review overview and PRDs. "What isn't documented but is necessary to achieve the product strategy?" Generate action items, synthesize, apply. Write to `docs/dev-team/feedback/round-2/`.
+Assemble the personas responsible for GTM and product ownership (by role — match to actual Phase 6 personas). Review overview and PRDs. "What isn't documented but is necessary to achieve the product strategy?" Generate action items, synthesize, apply. Write to `docs/dev-team/feedback/round-2/`.
 
 ### Round 3: Self-Service Gap Analysis
 Same product leadership team, expanded scope (now includes GTM docs). "What's missing to make this completely turnkey, no humans on the sales side?" Apply janna:lean-product-strategy hard. Write to `docs/dev-team/feedback/round-3/`.
@@ -355,6 +363,8 @@ Assemble the personas responsible for product ownership, GTM, sales engineering,
 ### Team Manifesto
 Assemble the **entire** dev team (all personas from Phase 6) to discuss shared values: what matters, what doesn't, north star, practices, anti-patterns. This emerges from team disagreement, not top-down. Include specific coding conventions and rules. Write to `docs/dev-team/who-we-are.md`.
 
+**Before presenting to user:** Run janna:critique-loop perspective critique (Product Strategist, The Customer). Fix issues inline.
+
 **Approval gate:** User confirms pitch deck and manifesto.
 
 **Output:**
@@ -376,6 +386,8 @@ Jeff Patton-style story map:
 - Cover every persona including non-obvious ones (developers, admins)
 - Persona tags on every story
 
+**Before presenting to user:** Run janna:critique-loop perspective critique (The Customer, Pragmatic Engineer). Fix issues inline.
+
 **Approval gate:** User confirms story map.
 
 **Output:** `docs/user-stories/story-map.md` + `docs/user-stories/[persona]-stories.md`
@@ -388,13 +400,15 @@ Jeff Patton-style story map:
 
 **Inputs:** User stories + PRDs + architecture
 
-Assemble testing, devops, and customer success personas:
+Assemble the personas responsible for testing, devops, and customer success (by role, not by exact name — match to actual Phase 6 personas):
 - Golden path E2E scenarios (per persona)
 - Functional test cases (per domain)
 - Adversarial test cases (parallel to functional — injections, boundary conditions, concurrency)
 - Performance benchmarks, soak tests, fuzz targets
 - Coverage matrix: every requirement → test, every story → test
 - Persona coverage matrix
+
+**Before presenting to user:** Run janna:critique-loop perspective critique (Systems Architect, Security Engineer). Fix issues inline.
 
 **Approval gate:** User confirms test plan.
 
@@ -408,7 +422,7 @@ Assemble testing, devops, and customer success personas:
 
 **Inputs:** Story map + PRDs + test plan (Full mode) or Story map + PRDs (Standard mode)
 
-Assemble product leadership, PM, and GTM personas. Full backlog:
+Assemble the personas responsible for product leadership, PM, and GTM (by role, not by exact name — match to actual Phase 6 personas). Full backlog:
 - **Sagas** — Strategic initiatives (`S-[NN]`)
 - **Epics** — Feature clusters within sagas (`E-[NNNN]`)
 - **Stories** — User-facing increments (`US-[PERSONA]-[NNN]`)
@@ -417,6 +431,8 @@ Assemble product leadership, PM, and GTM personas. Full backlog:
 - Story points, blocking dependencies, sprint allocation
 - Cross-cutting concerns (observability, security, accessibility) in every epic's ACs
 - V2 foundation constraints embedded in v1 stories where applicable
+
+**Before presenting to user:** Run janna:critique-loop perspective critique (Pragmatic Engineer). Fix issues inline.
 
 **Approval gate:** User confirms backlog.
 
@@ -462,7 +478,7 @@ Assemble product leadership, PM, and GTM personas. Full backlog:
 # JANNA Status
 
 ## Tarot Reading
-Cards drawn: [card 1], [card 2], [card 3]
+Cards drawn: [number] ([card name]), [number] ([card name]), [number] ([card name])
 User's chosen interpretations:
 - [Card 1]: [chosen interpretation]
 - [Card 2]: [chosen interpretation]

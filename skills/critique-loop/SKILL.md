@@ -173,7 +173,7 @@ This is false because Y. The actual constraint is Z."]
 
 Product leadership personas review all docs asking: "What ISN'T documented but is necessary to achieve the product strategy?"
 
-**Setup:** Assemble GTM + product + customer success personas.
+**Setup:** Assemble the personas responsible for GTM, product ownership, and customer success (by role, not by exact name — match to actual Phase 6 personas).
 
 **Round 2 focus:** General gaps — what's missing?
 **Round 3 focus:** Self-service gaps — "What's missing to make this completely turnkey with no humans on the sales side?"

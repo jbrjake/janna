@@ -151,8 +151,8 @@ People who will build the product. Created in Phase 6 (The Assembly).
 **Previously:** [1-2 notable prior roles]
 
 ## Line Index
-[Line numbers for: Origin Story, Professional Identity, As a Reviewer,
-Improvisation Notes — so agents can jump directly]
+[Line numbers for: Origin Story, Professional Identity, The Redemption Arc,
+As a Reviewer, Improvisation Notes — so agents can jump directly]
 
 ## Origin Story
 
@@ -165,6 +165,13 @@ more insistent than their colleagues understand.]
 
 [How the wound shaped their career choices. Why THIS company, THIS product,
 THIS role. Their career is an artifact of personal motivation.]
+
+## The Redemption Arc
+
+[How success with this product resolves something personal. What completion
+looks like — whose unfinished work they're carrying, what hole this fills.
+Not every dev team persona needs full narrative depth here (see Variable
+Depth above), but the most central ones should have specific, emotional arcs.]
 
 ## As a Reviewer
 

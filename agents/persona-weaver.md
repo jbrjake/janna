@@ -56,7 +56,7 @@ For each user:
    - Early adopters have different motivations than pragmatists
    - Budget conversations are different at a startup vs. enterprise
    - Technical sophistication determines onboarding friction tolerance
-4. **Create the adoption spectrum:**
+5. **Create the adoption spectrum:**
    - Someone who'd sign up in 5 minutes
    - Someone who needs convincing
    - Someone who's actively skeptical
