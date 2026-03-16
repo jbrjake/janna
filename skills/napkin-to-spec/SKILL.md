@@ -15,7 +15,7 @@ Do NOT skip phases within the selected complexity mode or generate documents out
 
 At the start of Phase 0, after the Tarot reading but before the intake questions, determine the project's complexity mode. The user can specify explicitly (via `/napkin standard` or `/napkin full`) or you can suggest based on the scope of the design kernel.
 
-### Standard Mode (9 phases) — Products with real users and market intent
+### Standard Mode (11 phases) — Products with real users and market intent
 
 | Phase | Name | What Happens |
 |-------|------|-------------|
@@ -28,9 +28,11 @@ At the start of Phase 0, after the Tarot reading but before the intake questions
 | 6 | The Assembly | Dev Team Personas with emotional depth |
 | 8 | The Pitch | Pitch Deck |
 | 9 | The Map | User Stories |
+| 11 | The Sprint | Agile planning (sagas, epics, sprints) |
 
-Skips: Forge (multi-round feedback), Test Plan, Agile, Mirror.
-User AND dev team personas are mandatory in both modes.
+Skips: Forge (multi-round feedback), Test Plan, Mirror.
+User personas, dev team personas, and agile artifacts are mandatory in both modes.
+The dev team and agile backlog are the primary outputs downstream code depends on.
 
 ### Full Mode (13 phases) — Commercial products, startup specs, enterprise platforms
 

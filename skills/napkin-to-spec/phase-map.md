@@ -2,7 +2,7 @@
 
 ## Complexity Modes
 
-### Standard (9 phases)
+### Standard (11 phases)
 ```
 Phase 0 (Reading) → Phase 1 (Blueprint)
     → Phase 2 (Tribunal) → PRD revision
@@ -12,8 +12,9 @@ Phase 0 (Reading) → Phase 1 (Blueprint)
                     → Phase 6 (Assembly/Dev Team Personas)
                         → Phase 8 (Pitch)
                             → Phase 9 (Map/User Stories)
+                                → Phase 11 (Sprint/Agile)
 ```
-User AND dev team personas are mandatory in both modes.
+Personas (user + dev team) and agile artifacts are mandatory in both modes.
 
 ### Full (13 phases)
 All phases below. No shortcuts.
