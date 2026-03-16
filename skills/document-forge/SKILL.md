@@ -427,37 +427,82 @@ Visual or table representation of epic dependencies. Which epics block which. Cr
 
 ---
 
-## Dev Team Template
+## Dev Team Templates
 
-### Roster
+### Team Topology Brainstorm
 
-**File:** `docs/dev-team/roster.md`
+**File:** `docs/dev-team/team-topology.md`
+
+Generated BEFORE personas. Think comprehensively:
 
 ```markdown
-# Development Team
+# Team Topology
 
-| Name | Role | Specialty | PRD Focus |
-|------|------|-----------|-----------|
-| [Name] | [Role] | [Specialty] | PRD-NN |
+## Engineering Roles
+[What specialties are needed? Why? Map to PRD areas.]
 
-## Team Composition Rationale
+## Quality Roles
+[Adversarial QA + functional QA — different mindsets, both needed]
 
-[Why these people for this product]
+## Product & GTM Roles
+[Product ownership, GTM lead, sales engineering, customer success,
+technical writing — everyone needed for a product to actually succeed]
+
+## Design Roles
+[UX/interaction, information design]
+
+## Creative Tensions
+[Which roles should productively disagree? Why does that improve the product?]
+
+## Backgrounds That Bring Special Insight
+[What educational, cultural, or career backgrounds would illuminate
+blind spots? Regulated industry experience? Military ops? Academic research?]
+
+## Anti-Patterns
+[What would you hope this team DIDN'T do?]
+```
+
+### Team Manifesto
+
+**File:** `docs/dev-team/who-we-are.md`
+
+Emerges from Phase 8 team discussion. NOT top-down.
+
+```markdown
+# Who We Are
+
+## North Star
+[What we build and why — in the team's own words]
+
+## What We Care About
+[Values as design decisions, not abstract principles. Each tied to a
+specific team member's experience. Include consequences for the product.]
+
+## What We Don't Care About
+[Explicit anti-patterns. What we refuse to optimize for.]
+
+## What We Do (Practices)
+[Specific engineering and product practices]
+
+## Coding Conventions
+[Numbered, actionable rules organized by domain]
+
+## Productive Tensions
+[Documented disagreements that improve the product]
 ```
 
 ### Feedback
 
-**File:** `docs/dev-team/feedback/[session]-[name]-feedback.md`
+**File:** `docs/dev-team/feedback/[session]/[name]-feedback.md`
 
 ```markdown
 # [Name] — Feedback on [PRD/Area]
 
-**Session:** [feedback round identifier]
+**Session:** [round identifier: initial | session-0 | session-1 | session-2]
 **Focus:** [which PRDs/docs reviewed]
 
 ## Summary
-
-[2-3 sentence overview of their take]
+[2-3 sentences — their take, in their voice]
 
 ## Findings
 
@@ -467,13 +512,93 @@ Visual or table representation of epic dependencies. Which epics block which. Cr
 **Issue:** [specific problem]
 **Recommendation:** [what to do about it]
 
-### [Finding 2 Title]
-...
-
 ## Action Items
-
 - [ ] [specific action] — assigned to [person/role]
 ```
+
+### Feedback Synthesis
+
+**File:** `docs/dev-team/feedback/[session]/action-items.md`
+
+```markdown
+# Action Items — [Session Name]
+
+## Section A: Reconcile Inconsistencies
+[Contradictions within existing docs]
+
+## Section B: Overview Changes
+[Additions needed in overview]
+
+## Section C: PRD-Specific Changes
+[Per-PRD changes with persona attribution]
+
+## Section D: New Standalone Documents
+[Documents that need to be created]
+
+## Section E: Domain-Specific Gaps
+[Vertical or domain gaps]
+
+## Section F: Open Questions Requiring Decisions
+[Unresolved decisions needing user input]
+```
+
+---
+
+## Focus Group Templates
+
+### Group Session
+
+**File:** `docs/focus-groups/group-N/group-session.md`
+
+```markdown
+# Focus Group — Group Session [N]
+
+**Facilitator:** [sales engineer persona]
+**Participants:** [persona list with links]
+**Product Demoed:** [overview version]
+
+## Demo Walkthrough
+[Section-by-section reactions]
+
+## Cross-Persona Themes
+[What multiple personas independently identified]
+
+## Purchase Triggers
+| Persona | Would Pay If... | Annual Budget Range |
+|---------|----------------|-------------------|
+
+## Debates
+[Where personas disagreed — the disagreement reveals product truths]
+```
+
+### Individual Session
+
+**File:** `docs/focus-groups/group-N/[persona]-individual.md`
+
+```markdown
+# [Name] — Individual Session
+
+## What They Said in Group vs. Alone
+[The delta is the most valuable signal]
+
+## Personal Stake
+[Why this matters at the level of identity]
+
+## Specific Feature Requests
+[Grounded in their workflow and motivation]
+
+## Deal Breakers
+[What would prevent adoption]
+
+## The Moment They Got Quiet
+[When they stopped evaluating and started hoping]
+```
+
+### Focus Group Synthesis
+
+**File:** `docs/focus-groups/group-N/synthesis.md`
+
+Structure as Tier 1 (adoption blockers) / Tier 2 (market expansion) / Tier 3 (domain-specific). Include actionable PRD changes.
 
 ---
 

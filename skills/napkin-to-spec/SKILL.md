@@ -5,49 +5,11 @@ description: "Use when developing a product idea into a complete specification �
 
 # Napkin to Spec: The Iterative Refinement Engine
 
-Turn a design kernel into a complete, self-aligned product specification through eight phases of iterative expansion and review.
+Turn a design kernel into a complete, self-aligned product specification through thirteen phases of iterative expansion, adversarial review, and human alignment.
 
 <HARD-GATE>
 Do NOT skip phases or generate documents out of order. Each phase builds on the previous. The user approves each phase before proceeding. This is not negotiable.
 </HARD-GATE>
-
-## Process Flow
-
-```dot
-digraph napkin_to_spec {
-    rankdir=TB;
-    "Phase 0: The Reading\n(Intake + Questions)" [shape=box];
-    "Phase 1: The Architecture\n(Design Docs)" [shape=box];
-    "Phase 2: The Blueprint\n(PRD)" [shape=box];
-    "Phase 3: The Cast\n(Personas)" [shape=box];
-    "Phase 4: The Stories\n(User Stories)" [shape=box];
-    "Phase 5: The Sprint\n(Agile)" [shape=box];
-    "Phase 6: The Gauntlet\n(Test Plan)" [shape=box];
-    "Phase 7: The Pitch\n(Pitch Deck + Overview)" [shape=box];
-    "Phase 8: The Review\n(Cross-Alignment)" [shape=box];
-    "User approves?" [shape=diamond];
-
-    "Phase 0: The Reading\n(Intake + Questions)" -> "User approves?";
-    "User approves?" -> "Phase 1: The Architecture\n(Design Docs)" [label="yes"];
-    "User approves?" -> "Phase 0: The Reading\n(Intake + Questions)" [label="revise"];
-
-    "Phase 1: The Architecture\n(Design Docs)" -> "Phase 2: The Blueprint\n(PRD)";
-    "Phase 2: The Blueprint\n(PRD)" -> "Phase 3: The Cast\n(Personas)";
-    "Phase 3: The Cast\n(Personas)" -> "Phase 4: The Stories\n(User Stories)";
-    "Phase 4: The Stories\n(User Stories)" -> "Phase 5: The Sprint\n(Agile)";
-    "Phase 5: The Sprint\n(Agile)" -> "Phase 6: The Gauntlet\n(Test Plan)";
-    "Phase 6: The Gauntlet\n(Test Plan)" -> "Phase 7: The Pitch\n(Pitch Deck + Overview)";
-    "Phase 7: The Pitch\n(Pitch Deck + Overview)" -> "Phase 8: The Review\n(Cross-Alignment)";
-}
-```
-
-**Every phase follows the same loop:**
-1. Generate draft artifacts
-2. Present to user in digestible sections
-3. User provides feedback / course correction
-4. Revise until approved
-5. Write to disk and commit
-6. Proceed to next phase
 
 ## File Organization
 
@@ -56,53 +18,51 @@ All generated artifacts go under `docs/` in the project root:
 ```
 docs/
 ├── design/          # Phase 0-1: Architecture and design docs
-├── prd/             # Phase 2: Numbered PRDs (01-*.md, 02-*.md, ...)
-├── overview.md      # Phase 7: Product overview
-├── pitch-deck/      # Phase 7: Pitch deck sections
-├── user-stories/    # Phase 4: Persona-driven user stories
-├── dev-team/        # Phase 3: Dev team personas and feedback
-├── agile/           # Phase 5: Epics, sprints, dependencies
+├── prd/             # Phase 1: Numbered PRDs
+├── overview/        # Phase 3: Product overview
+├── user-personas/   # Phase 4: User personas with deep backstories
+├── focus-groups/    # Phase 5: Focus group sessions and synthesis
+├── dev-team/        # Phase 6-7: Team topology, personas, feedback
+├── pitch-deck/      # Phase 8: Pitch deck sections
+├── user-stories/    # Phase 9: Story map + persona stories
+├── test-plan/       # Phase 10: Test strategy and cases
+├── agile/           # Phase 11: Sagas, epics, sprints, stories
+│   ├── sagas/
 │   ├── epics/
 │   ├── sprints/
 │   └── dependency-graph.md
-└── test-plan/       # Phase 6: Test strategy and matrices
+└── archive/         # Phase 12: Review feedback, historical
 ```
 
 ## Status Tracking
 
-Create and maintain `docs/JANNA-STATUS.md` as your program counter:
-
-```markdown
-# Janna Status
-
-**Project:** [name]
-**Current Phase:** [0-8]
-**Phase Status:** [in-progress | awaiting-approval | approved]
-**Last Updated:** [date]
-
-## Completed Phases
-- [x] Phase 0: The Reading — [date]
-- [ ] Phase 1: The Architecture
-...
-
-## Open Questions
-- [list any unresolved decisions]
-
-## User Corrections Applied
-- [track course corrections for alignment]
-```
-
-**After any context compaction:** Re-read `docs/JANNA-STATUS.md` before continuing.
+Maintain `docs/JANNA-STATUS.md` as your program counter. Update after every significant step. After any context compaction, re-read it before continuing.
 
 ---
 
 ## Phase 0: The Reading
 
-*Every project starts with understanding. Not assumptions — understanding.*
+*Janna shuffles the deck. She always does this when someone sits down with an idea.*
 
-**Inputs:** Raw idea, napkin sketch, or existing design docs in `docs/design/`
+**Inputs:** Raw idea, napkin sketch, or existing design docs
 
-**Process:**
+### The Tarot Spread
+
+Before anything else, do a reading. This is real pattern-finding, not theater.
+
+1. **Randomly select 3 cards** from the Major Arcana (0-XXI). Use actual randomness — pick numbers, map to cards. Don't choose cards that "seem appropriate."
+2. **Present the spread** to the user:
+   - Card 1 (The Situation): What is
+   - Card 2 (The Challenge): What stands in the way
+   - Card 3 (The Path Forward): What to move toward
+3. **For each card**, present 3-4 interpretive options as multiple choice — different aspects of the card's traditional meaning, ranging from literal to metaphorical. Ask the user which resonates.
+4. **Reflect briefly** on the reading. 3-5 sentences connecting the chosen interpretations to the product idea. Don't force it — find the genuine symbolic resonance.
+5. **Hold the reading in context.** Let it color your thinking through the early phases. The cards don't dictate anything, but they prime pattern recognition. When you notice alignment between the reading and a design decision, note it quietly.
+
+### The Intake
+
+After the reading:
+
 1. Read everything in `docs/design/` if it exists
 2. Summarize what you understand the product to be — in 2-3 sentences
 3. Ask clarifying questions, ONE AT A TIME:
@@ -111,8 +71,7 @@ Create and maintain `docs/JANNA-STATUS.md` as your program counter:
    - What's the one thing this does that nothing else does?
    - Who pays? How?
    - What's the smallest version that proves the idea works?
-4. After each answer, update your mental model and ask the next question
-5. When you have enough, present a **Design Kernel Summary**:
+4. Present a **Design Kernel Summary**:
    - Problem statement (2 sentences)
    - Target user (1 sentence)
    - Core insight (1 sentence)
@@ -120,172 +79,260 @@ Create and maintain `docs/JANNA-STATUS.md` as your program counter:
    - Business model hypothesis (1 sentence)
    - Key risks (2-3 bullets)
 
-**Apply janna:lean-product-strategy** when evaluating business model and MVP scope.
+**Apply janna:lean-product-strategy** on business model and MVP scope.
 
-**Approval gate:** User confirms the Design Kernel Summary before proceeding.
+**Approval gate:** User confirms Design Kernel Summary.
 
-**Output:** `docs/design/00-design-kernel.md`
+**Output:** `docs/design/00-design-kernel.md` (include the Tarot reading as an appendix)
 
 ---
 
-## Phase 1: The Architecture
+## Phase 1: The Blueprint
 
-*The design kernel becomes a technical foundation.*
+*Architecture becomes requirements.*
 
 **Inputs:** Approved design kernel + any existing design docs
 
-**Process:**
-1. If design docs already exist in `docs/design/`, review and validate them
-2. If not, generate architecture document(s) covering:
-   - System architecture overview
-   - Core data model
-   - Key technical decisions and rationale
-   - Integration points
-   - Scalability approach
-   - Security model
-3. Present in sections, get approval per section
-4. Dispatch janna:critique-loop with "systems architect" and "pragmatic engineer" perspectives
+1. If design docs exist, validate and expand them
+2. Expand design into full numbered PRDs — one per functional area
+3. "Be even more expansive about what needs to be covered. Assume this is a commercial product."
+4. Use janna:document-forge PRD template
+5. Each PRD: `docs/prd/NN-[area].md`
+6. Generate `docs/prd/00-prd-index.md`
 
-**Apply janna:lean-product-strategy:** Favor architectures that enable self-service, API-first, and rapid iteration.
-
-**Approval gate:** User confirms architecture before PRD generation.
-
-**Output:** `docs/design/*.md`
+**Approval gate:** User confirms PRD suite.
 
 ---
 
-## Phase 2: The Blueprint
+## Phase 2: The Tribunal
 
-*Architecture becomes product requirements.*
+*The graybeards arrive. They've seen a hundred pitches this quarter. They expect nothing.*
 
-**Inputs:** Approved architecture docs
+**Inputs:** Complete PRD suite
 
-**Process:**
-1. Identify functional areas from the architecture (these become individual PRDs)
-2. For each functional area, generate a numbered PRD using janna:document-forge PRD template
-3. PRDs are numbered sequentially: `docs/prd/01-[area].md`, `docs/prd/02-[area].md`, etc.
-4. Each PRD cross-references related PRDs and design docs
-5. Present PRDs in groups of 2-3, get approval before continuing
-6. Generate `docs/prd/00-prd-index.md` listing all PRDs with summaries
+**REQUIRED:** Use janna:critique-loop tribunal mode.
 
-**Apply janna:lean-product-strategy:** Every PRD should identify what's MVP vs. later, what's self-service vs. manual, what's automated vs. human-in-loop.
-
-**Approval gate:** User confirms complete PRD suite.
-
-**Output:** `docs/prd/*.md`
-
----
-
-## Phase 3: The Cast
-
-*Every product needs people — the ones who build it and the ones who use it.*
-
-**Inputs:** Approved PRDs
-
-**Process:**
-1. **Dev Team Personas** — Use janna:persona-generation to create 6-16 team members:
-   - Each has a specialty aligned with PRD functional areas
-   - Deep backstories: education, career path, opinions, blind spots
-   - They will later critique the PRDs from their perspective
-   - Diversity of thought, background, and experience
-2. **User Personas** — Use janna:persona-generation to create 3-6 target users:
-   - Aligned with the target market from Phase 0
-   - Goals, frustrations, current workflows
-   - Willingness to pay, adoption barriers
-   - Technical sophistication range
-3. Present personas in batches of 3-4, get feedback
-4. Generate initial dev team feedback on the PRDs (dispatching janna:critique-loop)
-
-4. **Team Manifesto** — Generate `docs/dev-team/who-we-are.md`:
-   - North star statement (what the team builds and why)
-   - Values as design decisions (not abstract principles — concrete coding rules)
-   - Anti-patterns ("What We Don't Care About" — explicitly excluded priorities)
-   - Engineering practices (testability, vertical slicing, documentation)
-   - Productive tensions (documented disagreements that improve the product)
-
-**Approval gate:** User confirms personas, manifesto, and initial feedback round.
+1. Assemble **grizzled, cynical graybeard personas** — private equity acquisition due diligence reviewers walking in expecting a total nothingburger
+2. Dispatch as a swarm of agents, each tackling different PRDs from their specialty, with **crosstalk between them**
+3. Each reviewer produces per-PRD teardowns:
+   - **What is good** (genuine credit)
+   - **What is BS** (specific false claims with technical reasoning)
+   - **What is missing** (gaps in specification)
+   - **Risk rating** (2/5 to 5/5)
+4. Consolidated synthesis: unanimous kill shots, domain-specific issues, cross-panel patterns
+5. **Revise PRDs** from feedback — seamlessly weave changes, don't mark as revised
 
 **Output:**
-- `docs/dev-team/roster.md` — team overview
-- `docs/dev-team/who-we-are.md` — team manifesto and values
-- `docs/dev-team/profiles/*.md` — individual profiles
-- `docs/dev-team/feedback/*.md` — PRD feedback by team member
-- `docs/user-stories/personas/*.md` — user persona profiles
+- `docs/archive/tribunal/*.md` — individual reviewer files
+- `docs/archive/tribunal/00-consolidated-review.md` — synthesis
+- Updated `docs/prd/*.md`
+
+**Approval gate:** User confirms revised PRDs.
 
 ---
 
-## Phase 4: The Stories
+## Phase 3: The Overview
 
-*Personas become narratives. Narratives become requirements.*
+*Write it as if everything already exists.*
 
-**Inputs:** Approved personas + PRDs
+**Inputs:** Revised PRDs
 
-**Process:**
-1. For each user persona, generate user stories covering the PRD feature set
-2. Story format: "As [persona name], I want to [specific goal] so that [concrete reason tied to their backstory]"
-3. Each story includes:
-   - Acceptance criteria (testable)
-   - Priority (P0-P3)
-   - Size estimate (S/M/L/XL)
-   - PRD cross-reference
-4. Group stories by functional area
-5. Present by persona, get feedback
+1. Create product overview explaining what it is, what makes it useful, and all features — from a user perspective, as if fully implemented
+2. Use janna:document-forge overview template
+3. Include multiple domains/industries, not just the obvious ones
 
-**Approval gate:** User confirms user stories.
+**Approval gate:** User confirms overview.
 
-**Output:** `docs/user-stories/*.md`
+**Output:** `docs/overview/` (split if >500 lines)
 
 ---
 
-## Phase 5: The Sprint
+## Phase 4: The Seekers
 
-*Stories become work. Work becomes sprints.*
+*Janna knows people. She knows who needs this product — not just professionally, but personally.*
 
-**Inputs:** Approved user stories + PRDs
+**Inputs:** Overview + PRDs
 
-**Process:**
-1. **Epics** — Group related user stories into epics, one per major feature area
-   - Each epic maps to one or more PRDs
-   - Include scope, dependencies, and acceptance criteria
-2. **Dependency graph** — Map epic dependencies (what blocks what)
-3. **Sprint plan** — Propose sprint structure:
-   - Sprint 0: Foundation (infrastructure, CI/CD, base architecture)
-   - Subsequent sprints organized by dependency order
-   - Each sprint has a clear goal and demo-able outcome
-4. **Story decomposition** — Break stories into engineering tasks
+**REQUIRED:** Use janna:persona-generation with full emotional depth.
 
-**Apply janna:lean-product-strategy:** Sprint 0 should include self-service infrastructure (docs site, API explorer, developer onboarding).
+1. **Market research** — Find 3-6 ideal customer profiles:
+   - Hands-on practitioners with budget authority
+   - Recurring revenue potential
+   - Burning need for the tool
+   - Special circumstances that make it especially useful
+   - Think out of the box — not just the obvious industries
+2. **Deep persona development** — For each, generate:
+   - **Formative wound** — the specific experience that created their obsession
+   - **The hole in their heart** — what this product fills that nothing else can
+   - **Legacy completion** — whose unfinished work are they carrying?
+   - **Redemption arc** — how does success with this product resolve something personal?
+   - **Bio-psycho-social depth** sufficient for consistent roleplay
+   - Progressive disclosure structure for agent navigation
+3. **Integrate into overview** — Revise overview to be more inclusive of these personas
 
-**Approval gate:** User confirms epics, dependency graph, and sprint plan.
+**Approval gate:** User confirms personas feel like real people with real stakes.
+
+**Output:** `docs/user-personas/*.md`
+
+---
+
+## Phase 5: The Circle
+
+*The focus group. Group session first — let them talk to each other. Then one-on-one, where the real reasons come out.*
+
+**Inputs:** User personas + Overview + PRDs
+
+**REQUIRED:** Use janna:critique-loop focus-group mode.
+
+1. **Group demo session:**
+   - Janna takes on the role of a sales engineer demoing the product as described in the overview
+   - Swarm of agents playing user personas, with **crosstalk between them**
+   - Press them: what would make it more valuable? What would guarantee annual payment?
+   - Capture group dynamics, cross-persona validation, and purchase triggers
+2. **Individual 1:1 sessions:**
+   - Each persona separately — what they couldn't or wouldn't say in group
+   - The personal stories, the real motivations
+   - What the product means to them at the level of identity, not efficiency
+3. **Synthesis** — Actionable bullet points:
+   - Tier 1: Adoption blockers (cross-persona consensus)
+   - Tier 2: Market expansion opportunities
+   - Tier 3: Domain-specific enhancements
+4. **Revise PRDs** from focus group feedback
 
 **Output:**
-- `docs/agile/epics/*.md`
-- `docs/agile/sprints/*.md`
-- `docs/agile/dependency-graph.md`
+- `docs/focus-groups/group-0/group-session.md`
+- `docs/focus-groups/group-0/[persona]-individual.md`
+- `docs/focus-groups/group-0/synthesis.md`
+- Updated `docs/prd/*.md`
+
+**Approval gate:** User confirms synthesis and PRD revisions.
 
 ---
 
-## Phase 6: The Gauntlet
+## Phase 6: The Assembly
+
+*Janna starts making calls. She knows exactly who this project needs — and she finds them at the right moments in their lives.*
+
+**Inputs:** PRDs + Overview
+
+**REQUIRED:** Use janna:persona-generation with full emotional depth.
+
+**Step 1: Team Topology Brainstorm**
+
+Think comprehensively about the needed team:
+- What different roles? (engineering, QA adversarial + functional, product ownership, GTM, customer success, design, technical writing, devops — everyone needed for a product to succeed)
+- What opinions and creative tensions would push it forward?
+- What educational and cultural backgrounds bring special insight?
+- What would you hope the team DIDN'T do?
+
+Write to `docs/dev-team/team-topology.md`.
+
+**Step 2: Persona Generation (from topology ONLY)**
+
+Generate full personas one by one, each with full consideration. Same emotional depth as user personas:
+- **Core wound** — what drives them. A specific incident, not a preference.
+- **Why THIS product** — personal connection to the problem domain. They've lived it.
+- **Professional+personal intersection** — their career is an artifact of personal motivation
+- **Improvisation notes** — voice patterns, frustration signals, pet phrases, how they disagree, how they earn trust
+- Progressive disclosure with line-number index
+
+**Step 3: Relationship Mapping**
+- Strongest bonds (and why)
+- Productive tensions (and why they improve the product)
+- Communication style spectrum
+- Culture anchors
+
+**Approval gate:** User confirms team feels real.
+
+**Output:**
+- `docs/dev-team/team-topology.md`
+- `docs/dev-team/00-team-index.md`
+- `docs/dev-team/NN-[name].md` per team member
+
+---
+
+## Phase 7: The Forge
+
+*The team reviews. Multiple rounds. Each round gets sharper.*
+
+**Inputs:** PRDs + dev team personas
+
+Multiple feedback rounds:
+
+### Round 1: Individual PRD Feedback
+Each team member reviews the PRDs most relevant to their expertise. "Last chance to weigh in before we move into work sequencing." Actionable bullet points of changes they sincerely believe will make or break sales. Write to `docs/dev-team/feedback/initial/*.md`.
+
+**Then:** Revise PRDs — seamlessly weave changes. Don't remove anything, resequence to later phases.
+
+### Round 2: Product Leadership Gap Analysis
+Assemble GTM + product personas. Review overview and PRDs. "What isn't documented but is necessary to achieve the product strategy?" Generate action items, synthesize, apply. Write to `docs/dev-team/feedback/session-0/`.
+
+### Round 3: Self-Service Gap Analysis
+Same product leadership team, expanded scope (now includes GTM docs). "What's missing to make this completely turnkey, no humans on the sales side?" Apply janna:lean-product-strategy hard. Write to `docs/dev-team/feedback/session-1/`.
+
+Each round: individual feedback files → synthesis → action items → application to PRDs.
+
+**Approval gate:** User confirms PRDs after all rounds.
+
+---
+
+## Phase 8: The Pitch
+
+*Two things happen: the story for the outside world, and the story the team tells itself.*
+
+**Inputs:** All approved artifacts
+
+### Pitch Deck
+Assemble CEO, marketing director, product owner, and sales engineer personas. Create pitch deck that:
+- Perfectly aligns with PRDs — no features that don't exist
+- Is legitimate, not hyperbolic ("not our first rodeo")
+- Includes honest limitations appendix
+- Applies lean strategy to business model
+- Use humanizer on final text
+
+### Team Manifesto
+Whole team discusses shared values: what matters, what doesn't, north star, practices, anti-patterns. This emerges from team disagreement, not top-down. Include specific coding conventions and rules. Write to `docs/dev-team/who-we-are.md`.
+
+**Approval gate:** User confirms pitch deck and manifesto.
+
+**Output:**
+- `docs/pitch-deck/*.md`
+- `docs/dev-team/who-we-are.md`
+
+---
+
+## Phase 9: The Map
+
+*Stories emerge from the intersection of personas and requirements.*
+
+**Inputs:** All artifacts, full team + user personas
+
+Jeff Patton-style story map:
+- Backbone = major user activities in workflow order
+- Vertical = release priority (R1 Walking Skeleton → R2 v1 GA → R3 Fast Follow → R4 Future)
+- All R1 stories ship before any R2 story starts
+- Cover every persona including non-obvious ones (developers, admins)
+- Persona tags on every story
+
+**Approval gate:** User confirms story map.
+
+**Output:** `docs/user-stories/story-map/`
+
+---
+
+## Phase 10: The Gauntlet
 
 *If you can't test it, you can't ship it.*
 
-**Inputs:** PRDs + user stories + architecture
+**Inputs:** User stories + PRDs + architecture
 
-**Process:**
-1. **Test strategy** — Risk-driven approach identifying:
-   - What breaks if this feature fails?
-   - What's the blast radius?
-   - What's the probability of failure?
-2. **Test types** — For each PRD area:
-   - Unit test approach
-   - Integration test approach
-   - E2E scenarios (derived from user stories)
-   - Performance benchmarks
-   - Security test cases
-3. **Test matrix** — Requirements traceability:
-   - Every PRD requirement maps to at least one test
-   - Every user story acceptance criterion maps to a test
-4. **Quality gates** — Define what "done" means for each sprint
+Assemble testing, devops, and customer success personas:
+- Golden path E2E scenarios (per persona)
+- Functional test cases (per domain)
+- Adversarial test cases (parallel to functional — injections, boundary conditions, concurrency)
+- Performance benchmarks, soak tests, fuzz targets
+- Coverage matrix: every requirement → test, every story → test
+- Persona coverage matrix
 
 **Approval gate:** User confirms test plan.
 
@@ -293,91 +340,62 @@ Create and maintain `docs/JANNA-STATUS.md` as your program counter:
 
 ---
 
-## Phase 7: The Pitch
+## Phase 11: The Sprint
 
-*Everything you've built becomes a story for the outside world.*
+*Stories become work. Work becomes sprints.*
 
-**Inputs:** All approved artifacts
+**Inputs:** Story map + PRDs + test plan
 
-**Process:**
-1. **Overview document** — Comprehensive product overview:
-   - Executive summary
-   - Problem + solution
-   - Architecture overview (non-technical)
-   - Market positioning
-   - Competitive landscape
-   - Editions / pricing (applying lean strategy)
-   - Roadmap
-2. **Pitch deck sections** — Investor-ready narrative:
-   - The Problem (with data)
-   - The Solution (with demo scenario)
-   - Market Size (TAM/SAM/SOM)
-   - Product (key screens / workflows)
-   - Business Model (lean-biased)
-   - Traction / Milestones
-   - Team (drawn from dev team personas)
-   - The Ask
+Assemble product leadership, PM, and GTM personas. Full backlog:
+- **Sagas** — Strategic initiatives (S01-SNN)
+- **Epics** — Feature clusters within sagas (E-XXYY)
+- **Stories** — User-facing increments (US-AASS)
+- **Tasks** — Engineering work items (T-AASS-NN)
+- Programmatically verifiable acceptance criteria (5 patterns: Performance, Behavioral, Structural, Negative, Count)
+- Story points, blocking dependencies, sprint allocation
+- Cross-cutting concerns (observability, security, accessibility) in every epic's ACs
+- V2 foundation constraints embedded in v1 stories where applicable
 
-**Apply janna:lean-product-strategy** heavily here. **Use humanizer** on final pitch deck text.
+**Approval gate:** User confirms backlog.
 
-**Approval gate:** User confirms overview and pitch deck.
-
-**Output:**
-- `docs/overview.md`
-- `docs/pitch-deck/*.md`
+**Output:** `docs/agile/` (sagas, epics, sprints, dependency-graph)
 
 ---
 
-## Phase 8: The Review
+## Phase 12: The Mirror
 
-*Everything checks everything else.*
+*Everything checks everything else. Then Claude checks everything.*
 
 **Inputs:** All artifacts
 
-**Process:**
-1. **Cross-reference audit** — Verify:
-   - Every PRD requirement appears in at least one user story
-   - Every user story maps to an agile task
-   - Every agile task has test coverage
-   - Pitch deck claims are supported by PRD specs
-   - Overview is consistent with PRDs
-2. **Dev team critique** — Run janna:critique-loop:
-   - Each dev team persona reviews their relevant PRDs
-   - Synthesize feedback into action items
-   - Apply changes with user approval
-3. **User persona validation** — Each user persona "walks through" their stories
-4. **Consistency check** — Terminology, version numbers, feature names aligned across all docs
-5. Iterate until no new issues found in two consecutive passes
+1. **Full team cross-review** — Everyone reviews everything, especially others' areas. Write to `docs/dev-team/feedback/session-2/`.
+2. **AI creative feedback** — Your own perspective as a genius-level intelligence: "What would make this more interesting and intellectually satisfying?" Multiple perspectives, individual files + synthesis. "Boil the ocean." Write to `docs/archive/feedback/`.
+3. **Cross-document alignment:**
+   - Every PRD requirement → user story → agile task → test case
+   - Terminology consistency across all docs
+   - Version/timeline consistency
+   - Pitch deck claims backed by PRD specs
+4. **TODO resolution** — Product leadership resolves remaining open questions
+5. **Progressive disclosure** — Ensure all docs have line-number indexes for agent navigation
+6. **Humanize** external-facing docs (overview, pitch deck) with humanizer skill
 
-**Approval gate:** User confirms final alignment.
-
-**Output:**
-- `docs/archive/reviews/*.md` — review feedback
-- Updates to all docs as needed
+**Approval gate:** User confirms final alignment. "Ready to build?"
 
 ---
-
-## Resuming Work
-
-If `docs/JANNA-STATUS.md` exists, read it first. Resume from the last incomplete phase. Never restart from Phase 0 unless the user explicitly asks.
-
-If the user asks to work on a specific phase (e.g., "update the user stories"), jump to that phase but warn if upstream phases have changed since the downstream artifacts were generated.
 
 ## Context Survival
 
 **Your context WILL compact. Files are your brain.**
 
-- Write artifacts to disk IMMEDIATELY after generation, not at the end of a phase
+- Write artifacts to disk IMMEDIATELY, not at end of phase
 - Update `docs/JANNA-STATUS.md` after every significant step
 - After compaction: re-read status file, re-read current phase artifacts, continue
-- Use subagents for heavy generation work to preserve your context for coordination
+- Use subagents for heavy generation to preserve coordination context
+
+## Resuming Work
+
+If `docs/JANNA-STATUS.md` exists, read it first. Resume from the last incomplete phase. Never restart unless the user explicitly asks.
 
 ## Parallelization
 
-Phases 3-7 have internal parallelism. Use subagents when:
-- Generating multiple personas simultaneously
-- Writing multiple PRDs simultaneously
-- Creating user stories for different personas simultaneously
-- Building test plans for different functional areas simultaneously
-
-**Never parallelize across phases.** Phase dependencies are strict.
+Within-phase parallelism only (multiple personas, multiple PRDs, multiple test areas simultaneously). **Never parallelize across phases.** Dependencies are strict.
