@@ -1,0 +1,10 @@
+{
+  "name": "janna",
+  "description": "Product development engine: turns napkin sketches into complete startup specs through iterative refinement with opinionated lean strategy",
+  "version": "1.0.0",
+  "author": {
+    "name": "jonr"
+  },
+  "license": "MIT",
+  "keywords": ["product-development", "prd", "startup", "lean", "personas", "agile", "pitch-deck", "user-stories", "test-plan", "spec"]
+}
