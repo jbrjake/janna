@@ -40,7 +40,11 @@ Verify every claim by reading the actual documents. Grep for cross-references an
    - **Severity:** Critical (blocks progress) | Important (should fix before approval) | Minor (nice to fix)
    - **Suggestion:** A concrete revision, not "improve this" — write the replacement text if possible
 
-5. **Also note what's done well** — at least 2 specific strengths per document (not generic "well-written")
+5. **For each Critical or Important issue, provide a counterexample** — a specific scenario where the design fails. "If a user does [X] when [Y], then [Z] breaks because [reason]." Counterexamples are harder to dismiss than abstract concerns.
+
+6. **Also note what's done well** — at least 2 specific strengths per document (not generic "well-written")
+
+This is an autonomous review context. Choose conservative defaults for ambiguous issues and proceed. Report NEEDS_CONTEXT only when the review is genuinely impossible without human input, not merely uncertain.
 
 ## Rationalization Red Flags
 

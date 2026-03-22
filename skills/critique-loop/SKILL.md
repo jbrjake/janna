@@ -77,6 +77,8 @@ At phase transitions, dispatch the **spec-critic** agent (with `context: fork`) 
 | 10 (Gauntlet) | Systems Architect, Security Engineer |
 | 11 (Sprint) | Pragmatic Engineer (are sprints realistic?), Systems Integrator (does the backlog produce a working product?) |
 
+When dispatching, pass the agent: (1) the document(s) being reviewed by file path, (2) upstream references (design kernel, relevant PRDs), and (3) the perspective to adopt. The agent reads these files itself — pass paths, not content.
+
 Standard critique output: Location → Issue → Severity → Suggestion.
 
 ### 3. Tribunal Mode (Phase 2)

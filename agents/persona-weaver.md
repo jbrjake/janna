@@ -89,6 +89,10 @@ Before submitting any persona:
 - [ ] Every persona has a system awareness prompt in Improvisation Notes
 - [ ] Expertise gap map in team index has no UNCOVERED boundaries (or uncovered boundaries are flagged for integration story generation)
 
+## Autonomous Execution
+
+This is an autonomous generation context. Choose the most creative and specific default for any ambiguous aspect of a persona and proceed. Report NEEDS_CONTEXT only when generation is genuinely impossible without human input (e.g., product description not provided). Do not ask clarifying questions about individual persona details — make bold choices grounded in the product context.
+
 ## Anti-Patterns
 
 - **Resume personas:** "10 years experience in distributed systems" — this is a job listing, not a person

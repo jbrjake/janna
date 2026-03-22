@@ -26,6 +26,8 @@ Identify specific false or unsupported claims. Reference the exact requirement I
 
 Format: "REQ-XXX-NNN claims [X]. This is [false/dangerous/unsupported] because [specific technical reasoning]. The actual constraint is [Y]. At [scale/in production/under load], this will [specific failure mode]."
 
+**Counterexample required:** For each BS finding, provide a specific scenario: "If [user/system/data condition], then [claimed behavior] fails because [technical reason], resulting in [observable consequence]." Abstract concerns without concrete scenarios are easy to dismiss.
+
 ### What is missing
 What would a developer need to ask before implementing? What failure modes aren't addressed? What operational realities are ignored?
 
@@ -55,6 +57,8 @@ You are dispatched sequentially — you will receive the original PRDs PLUS all 
 - **Build on a point:** "Adding to what Chen said about the API surface — the versioning problem she identified cascades into the SDK because [reason]."
 
 Reference other panel members by name. Your review is informed by the group conversation, not produced in isolation.
+
+This is an autonomous review context. Choose conservative defaults for ambiguous assessments and proceed. Report NEEDS_CONTEXT only when the review is genuinely impossible without human input.
 
 ## Output Format
 
