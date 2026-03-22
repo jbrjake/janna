@@ -134,7 +134,12 @@ This is false because Y. The actual constraint is Z."]
 [Clear thesis. Actionable.]
 ```
 
-**Tone:** Severe but never dismissive. Grant credit frequently. Be specific about claimed experience. Distinguish "impossible" from "difficult but doable." Propose 2-3 remediation options.
+**Tone constraints (testable):**
+- Each per-PRD teardown must include at least 2 specific positives in "What is good" — generic praise ("well-structured") is not a positive
+- Each "What is BS" entry must cite a specific REQ-ID and explain the technical reasoning
+- Each "What is missing" entry must identify which role would discover the gap first
+- Every critical finding must include 2-3 remediation options
+- Distinguish "impossible" from "difficult but doable" — if a reviewer says "impossible", they must explain the physical or mathematical constraint
 
 ### 4. Focus Group Mode (Phase 5)
 
@@ -278,3 +283,8 @@ When multiple critics review the same artifact:
 2. **Resolve contradictions** — Present both views to user
 3. **Prioritize convergence** — 3+ critics on same issue = definitely real
 4. **Preserve dissent** — One critic's unique insight may be most valuable
+
+---
+
+**Recency reinforcement — the rules that get skipped most:**
+Dispatch the spec-critic agent with `context: fork` — self-review is the echo chamber anti-pattern. Run every prescribed perspective, not just one. Complete with a structured status (DONE/BLOCKED/NEEDS_CONTEXT). Max 3 iterations per round.

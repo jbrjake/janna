@@ -62,7 +62,7 @@ digraph depth_selection {
 }
 ```
 
-Every persona needs SOME emotional stake. The minimum bar is a specific experience that drives their professional choices — never a generic job description.
+Every persona needs SOME emotional stake. The minimum bar: a specific experience that drives their professional choices. If a persona's backstory could apply to anyone in their job title, it's a generic job description — rewrite it with a specific incident, name, place, and consequence.
 
 ---
 
@@ -144,12 +144,14 @@ the product when they're excited vs. skeptical. Enough for consistent
 roleplay across sessions.]
 ```
 
-**Persona spread:**
-- Cover primary target market and one adjacent market
-- Range of technical sophistication
+**Persona spread (all conditions required):**
+- At least one persona from a non-obvious industry (not the primary target market)
+- Range of technical sophistication: at least one level 1-2 and one level 4-5
 - At least one power user, one casual user, one reluctant user
-- At least one in a buying role
+- At least one persona with budget authority (buying role)
 - Count: 3-6 depending on market breadth
+- If any persona's Origin Story is under 3 paragraphs, it lacks sufficient depth — expand it
+- If any persona's Character Notes lacks voice patterns, a frustration signal, and a trust-building behavior, the notes are incomplete
 
 ---
 
@@ -311,3 +313,8 @@ He presents the graph to his leadership. For the first time, they can see what h
 He draws supply chain diagrams on whiteboards while explaining things. He carries a Moleskine notebook. He speaks slowly — people mistake it for uncertainty but he's choosing precise words. An ugly graph showing a real dependency he hasn't mapped is worth more to him than a pretty dashboard that shows nothing new.
 
 **The key insight:** Start with the wound, not the demographics. The wound generates the career, the career generates the opinions, the opinions generate useful product feedback. Work forward from the formative incident, not backward from a job description.
+
+---
+
+**Recency reinforcement — the rules that get skipped most:**
+Start with the formative wound, not demographics. Generate one persona at a time with full attention. If Origin Story is under 3 paragraphs, expand it. If Character Notes lacks voice patterns, frustration signals, and trust behaviors, it's incomplete.

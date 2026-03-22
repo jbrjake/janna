@@ -34,12 +34,12 @@ digraph gtm {
 }
 ```
 
-**Default recommendations:**
-- Free tier that's genuinely useful (not a toy)
-- Self-service upgrade path with credit card
-- Usage-based pricing over seat-based (align cost with value)
+**Default recommendations (testable):**
+- Free tier includes the core differentiating feature — if the free tier only offers generic functionality, it's a toy
+- Self-service upgrade path with credit card — if a PRD mentions "contact sales to upgrade", rewrite it
+- Usage-based pricing over seat-based — unless the product's value scales with collaboration, not usage
 - Sales team only for deals over $50K ACV — and even then, product-assisted
-- Virality hooks: sharing, collaboration, embeddable outputs, public dashboards
+- At least one virality hook in v1: sharing, collaboration, embeddable outputs, or public dashboards
 
 ### Architecture: Automate the Human Out
 
@@ -83,10 +83,10 @@ These are all v1.1+ features. Ship the insight first.
 
 ### Community: Your Users Are Your PMs
 
-- Open-source what you can (builds trust, accelerates adoption)
+- Default to open-source unless IP protection requires closed source — document the reasoning either way
 - Public roadmap (users vote on priorities)
 - Community forum or Discord over private support channels
-- Docs are a first-class product (not an afterthought)
+- API documentation is a v1 requirement, not a post-launch task — if the PRD defers docs to v1.1, flag it
 - Changelog as marketing (every release is content)
 
 ## Applying This Framework
