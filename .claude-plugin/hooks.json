@@ -5,6 +5,12 @@
         "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/session-start.sh",
         "async": false
       }
+    ],
+    "PostToolUse": [
+      {
+        "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/validate-docs-path.sh",
+        "async": true
+      }
     ]
   }
 }
