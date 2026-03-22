@@ -8,6 +8,8 @@ Overengineered. Not sorry.
 
 You hand Janna an idea. A sentence, a napkin sketch, a half-finished design doc from 2 AM. She runs it through a 13-phase process that produces PRDs, user personas with redemption arcs, simulated focus groups with crosstalk, a fictional dev team recruited from people at turning points in their lives, a pitch deck, user stories, and a complete agile backlog. Every document gets adversarial review from multiple angles and cross-checked against everything else until nothing contradicts anything.
 
+Four product axioms act as hard gates through the whole process: the app launches, the core function works end-to-end, component outputs are compatible, and the walking skeleton is observable. Every sprint verifies them. They're the things obvious enough that nobody bothers writing them down, which is why they need to be written down.
+
 The two outputs downstream code actually depends on are the dev team personas and the agile artifacts. Everything else exists to make those two things sharper.
 
 ## Installation
@@ -68,16 +70,18 @@ Up to 13 phases. Standard mode runs 10. Both always produce user personas, dev t
 - **Phase 5: The Circle.** Simulated focus groups. A group demo with cross-persona crosstalk, then individual 1:1 sessions where each persona says what they actually think.
 - **Phase 6: The Assembly.** Dev team personas. Janna finds people at turning points in their lives. The engineer whose last company died because she didn't fight for the right architecture. The entity resolution specialist whose family name was spelled six different ways on every government form. They have reasons, not just skills.
 - **Phase 8: The Pitch.** A pitch deck constrained to say nothing the PRDs can't back up.
-- **Phase 9: The Map.** User stories traced back to specific persona needs.
-- **Phase 11: The Sprint.** Sagas, epics, sprints, stories, tasks. Acceptance criteria, story points, blocking dependencies. The actual work breakdown your engineering process runs on.
+- **Phase 9: The Map.** User stories traced back to specific persona needs, plus integration gap analysis for every boundary between subsystems.
+- **Phase 11: The Sprint.** Sagas, epics, sprints, stories, tasks. Seven AC patterns including integration and system-level. Sprint-level acceptance criteria. The actual work breakdown your engineering process runs on.
 
-**Full mode** adds three more: multi-round dev team feedback on the PRDs, test plans with adversarial edge cases, and a cross-review phase where Claude reviews its own work from the perspective of a genius-level intelligence and tells you what it honestly thinks.
+**Full mode** adds the three missing numbers: **Phase 7 (The Forge)** is multi-round dev team feedback on the PRDs. **Phase 10 (The Gauntlet)** is test plans with tier coverage from Sprint 1 and system-level adversarial cases. **Phase 12 (The Mirror)** is a cross-review phase that includes a product completeness check asking whether the spec would actually produce a working product.
 
 ## The personas
 
 Every persona has a formative wound. Not a pain point. A wound. Something that happened to them or someone they loved that turned a career into a mission. The pharmacovigilance scientist whose grandmother was prescribed a drug already withdrawn in the US. The insurance investigator who calls her retired father to describe what she finally sees on screen, and he goes quiet, and then he says, "That's what I always wanted."
 
 The product doesn't solve their professional problem. It closes something that's been open for years.
+
+At least one dev team persona per project carries a wound from a system assembly failure — not a bug in one component, but a catastrophe at the seam where two subsystems met. That person asks the question nobody else thinks to ask at sprint kickoff. The team index also includes an expertise gap map: a table of every domain boundary and who owns it. Boundaries with no owner generate integration stories, because if nobody owns the seam, the seam doesn't get tested.
 
 Melodramatic? Absolutely. But when your simulated users carry that kind of weight, their feedback has teeth. The user stories read like things actual people would do. The dev team's agile breakdown reads like people who give a damn wrote it.
 
