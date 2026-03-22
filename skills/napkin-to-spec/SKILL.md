@@ -89,21 +89,7 @@ Before anything else, do a reading. This is real pattern-finding, not theater.
    ```bash
    python3 -c "import random; cards=random.sample(range(22), 3); print(' '.join(map(str, cards)))"
    ```
-   Map the numbers to Major Arcana:
-
-   | # | Card | # | Card |
-   |---|------|---|------|
-   | 0 | The Fool | 11 | Justice |
-   | 1 | The Magician | 12 | The Hanged Man |
-   | 2 | The High Priestess | 13 | Death |
-   | 3 | The Empress | 14 | Temperance |
-   | 4 | The Emperor | 15 | The Devil |
-   | 5 | The Hierophant | 16 | The Tower |
-   | 6 | The Lovers | 17 | The Star |
-   | 7 | The Chariot | 18 | The Moon |
-   | 8 | Strength | 19 | The Sun |
-   | 9 | The Hermit | 20 | Judgement |
-   | 10 | Wheel of Fortune | 21 | The World |
+   Map numbers 0-21 to Major Arcana (see `phase-map.md` for the lookup table: 0=Fool, 1=Magician, ... 21=World).
 
    Use only the randomly generated numbers. The randomness is the point — it forces non-obvious
    pattern-finding. Fallback if python3 is unavailable: `shuf -i 0-21 -n 3` (Linux/macOS with coreutils). Use `shuf` over `jot` — `jot` draws with replacement and may exclude the upper bound.
