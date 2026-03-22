@@ -56,6 +56,15 @@ Use these seven verifiable AC formats:
 
 ---
 
+## Invocation Procedure
+
+When generating a document:
+1. **Identify the document type** (PRD, overview, pitch deck, stories, agile, test plan, dev team, focus group)
+2. **Read `references/templates.md`** and find the matching template
+3. **Apply Universal Rules** (above) to every section
+4. **Apply AC Patterns** (above) to any acceptance criteria
+5. **Run Quick Critique** (critique-loop Mode 1) before writing to disk
+
 ## Conditional Loading
 
 Read companion files based on the current phase:
