@@ -47,7 +47,7 @@ Fix inline. No separate output needed.
 
 ### 2. Perspective Critique (per-phase)
 
-At phase transitions, dispatch the **spec-critic** agent adopting specific expert perspectives:
+At phase transitions, dispatch the **spec-critic** agent (with `context: fork`) adopting specific expert perspectives. Forked context ensures reviewers see only the artifact and spec — not session history that would bias their review:
 
 | Phase | Perspectives |
 |-------|-------------|
@@ -226,7 +226,7 @@ Product leadership personas review all docs asking: "What ISN'T documented but i
 
 Full alignment audit across the entire artifact set. Three sub-steps:
 
-1. **Full team cross-review:** Dispatch each dev team persona sequentially using the **spec-critic** agent (with the persona's name and specialty as the perspective), each reviewing documents outside their primary area. Write to `docs/dev-team/feedback/cross-review/`.
+1. **Full team cross-review:** Dispatch each dev team persona sequentially using the **spec-critic** agent (with `context: fork`, using the persona's name and specialty as the perspective), each reviewing documents outside their primary area. Write to `docs/dev-team/feedback/cross-review/`.
 2. **Cross-document tracing:** Verify every PRD requirement maps to a user story, every story maps to an agile task, every task has test coverage. Flag orphans.
 3. **AI self-review:** Review the entire spec corpus from your own perspective. What would make this more interesting, more internally consistent, more complete? Write to `docs/archive/feedback/`.
 4. **System integration check:** Dispatch the spec-critic agent as **Systems Integrator** to review the complete backlog, asking: "If every story in this backlog were implemented exactly as specified, would the result be a working product that a user can launch and operate?" Flag any gap where stories pass individually but the assembled product would fail — missing wiring, incompatible interfaces, no story covering the path from entry point to visible output.

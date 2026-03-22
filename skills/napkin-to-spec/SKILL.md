@@ -536,7 +536,11 @@ Read `references/status-template.md` when starting a new session, resuming work,
 
 ## Parallelization
 
-Within-phase parallelism only (multiple personas, multiple PRDs, multiple test areas simultaneously). **Never parallelize across phases.** Dependencies are strict.
+Within-phase parallelism only (multiple personas, multiple PRDs, multiple test areas simultaneously). Cross-phase parallelization is prohibited — dependencies are strict.
+
+## Learning Capture
+
+After completing each major phase (1, 5, 7, 11, 12), append a 2-3 sentence summary to `docs/JANNA-STATUS.md` under a `## Learnings` section: what worked well, what the user corrected, what to do differently next time. Future sessions read this before starting new phases.
 
 ## Quality Gates
 
