@@ -5,6 +5,8 @@ description: "Use when creating personas with deep backstories — dev team memb
 
 **Skill type: RIGID** — Follow exactly. Do not adapt, skip, or reorder steps.
 
+Announce: "Using persona-generation to create [user personas / dev team / tribunal graybeards]."
+
 # Persona Generation
 
 Create people whose lives led them to this product. Not profiles — people. Every persona has a history that explains not just their opinions but their obsessions. The product helps them do their job AND fills a hole in their heart.
@@ -61,6 +63,20 @@ digraph depth_selection {
 ```
 
 Every persona needs SOME emotional stake. The minimum bar is a specific experience that drives their professional choices — never a generic job description.
+
+---
+
+## Rationalization Red Flags
+
+If you catch yourself thinking any of these, STOP. You are rationalizing non-compliance.
+
+| Your thought | The reality |
+|---|---|
+| "This persona just needs basic demographics" | Demographics without a formative wound produce a resume, not a person. Start with the wound. |
+| "The emotional depth is overkill for a dev team member" | Dev team personas review PRDs. A reviewer without personal stakes rubber-stamps everything. |
+| "I'll add the backstory later" | Later never comes. Context shifts. Write the formative wound before the professional identity. |
+| "This product doesn't lend itself to emotional personas" | Every product solves a problem. Someone had a bad day because that problem existed. Find that person. |
+| "I can generate all personas in one pass" | Each persona deserves full consideration. Generate one at a time with full attention. |
 
 ---
 

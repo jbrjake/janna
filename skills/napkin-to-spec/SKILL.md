@@ -5,6 +5,8 @@ description: "Use when developing a product idea into a complete specification �
 
 **Skill type: RIGID** — Follow exactly. Do not adapt, skip, or reorder steps.
 
+Announce: "Using napkin-to-spec to [run Phase N / continue from Phase N / begin a new project]."
+
 # Napkin to Spec: The Iterative Refinement Engine
 
 Turn a design kernel into a complete, self-aligned product specification through up to thirteen phases of iterative expansion, adversarial review, and human alignment.
@@ -537,6 +539,10 @@ Read `references/status-template.md` when starting a new session, resuming work,
 ## Parallelization
 
 Within-phase parallelism only (multiple personas, multiple PRDs, multiple test areas simultaneously). Cross-phase parallelization is prohibited — dependencies are strict.
+
+## Circuit Breaker
+
+If the same phase fails to reach user approval after 3 revision cycles, stop iterating and ask the user: "We've done three rounds on this phase. Would you like to approve what we have, change direction, or skip to the next phase?"
 
 ## Learning Capture
 

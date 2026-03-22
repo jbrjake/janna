@@ -5,9 +5,25 @@ description: "Use when reviewing documents, running adversarial reviews, conduct
 
 **Skill type: RIGID** — Follow exactly. Do not adapt, skip, or reorder steps.
 
+Announce: "Using critique-loop [mode name] to review [artifact]."
+
 # Critique Loop
 
 Six modes of review, from quick self-check to full adversarial tribunal. Every generated artifact goes through at least one. Major artifacts get multiple rounds from different angles.
+
+## Rationalization Red Flags
+
+If you catch yourself thinking any of these, STOP. You are rationalizing non-compliance.
+
+| Your thought | The reality |
+|---|---|
+| "This artifact is short, it doesn't need a critique" | Short artifacts have the highest defect density. Run the critique. |
+| "The user is happy with it, skip the review" | User satisfaction is not quality validation. The critique catches what the user and you both missed. |
+| "I'll run the critique mentally instead of dispatching an agent" | Self-review without external signal is the Self-Reviewing Echo Chamber anti-pattern. Dispatch the agent. |
+| "One reviewer is enough" | Single-perspective reviews have blind spots by definition. Use the prescribed perspectives. |
+| "The iteration protocol is too slow" | One iteration cycle is faster than rediscovering the same issue three phases later. Follow the protocol. |
+
+---
 
 ## Mode Selection
 
@@ -244,6 +260,14 @@ Re-run on changed sections only → If no new Critical/Important → DONE
 ```
 
 **Max iterations:** 3 per round. After 3, surface remaining issues to user.
+
+### Structured Status
+
+Every critique mode completes with exactly one status:
+- **DONE** — All Critical/Important issues resolved or accepted by user
+- **DONE_WITH_CONCERNS** — Complete, but [describe lingering issue]
+- **BLOCKED** — Cannot proceed because [describe blocker — missing artifact, conflicting requirements]
+- **NEEDS_CONTEXT** — Missing information: [describe what's needed from user]
 
 **Present all fixes to the user.** The user is the navigator. Exception: pre-presentation perspective critiques (the "Before presenting to user" steps in napkin-to-spec) are quality gates — fix Critical/Important issues inline and note what changed. Skip the full iteration loop for pre-presentation gates.
 
