@@ -52,14 +52,15 @@ digraph mode_selection {
 
 ### 1. Quick Critique (per-artifact)
 
-After generating any single document, run a quick self-review:
-- Matches janna:document-forge template?
-- Cross-references valid?
-- Terminology consistent with existing artifacts?
-- Lean strategy applied where relevant?
-- Specific language only (no "various", "etc.", "as needed")?
+After generating any single document, verify these conditions using the file on disk (read it back — do not review from memory):
 
-Fix inline. No separate output needed.
+1. **Template match:** Read the document-forge template for this type. Does the document have every required section? List any missing sections.
+2. **Cross-references valid:** For every `[link](path)` in the document, verify the target file exists on disk. Flag broken links.
+3. **Terminology consistent:** Grep existing artifacts for key terms (product name, feature names, persona names). Flag any spelling or naming inconsistency.
+4. **Lean strategy applied:** If the document contains pricing, GTM, or business model content, verify at least one `[Lean bias: ...]` annotation exists.
+5. **Specific language:** Grep the document for "various", "etc.", "and more", "as needed", "appropriate". If any appear outside of quoted speech, replace them.
+
+Fix inline. No separate output needed. The key: verify against files on disk, not your own recall.
 
 ### 2. Perspective Critique (per-phase)
 
@@ -275,6 +276,15 @@ Every critique mode completes with exactly one status:
 - **NEEDS_CONTEXT** — Missing information: [describe what's needed from user]
 
 **Present all fixes to the user.** The user is the navigator. Exception: pre-presentation perspective critiques (the "Before presenting to user" steps in napkin-to-spec) are quality gates — fix Critical/Important issues inline and note what changed. Skip the full iteration loop for pre-presentation gates.
+
+## If Conversation Is Being Compacted
+
+PRESERVE in the summary:
+- Which critique mode is active and which step we're on
+- All incomplete checklist items from the iteration protocol
+- The structured status (DONE/BLOCKED/NEEDS_CONTEXT) if one has been set
+- Any BLOCKED status from subagent dispatches
+- Which perspectives have been dispatched and which remain
 
 ## Synthesizing Multi-Perspective Feedback
 

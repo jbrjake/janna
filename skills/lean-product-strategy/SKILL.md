@@ -89,16 +89,23 @@ These are all v1.1+ features. Ship the insight first.
 - API documentation is a v1 requirement, not a post-launch task — if the PRD defers docs to v1.1, flag it
 - Changelog as marketing (every release is content)
 
-## Applying This Framework
+## Invocation Procedure
 
-When generating any artifact, ask:
+When this skill is invoked (directly or via REQUIRED reference from another skill):
 
-1. **PRDs:** Does every requirement pass the "can the user do this without contacting us?" test?
-2. **Pitch decks:** Is the business model slide showing a low-CAC, high-LTV motion?
-3. **User stories:** Do stories assume self-service? If a story says "user contacts support to..." — rewrite it
-4. **Agile:** Is Sprint 0 setting up self-service infrastructure (docs, API, onboarding)?
-5. **Test plan:** Are there tests for the self-service flows? (Signup, onboarding, upgrade, billing)
-6. **Overview:** Does the competitive positioning emphasize ease-of-adoption over feature count?
+1. **Identify the artifact type** being generated or reviewed
+2. **Apply the matching check** from the table below
+3. **For each failing check**, propose a specific revision inline
+4. **Add bias annotations** — every decision shaped by lean strategy gets a `[Lean bias: reason]` note
+
+| Artifact | Check |
+|----------|-------|
+| **PRDs** | Does every requirement pass the "can the user do this without contacting us?" test? |
+| **Pitch decks** | Is the business model slide showing a low-CAC, high-LTV motion? |
+| **User stories** | Do stories assume self-service? If a story says "user contacts support to..." — rewrite it |
+| **Agile** | Is Sprint 0 setting up self-service infrastructure (docs, API, onboarding)? |
+| **Test plan** | Are there tests for the self-service flows? (Signup, onboarding, upgrade, billing) |
+| **Overview** | Does the competitive positioning emphasize ease-of-adoption over feature count? |
 
 ## When to Override
 

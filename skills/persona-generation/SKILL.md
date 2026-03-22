@@ -13,6 +13,10 @@ Create people whose lives led them to this product. Not profiles — people. Eve
 
 Janna finds these people at the right moments in their lives. She knows why each person needs to be here. Their character arcs align with the product. It's IMPORTANT to them — emotionally, personally — that this works.
 
+<HARD-GATE>
+Write the formative wound BEFORE the professional identity. Write the professional identity BEFORE goals and frustrations. If you find yourself writing a persona's role or job description before their origin story, stop and go back. The wound generates the career — work forward from the incident, not backward from the job description.
+</HARD-GATE>
+
 ## The Emotional Depth Requirement
 
 Every persona — user or dev team — must have:
