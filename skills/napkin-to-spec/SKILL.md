@@ -3,12 +3,14 @@ name: napkin-to-spec
 description: "Use when developing a product idea into a complete specification — taking rough concepts, design docs, or napkin sketches through iterative refinement into PRDs, user stories, agile artifacts, test plans, pitch decks, and team profiles. Triggers on: 'build a spec', 'develop this idea', 'create a PRD', 'product development', 'startup plan', 'napkin sketch', 'flesh this out'."
 ---
 
+**Skill type: RIGID** — Follow exactly. Do not adapt, skip, or reorder steps.
+
 # Napkin to Spec: The Iterative Refinement Engine
 
 Turn a design kernel into a complete, self-aligned product specification through up to thirteen phases of iterative expansion, adversarial review, and human alignment.
 
 <HARD-GATE>
-Do NOT skip phases within the selected complexity mode or generate documents out of order. Each phase builds on the previous. The user approves each phase before proceeding. The user CAN select which mode to run (Standard or Full).
+Complete every phase in order within the selected complexity mode. Generate documents only for the current phase. The user approves each phase before proceeding. The user CAN select which mode to run (Standard or Full). If you find yourself generating Phase N+1 artifacts before Phase N has user approval, stop and go back.
 </HARD-GATE>
 
 ## Complexity Modes
@@ -40,11 +42,44 @@ All phases. No shortcuts.
 
 ### Selecting a Mode
 
-If the user doesn't specify, suggest based on the design kernel:
-- Product with identified market / multiple user types → suggest Standard
-- Platform / commercial product / needs multi-round dev team feedback, test plans, or a final cross-review pass → suggest Full
+```dot
+digraph mode_selection {
+    "User specified mode?" [shape=diamond];
+    "Use specified mode" [shape=box style=filled fillcolor=lightgreen];
+    "Design kernel scope?" [shape=diamond];
+    "Suggest Standard" [shape=box style=filled fillcolor=lightblue];
+    "Suggest Full" [shape=box style=filled fillcolor=lightyellow];
+
+    "User specified mode?" -> "Use specified mode" [label="yes"];
+    "User specified mode?" -> "Design kernel scope?" [label="no"];
+    "Design kernel scope?" -> "Suggest Standard" [label="identified market\nmultiple user types"];
+    "Design kernel scope?" -> "Suggest Full" [label="platform / commercial\nneeds feedback rounds\ntest plans / cross-review"];
+}
+```
 
 The user can upgrade mid-process ("let's add a test plan" during Standard triggers Phase 10, upgrading to Full). Downgrading is harder — you can skip remaining phases but can't un-generate artifacts.
+
+## Rationalization Red Flags
+
+If you catch yourself thinking any of these, STOP. You are rationalizing non-compliance.
+
+| Your thought | The reality |
+|---|---|
+| "This is a simple product, skip the Tarot reading" | The reading primes non-obvious pattern recognition. Simple products benefit most from lateral thinking. Do the reading. |
+| "I already understand the product, skip the intake questions" | Your understanding is based on the design kernel alone. The intake surfaces assumptions the user hasn't stated. Ask the questions. |
+| "The user seems eager, skip the approval gate" | Approval gates are alignment checks, not bureaucracy. Skipping one means the next phase builds on unconfirmed assumptions. Wait for approval. |
+| "I'll combine these phases to save time" | Each phase builds on the previous phase's approved output. Combining means combining unreviewed work. Follow the sequence. |
+| "The critique step is overkill for this document" | The pre-presentation quality gate catches issues that cost more time in later phases. Run it. |
+| "The user wants me to skip ahead" | Unless they said "skip Phase N", they expressed eagerness, not a process override. Present the next phase in sequence. |
+| "I'll write the status file later" | Context compaction can happen at any time. Write artifacts and update JANNA-STATUS.md immediately. Every time. |
+
+## Pre-Presentation Quality Gate
+
+Every phase marked **"Pre-presentation critique: [perspectives]"** means: run janna:critique-loop perspective critique with those perspectives. Fix Critical/Important issues inline — these are quality gates, not the full iteration protocol. Note what you changed.
+
+## Phase Tracking
+
+When starting a project, create a task list with one entry per phase in the selected mode (Standard: 10 phases, Full: 13 phases). Mark each phase in_progress when starting it and completed when the user approves it. This makes skipped phases visible.
 
 ## File Organization
 
@@ -159,7 +194,7 @@ After the reading:
 5. Each PRD: `docs/prd/NN-[area].md`
 6. Generate `docs/prd/00-prd-index.md`
 
-**Before presenting to user:** Run janna:critique-loop perspective critique (Systems Architect, Pragmatic Engineer). Fix Critical/Important issues inline — these are pre-presentation quality gates, not the full iteration protocol. Note what you changed.
+**Pre-presentation critique:** Systems Architect, Pragmatic Engineer.
 
 **Approval gate:** User confirms PRD suite.
 
@@ -204,7 +239,7 @@ After the reading:
 
 The overview serves as the **summary layer** for all downstream phases. User personas, focus groups, and the dev team topology brainstorm read the overview instead of wading through every PRD. Write it with that purpose in mind: it should contain everything a potential user or team member needs to understand the product without reading the full PRD suite.
 
-**Before presenting to user:** Run janna:critique-loop perspective critique (Product Strategist, UX Advocate). Fix Critical/Important issues inline — pre-presentation quality gate. Note what you changed.
+**Pre-presentation critique:** Product Strategist, UX Advocate.
 
 **Approval gate:** User confirms overview.
 
@@ -235,7 +270,7 @@ The overview serves as the **summary layer** for all downstream phases. User per
    - Progressive disclosure structure with anchor slugs for agent navigation
 3. **Integrate into overview** — Revise overview to be more inclusive of these personas. Present the overview changes alongside the personas at the approval gate.
 
-**Before presenting to user:** Run janna:critique-loop perspective critique (UX Advocate, The Customer). Fix Critical/Important issues inline — pre-presentation quality gate. Note what you changed.
+**Pre-presentation critique:** UX Advocate, The Customer.
 
 **Approval gate:** User confirms personas feel like real people with real stakes.
 
@@ -313,7 +348,7 @@ Generate full personas one by one, each with full consideration. Same emotional 
 - Communication style spectrum
 - Culture anchors
 
-**Before presenting to user:** Run janna:critique-loop perspective critique (UX Advocate). Fix Critical/Important issues inline — pre-presentation quality gate. Note what you changed.
+**Pre-presentation critique:** UX Advocate.
 
 **Approval gate:** User confirms team feels real.
 
@@ -368,7 +403,7 @@ Assemble the personas responsible for product ownership, GTM, sales engineering,
 ### Team Manifesto
 Assemble the **entire** dev team (all personas from Phase 6) to discuss shared values: what matters, what doesn't, north star, practices, anti-patterns. This emerges from team disagreement, not top-down. Include specific coding conventions and rules. Write to `docs/dev-team/who-we-are.md`.
 
-**Before presenting to user:** Run janna:critique-loop perspective critique (Product Strategist, The Customer). Fix Critical/Important issues inline — pre-presentation quality gate. Note what you changed.
+**Pre-presentation critique:** Product Strategist, The Customer.
 
 **Approval gate:** User confirms pitch deck and manifesto.
 
@@ -399,7 +434,7 @@ Jeff Patton-style story map:
 4. Verify R1 contains the lights-on story (AX-001)
 5. Verify the golden path E2E scenario has a corresponding R1 story
 
-**Before presenting to user:** Run janna:critique-loop perspective critique (The Customer, Pragmatic Engineer). Fix Critical/Important issues inline — pre-presentation quality gate. Note what you changed.
+**Pre-presentation critique:** The Customer, Pragmatic Engineer.
 
 **Approval gate:** User confirms story map.
 
@@ -423,7 +458,7 @@ Assemble the personas responsible for testing, devops, and customer success (by 
 - Persona coverage matrix
 - Test plan must include at least one test per tier (Unit, Integration, E2E) in Sprint 1. The golden path E2E scenario generates a corresponding R1 story.
 
-**Before presenting to user:** Run janna:critique-loop perspective critique (Systems Architect, Security Engineer). Fix Critical/Important issues inline — pre-presentation quality gate. Note what you changed.
+**Pre-presentation critique:** Systems Architect, Security Engineer.
 
 **Approval gate:** User confirms test plan.
 
@@ -451,7 +486,7 @@ Assemble the personas responsible for product leadership, PM, and GTM (by role, 
 - Every sprint must define a **user-facing delta** — one sentence describing what a user can see or do at sprint end that they couldn't before
 - Every sprint's **Definition of Done** must include: app builds, app launches (AX-001), core function works (AX-002), at least one integration test passes, demo includes actual app output
 
-**Before presenting to user:** Run janna:critique-loop perspective critique (Pragmatic Engineer). Fix Critical/Important issues inline — pre-presentation quality gate. Note what you changed.
+**Pre-presentation critique:** Pragmatic Engineer.
 
 **Approval gate:** User confirms backlog.
 
@@ -497,61 +532,7 @@ Assemble the personas responsible for product leadership, PM, and GTM (by role, 
 - After compaction: re-read status file, re-read current phase artifacts, continue
 - Use subagents for heavy generation to preserve coordination context
 
-### Structured Status File
-
-`docs/JANNA-STATUS.md` must contain ALL of the following. Update it proactively — don't wait for compaction.
-
-```markdown
-# JANNA Status
-
-## Tarot Reading
-Cards drawn: [number] ([card name]), [number] ([card name]), [number] ([card name])
-User's chosen interpretations:
-- [Card 1]: [chosen interpretation]
-- [Card 2]: [chosen interpretation]
-- [Card 3]: [chosen interpretation]
-Resonance notes: [any connections noted between reading and design decisions]
-
-## Design Kernel Summary
-[2-3 sentence summary of the core product idea]
-
-## Complexity Mode
-[Standard / Full]
-
-## Current Phase
-Phase [N]: [Name]
-Status: [in progress / awaiting approval / complete]
-What I'm doing: [current task and reasoning]
-
-## Key Personas
-[For each created persona: Name, role, core wound in one sentence]
-
-## Key Design Decisions
-- [Decision]: [rationale]
-
-## User Course Corrections
-- [What the user changed and why]
-
-## Open Questions
-- [Unresolved decisions]
-
-## Completed Phases
-- [x] Phase 0: The Reading — [date]
-- [ ] Phase 1: The Blueprint
-...
-```
-
-### Session Start Protocol
-
-When a session begins and `docs/JANNA-STATUS.md` exists:
-1. Read it immediately
-2. Read the current phase's artifacts
-3. Tell the user where you left off
-4. Ask if they want to continue, start fresh, or work on a specific phase
-
-## Resuming Work
-
-If `docs/JANNA-STATUS.md` exists, read it first. Resume from the last incomplete phase. Never restart unless the user explicitly asks.
+Read `references/status-template.md` when starting a new session, resuming work, or after context compaction — it contains the JANNA-STATUS.md template and session start protocol.
 
 ## Parallelization
 
@@ -559,4 +540,9 @@ Within-phase parallelism only (multiple personas, multiple PRDs, multiple test a
 
 ## Quality Gates
 
-Every generated document must pass janna:critique-loop Quick Critique (Mode 1) before being written to disk: template match, cross-references valid, terminology consistent, lean strategy applied, no vague language. This is automatic and inline — no separate output needed. Perspective critiques (Mode 2) are called out explicitly in each phase as "Before presenting to user" steps.
+Every generated document must pass janna:critique-loop Quick Critique (Mode 1) before being written to disk: template match, cross-references valid, terminology consistent, lean strategy applied, specific language only. This is automatic and inline — no separate output needed. Perspective critiques (Mode 2) are called out per phase as "Pre-presentation critique" lines.
+
+---
+
+**Recency reinforcement — the rules that get skipped most:**
+Write artifacts to disk IMMEDIATELY — context compaction can happen at any moment. Update JANNA-STATUS.md after every significant step. Wait for user approval before advancing to the next phase. Run the pre-presentation critique before showing work to the user.

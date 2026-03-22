@@ -3,9 +3,34 @@ name: critique-loop
 description: "Use when reviewing documents, running adversarial reviews, conducting focus groups, or checking cross-document alignment. Triggers on: 'review this', 'critique', 'focus group', 'tribunal', 'graybeard review', 'gap analysis', 'alignment check', 'what's missing'."
 ---
 
+**Skill type: RIGID** — Follow exactly. Do not adapt, skip, or reorder steps.
+
 # Critique Loop
 
 Six modes of review, from quick self-check to full adversarial tribunal. Every generated artifact goes through at least one. Major artifacts get multiple rounds from different angles.
+
+## Mode Selection
+
+```dot
+digraph mode_selection {
+    rankdir=TB
+    node [shape=box]
+    "What is being reviewed?" [shape=diamond];
+    "Single artifact just generated" [shape=box] -> "Mode 1: Quick Critique";
+    "Phase transition" [shape=box] -> "Mode 2: Perspective Critique";
+    "PRD suite (Phase 2)" [shape=box] -> "Mode 3: Tribunal";
+    "User personas + overview (Phase 5)" [shape=box] -> "Mode 4: Focus Group";
+    "Docs from product leadership (Phase 7)" [shape=box] -> "Mode 5: Gap Analysis";
+    "All artifacts (Phase 12)" [shape=box] -> "Mode 6: Cross-Review";
+
+    "What is being reviewed?" -> "Single artifact just generated";
+    "What is being reviewed?" -> "Phase transition";
+    "What is being reviewed?" -> "PRD suite (Phase 2)";
+    "What is being reviewed?" -> "User personas + overview (Phase 5)";
+    "What is being reviewed?" -> "Docs from product leadership (Phase 7)";
+    "What is being reviewed?" -> "All artifacts (Phase 12)";
+}
+```
 
 ## The Six Modes
 
@@ -16,7 +41,7 @@ After generating any single document, run a quick self-review:
 - Cross-references valid?
 - Terminology consistent with existing artifacts?
 - Lean strategy applied where relevant?
-- No vague language ("various", "etc.", "as needed")?
+- Specific language only (no "various", "etc.", "as needed")?
 
 Fix inline. No separate output needed.
 
@@ -220,7 +245,7 @@ Re-run on changed sections only → If no new Critical/Important → DONE
 
 **Max iterations:** 3 per round. After 3, surface remaining issues to user.
 
-**Never fix silently.** The user is the navigator. Exception: pre-presentation perspective critiques (the "Before presenting to user" steps in napkin-to-spec) are quality gates — fix Critical/Important issues inline and note what changed, but don't run the full iteration loop.
+**Present all fixes to the user.** The user is the navigator. Exception: pre-presentation perspective critiques (the "Before presenting to user" steps in napkin-to-spec) are quality gates — fix Critical/Important issues inline and note what changed. Skip the full iteration loop for pre-presentation gates.
 
 ## Synthesizing Multi-Perspective Feedback
 

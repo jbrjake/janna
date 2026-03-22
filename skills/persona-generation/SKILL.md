@@ -3,9 +3,11 @@ name: persona-generation
 description: "Use when creating personas with deep backstories — dev team members, user personas, critic personas, or focus group participants. Triggers on: 'create personas', 'build a team', 'user profiles', 'who would use this', 'dev team', 'focus group'."
 ---
 
+**Skill type: RIGID** — Follow exactly. Do not adapt, skip, or reorder steps.
+
 # Persona Generation
 
-Create people whose lives led them to this product. Not profiles — people. Every persona has a history that explains not just their opinions but their obsessions. The product doesn't just help them do their job. It fills a hole in their heart.
+Create people whose lives led them to this product. Not profiles — people. Every persona has a history that explains not just their opinions but their obsessions. The product helps them do their job AND fills a hole in their heart.
 
 Janna finds these people at the right moments in their lives. She knows why each person needs to be here. Their character arcs align with the product. It's IMPORTANT to them — emotionally, personally — that this works.
 
@@ -44,13 +46,21 @@ How does success with this product resolve something personal? Not every persona
 - He presents the graph to the board. "This is what I've been trying to show you," he says, and he means it literally.
 
 ### Variable Depth
-Not every persona needs the same intensity. But every one needs SOME emotional stake. A rough guide:
 
-- **2-3 personas get full narrative depth** — formative wound, redemption arc, the works
-- **3-5 personas get moderate depth** — clear personal motivation, specific backstory
-- **Remaining personas get lighter depth** — still grounded in experience, but briefer
+```dot
+digraph depth_selection {
+    "How central is this persona\nto the product's value prop?" [shape=diamond];
+    "Full depth" [shape=box style=filled fillcolor=lightgreen label="Full depth (2-3 personas)\nFormative wound, redemption arc,\nlegacy completion, the works"];
+    "Moderate depth" [shape=box style=filled fillcolor=lightblue label="Moderate depth (3-5 personas)\nClear personal motivation,\nspecific backstory"];
+    "Lighter depth" [shape=box style=filled fillcolor=lightyellow label="Lighter depth (remaining)\nGrounded in experience,\nbut briefer"];
 
-The deepest personas should be the ones most central to the product's value proposition.
+    "How central is this persona\nto the product's value prop?" -> "Full depth" [label="core user / key builder"];
+    "How central is this persona\nto the product's value prop?" -> "Moderate depth" [label="important but not core"];
+    "How central is this persona\nto the product's value prop?" -> "Lighter depth" [label="supporting role"];
+}
+```
+
+Every persona needs SOME emotional stake. The minimum bar is a specific experience that drives their professional choices — never a generic job description.
 
 ---
 

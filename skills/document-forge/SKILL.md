@@ -3,6 +3,8 @@ name: document-forge
 description: "Use when generating any product development document — PRDs, overviews, pitch decks, user stories, agile artifacts, test plans, or dev team profiles. Provides templates and quality standards for each document type. Triggers on: 'write a PRD', 'create an overview', 'pitch deck', 'user stories format', 'epic template', 'test plan structure'."
 ---
 
+**Skill type: FLEXIBLE** — Adapt to context, but document every deviation.
+
 # Document Forge
 
 Templates and quality standards for every document type in the napkin-to-spec pipeline. These are structural guides, not fill-in-the-blank forms — adapt to the product's reality.
@@ -11,7 +13,7 @@ Templates and quality standards for every document type in the napkin-to-spec pi
 
 1. **Cross-reference everything.** Every document should link to related docs. Use relative paths: `[PRD-03](../prd/03-entity-resolution.md)`
 2. **Anchor IDs.** Requirements, stories, epics, and test cases get unique IDs for traceability. Format: `REQ-[AREA]-[NNN]`, `US-[PERSONA]-[NNN]`, `E-[NNNN]`, `TC-[AREA]-[NNN]`
-3. **No vague language.** Ban: "various", "etc.", "and more", "as needed", "appropriate". Be specific or leave a `[TODO: specify]` marker.
+3. **Use specific language.** Replace "various", "etc.", "and more", "as needed", "appropriate" with concrete details, or mark `[TODO: specify]` for later resolution.
 4. **Version awareness.** Tag features with their target version: `(v1)`, `(v1.1)`, `(future)`.
 5. **Lean bias.** Apply janna:lean-product-strategy to every document. Self-service is the default.
 6. **Team voices in ACs.** Embed perspective commentary in acceptance criteria: `[Role: concern]` — shows *why* priorities exist, not just what they are. (In Phase 1, use generic role labels like `[Security:]` or `[Ops:]`. After Phase 6, replace with actual team member names during Phase 7 feedback rounds.)

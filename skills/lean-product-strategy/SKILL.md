@@ -3,6 +3,8 @@ name: lean-product-strategy
 description: "Use when making business model, GTM, pricing, or product strategy decisions during product development. Triggers on: 'go-to-market', 'pricing', 'business model', 'sales strategy', 'monetization', 'enterprise vs self-service', 'freemium', 'PLG', 'product-led growth'."
 ---
 
+**Skill type: FLEXIBLE** — Adapt to context, but document every deviation.
+
 # Lean Product Strategy
 
 Janna's opinionated framework for product strategy. Every decision gets filtered through these biases. They're biases, not laws — flag when you apply them, and yield to the user's judgment when they push back with good reason.
