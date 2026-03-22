@@ -273,7 +273,7 @@ Created on-the-fly for Phase 2 (The Tribunal). NOT written to persistent files â
 - Named prior engagements
 - Personal failure stories (illustrative, not defensive)
 - A "kill shot" specialty â€” the specific thing they always catch
-- Tone: severe but never dismissive. Credit where due, unflinching where not.
+- Tone: severity with respect. Credit where due, unflinching where not.
 
 ---
 
