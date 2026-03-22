@@ -19,28 +19,10 @@ Complete every phase in order within the selected complexity mode. Generate docu
 
 At the start of Phase 0, after the Tarot reading but before the intake questions, determine the project's complexity mode. The user can specify explicitly (via `/napkin standard` or `/napkin full`) or you can suggest based on the scope of the design kernel.
 
-### Standard Mode (10 phases) — Products with real users and market intent
+- **Standard (10 phases):** Phases 0-6, 8, 9, 11. Skips Forge, Test Plan, Mirror. User personas, dev team, and agile artifacts are mandatory.
+- **Full (13 phases):** All phases. No shortcuts.
 
-| Phase | Name | What Happens |
-|-------|------|-------------|
-| 0 | The Reading | Tarot + intake → Design Kernel |
-| 1 | The Blueprint | Design Kernel → PRDs |
-| 2 | The Tribunal | Adversarial graybeard PRD review |
-| 3 | The Overview | Product overview (summary layer for personas) |
-| 4 | The Seekers | User Personas with emotional depth |
-| 5 | The Circle | Focus Groups → PRD revision |
-| 6 | The Assembly | Dev Team Personas with emotional depth |
-| 8 | The Pitch | Pitch Deck + Team Manifesto |
-| 9 | The Map | User Stories |
-| 11 | The Sprint | Agile planning (sagas, epics, sprints) |
-
-Skips: Forge (multi-round feedback), Test Plan, Mirror.
-User personas, dev team personas, and agile artifacts are mandatory in both modes.
-The dev team and agile backlog are the primary outputs downstream code depends on.
-
-### Full Mode (13 phases) — Commercial products, startup specs, enterprise platforms
-
-All phases. No shortcuts.
+Read `phase-map.md` for the full phase dependency graph, I/O summary, and approval gate prompts.
 
 ### Selecting a Mode
 
@@ -85,26 +67,7 @@ When starting a project, create a task list with one entry per phase in the sele
 
 ## File Organization
 
-All generated artifacts go under `docs/` in the project root:
-
-```
-docs/
-├── design/          # Phase 0: Tarot reading, architecture, and design docs
-├── prd/             # Phase 1: Numbered PRDs
-├── overview.md      # Phase 3: Product overview (or overview/ if split)
-├── user-personas/   # Phase 4: User personas with deep backstories
-├── focus-groups/    # Phase 5: Focus group sessions and synthesis
-├── dev-team/        # Phase 6-7: Team topology, personas, feedback
-├── pitch-deck/      # Phase 8: Pitch deck sections
-├── user-stories/    # Phase 9: Story map + persona stories
-├── test-plan/       # Phase 10: Test strategy and cases
-├── agile/           # Phase 11: Sagas, epics, sprints, stories
-│   ├── sagas/
-│   ├── epics/
-│   ├── sprints/
-│   └── dependency-graph.md
-└── archive/         # Phases 2, 12: Tribunal reviews, cross-review feedback, historical
-```
+All artifacts go under `docs/` in the project root. See `phase-map.md` for the full directory tree. Key paths: `docs/design/`, `docs/prd/`, `docs/overview.md`, `docs/user-personas/`, `docs/focus-groups/`, `docs/dev-team/`, `docs/pitch-deck/`, `docs/user-stories/`, `docs/test-plan/`, `docs/agile/`, `docs/archive/`.
 
 ## Status Tracking
 

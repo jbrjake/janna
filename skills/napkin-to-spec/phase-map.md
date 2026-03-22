@@ -89,3 +89,26 @@ Phase 0 (Reading/Tarot) → Phase 1 (Blueprint/PRDs)
 | 10 | document-forge (test-plan) | critique-loop (perspective) |
 | 11 | document-forge (agile) | critique-loop (perspective), lean-product-strategy |
 | 12 | critique-loop (all modes) | humanizer |
+
+## File Organization
+
+All generated artifacts go under `docs/` in the project root:
+
+```
+docs/
+├── design/          # Phase 0: Tarot reading, architecture, and design docs
+├── prd/             # Phase 1: Numbered PRDs
+├── overview.md      # Phase 3: Product overview (or overview/ if split)
+├── user-personas/   # Phase 4: User personas with deep backstories
+├── focus-groups/    # Phase 5: Focus group sessions and synthesis
+├── dev-team/        # Phase 6-7: Team topology, personas, feedback
+├── pitch-deck/      # Phase 8: Pitch deck sections
+├── user-stories/    # Phase 9: Story map + persona stories
+├── test-plan/       # Phase 10: Test strategy and cases
+├── agile/           # Phase 11: Sagas, epics, sprints, stories
+│   ├── sagas/
+│   ├── epics/
+│   ├── sprints/
+│   └── dependency-graph.md
+└── archive/         # Phases 2, 12: Tribunal reviews, cross-review feedback, historical
+```
