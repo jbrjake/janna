@@ -19,6 +19,10 @@ A specific incident, not a vague preference. Something that happened to them or 
 - NOT: "She's passionate about data quality"
 - YES: "Her grandmother was prescribed a drug already withdrawn from the US market. The safety signal was detectable in integrated data. Nobody connected it. She had a stroke."
 
+At least one persona per team should carry a wound rooted in **system assembly failure** — not a bug in one component, but a failure at the boundary where subsystems meet. The wound teaches them to distrust "all tests pass" when nobody tested the seams.
+
+- Example: "She built the image analysis module for a medical imaging startup. Every unit test passed. The rendering pipeline flipped row-major to column-major at the handoff. Radiologists saw mirrored images for three weeks before anyone noticed. She doesn't sleep well when someone says 'all tests pass.'"
+
 ### The Hole in Their Heart
 What this product fills that nothing else can. This is identity-level, not efficiency-level.
 
@@ -139,6 +143,7 @@ People who will build the product. Created in Phase 6 (The Assembly).
 - UX/interaction design
 - Technical writing
 - DevOps
+- **Integration owner** — dedicated role or expanded responsibility on an existing role. Owns the spaces between domains: interface contracts, data format compatibility, end-to-end reachability. Maintains the "lights on" test. Asks "which story verifies this works end-to-end?" at every sprint kickoff.
 
 **For each team member, generate:**
 
@@ -190,6 +195,7 @@ Depth above), but the most central ones should have specific, emotional arcs.]
 **How they disagree:** [directly? through questions? by going silent?]
 **How they earn trust:** [through code? through data? through stories?]
 **Core tension they carry:** [the internal conflict that makes them interesting]
+**System awareness prompt:** [the question this persona asks that nobody else thinks to ask — the thing they check because of what they've seen go wrong. Should reflect their domain. Examples: a rendering engineer asks "what coordinate system is this data in?"; a platform engineer asks "does it actually start?"; an adversarial QA asks "what happens with zero input?"; a product owner asks "can a user see the result?"; a test infra lead asks "are we testing the real interface or a mock?"]
 ```
 
 **Relationship mapping (separate file `docs/dev-team/00-team-index.md`):**
@@ -215,6 +221,14 @@ Depth above), but the most central ones should have specific, emotional arcs.]
 | Insight | Carried By | Why |
 |---------|-----------|-----|
 | [domain expertise] | [name] | [specific background] |
+
+## Expertise Gap Map
+
+| Domain A | Domain B | Boundary | Gap Coverage |
+|----------|----------|----------|-------------|
+| [subsystem] | [subsystem] | [interface description] | [name] or **UNCOVERED** |
+
+Gaps marked **UNCOVERED** have no team member owning the boundary between the two domains. These must generate integration stories during sprint planning — if nobody owns the seam, the seam doesn't get tested.
 ```
 
 ---

@@ -33,7 +33,7 @@ At phase transitions, dispatch the **spec-critic** agent adopting specific exper
 | 8 (Pitch) | Product Strategist, The Customer |
 | 9 (Map) | The Customer, Pragmatic Engineer |
 | 10 (Gauntlet) | Systems Architect, Security Engineer |
-| 11 (Sprint) | Pragmatic Engineer (are sprints realistic?) |
+| 11 (Sprint) | Pragmatic Engineer (are sprints realistic?), Systems Integrator (does the backlog produce a working product?) |
 
 Standard critique output: Location → Issue → Severity → Suggestion.
 
@@ -204,6 +204,7 @@ Full alignment audit across the entire artifact set. Three sub-steps:
 1. **Full team cross-review:** Dispatch each dev team persona sequentially using the **spec-critic** agent (with the persona's name and specialty as the perspective), each reviewing documents outside their primary area. Write to `docs/dev-team/feedback/cross-review/`.
 2. **Cross-document tracing:** Verify every PRD requirement maps to a user story, every story maps to an agile task, every task has test coverage. Flag orphans.
 3. **AI self-review:** Review the entire spec corpus from your own perspective. What would make this more interesting, more internally consistent, more complete? Write to `docs/archive/feedback/`.
+4. **System integration check:** Dispatch the spec-critic agent as **Systems Integrator** to review the complete backlog, asking: "If every story in this backlog were implemented exactly as specified, would the result be a working product that a user can launch and operate?" Flag any gap where stories pass individually but the assembled product would fail — missing wiring, incompatible interfaces, no story covering the path from entry point to visible output.
 
 ---
 

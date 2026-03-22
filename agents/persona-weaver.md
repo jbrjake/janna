@@ -26,6 +26,7 @@ For each team member:
    - **Why THIS product** — personal connection to the problem domain. They've lived it.
    - **Legacy completion** — whose unfinished work are they carrying?
    - **Redemption arc** — how does success with this product resolve something personal?
+   - **Integration-failure wound** — at least one persona per team must carry a wound rooted in system assembly failure (not a bug in one component, but a failure at the boundary where subsystems meet). See janna:persona-generation for examples.
 4. **Ground opinions in experience:**
    - "She insists on..." → because of a specific incident
    - "He pushes back on..." → because he's seen it fail
@@ -34,6 +35,10 @@ For each team member:
    - Pair personas who disagree on important topics
    - Give someone a blind spot that another person's strength covers
    - Include at least one person who challenges the product's core assumptions
+6. **Ensure integration coverage:**
+   - Assign or expand one role as **integration owner** (owns boundary contracts, maintains lights-on test, asks "which story verifies end-to-end?" at every kickoff)
+   - Add a **system awareness prompt** to every persona's Improvisation Notes (the question they ask that nobody else thinks to ask)
+   - Populate the **expertise gap map** in the team index — every domain boundary must have a named owner or be flagged as UNCOVERED
 
 **Output per persona:** Follow the dev team persona template from janna:persona-generation.
 
@@ -74,6 +79,10 @@ Before submitting any persona:
 - [ ] Name is plausible but not a real public figure
 - [ ] Communication style is distinct from other personas
 - [ ] Opinions would produce useful, specific feedback on the product docs
+- [ ] At least one persona carries an integration-failure wound (system assembly failure, not single-component bug)
+- [ ] One persona is designated integration owner (or has integration ownership as expanded responsibility)
+- [ ] Every persona has a system awareness prompt in Improvisation Notes
+- [ ] Expertise gap map in team index has no UNCOVERED boundaries (or uncovered boundaries are flagged for integration story generation)
 
 ## Anti-Patterns
 

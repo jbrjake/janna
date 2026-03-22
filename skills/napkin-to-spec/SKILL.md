@@ -387,9 +387,17 @@ Assemble the **entire** dev team (all personas from Phase 6) to discuss shared v
 Jeff Patton-style story map:
 - Backbone = major user activities in workflow order
 - Vertical = release priority (R1 Walking Skeleton → R2 v1 GA → R3 Fast Follow → R4 Future)
+- R1 means *walking* — observable end-to-end behavior, not just scaffolding. The first R1 story is always a "lights on" story: application launches and displays non-default output (AX-001).
 - All R1 stories ship before any R2 story starts
 - Cover every persona including non-obvious ones (developers, admins)
 - Persona tags on every story
+
+**Integration gap analysis** — after drafting the story map:
+1. List every boundary where one subsystem's output feeds another's input
+2. For each boundary, check: is there a story that exercises this interface?
+3. Generate missing integration stories (1–3 SP each) for any uncovered boundary
+4. Verify R1 contains the lights-on story (AX-001)
+5. Verify the golden path E2E scenario has a corresponding R1 story
 
 **Before presenting to user:** Run janna:critique-loop perspective critique (The Customer, Pragmatic Engineer). Fix Critical/Important issues inline — pre-presentation quality gate. Note what you changed.
 
@@ -409,9 +417,11 @@ Assemble the personas responsible for testing, devops, and customer success (by 
 - Golden path E2E scenarios (per persona)
 - Functional test cases (per domain)
 - Adversarial test cases (parallel to functional — injections, boundary conditions, concurrency)
+- System-level adversarial cases (TC-SYS-ADV — cold launch, interface mismatch, plus project-specific cases from integration map)
 - Performance benchmarks, soak tests, fuzz targets
 - Coverage matrix: every requirement → test, every story → test
 - Persona coverage matrix
+- Test plan must include at least one test per tier (Unit, Integration, E2E) in Sprint 1. The golden path E2E scenario generates a corresponding R1 story.
 
 **Before presenting to user:** Run janna:critique-loop perspective critique (Systems Architect, Security Engineer). Fix Critical/Important issues inline — pre-presentation quality gate. Note what you changed.
 
@@ -425,17 +435,21 @@ Assemble the personas responsible for testing, devops, and customer success (by 
 
 *Stories become work. Work becomes sprints.*
 
-**Inputs:** Story map + PRDs + test plan (Full mode) or Story map + PRDs (Standard mode)
+**Inputs:** Story map + PRDs + test plan (Full mode) + integration stories from gap analysis, or Story map + PRDs (Standard mode)
+
+**Test-plan-to-backlog bridge:** Every integration test case in the test plan must trace to a backlog story. If a test case has no corresponding story, generate one. Every golden path E2E scenario must trace to an R1 story. The test plan is not a separate document — it's a contract that the backlog must fulfill.
 
 Assemble the personas responsible for product leadership, PM, and GTM (by role, not by exact name — match to actual Phase 6 personas). Full backlog:
 - **Sagas** — Strategic initiatives (`S-[NN]`)
 - **Epics** — Feature clusters within sagas (`E-[NNNN]`)
 - **Stories** — User-facing increments (`US-[PERSONA]-[NNN]`)
 - **Tasks** — Engineering work items (`T-[EPIC]-[NN]`)
-- Programmatically verifiable acceptance criteria (5 patterns: Performance, Behavioral, Structural, Negative, Count)
+- Programmatically verifiable acceptance criteria (7 patterns: Performance, Behavioral, Structural, Negative, Count, Integration, System)
 - Story points, blocking dependencies, sprint allocation
 - Cross-cutting concerns (observability, security, accessibility) in every epic's ACs
 - V2 foundation constraints embedded in v1 stories where applicable
+- Every sprint must define a **user-facing delta** — one sentence describing what a user can see or do at sprint end that they couldn't before
+- Every sprint's **Definition of Done** must include: app builds, app launches (AX-001), core function works (AX-002), at least one integration test passes, demo includes actual app output
 
 **Before presenting to user:** Run janna:critique-loop perspective critique (Pragmatic Engineer). Fix Critical/Important issues inline — pre-presentation quality gate. Note what you changed.
 
@@ -458,9 +472,17 @@ Assemble the personas responsible for product leadership, PM, and GTM (by role, 
    - Terminology consistency across all docs
    - Version/timeline consistency
    - Pitch deck claims backed by PRD specs
-4. **TODO resolution** — Product leadership resolves remaining open questions
-5. **Progressive disclosure** — Ensure all docs have anchor-slug section indexes for agent navigation (e.g., `[Origin Story](#origin-story)`)
-6. **Humanize** external-facing docs (overview, pitch deck) with humanizer skill
+4. **Product completeness check** — Verify the spec would produce a working product, not just passing tests:
+   - [ ] R1 contains a "lights on" story (app launches with non-default output)
+   - [ ] Every sprint with visible features includes at least one integration story
+   - [ ] Test plan includes at least one test per tier (Unit, Integration, E2E) by Sprint 1
+   - [ ] Sprint DoD includes "application launches" (AX-001) as a hard gate
+   - [ ] Product axioms (AX-001 through AX-004) appear in traceability matrix
+   - [ ] At least one team member is designated integration owner
+   - [ ] Expertise gap map has no UNCOVERED boundaries (or uncovered boundaries have generated integration stories)
+5. **TODO resolution** — Product leadership resolves remaining open questions
+6. **Progressive disclosure** — Ensure all docs have anchor-slug section indexes for agent navigation (e.g., `[Origin Story](#origin-story)`)
+7. **Humanize** external-facing docs (overview, pitch deck) with humanizer skill
 
 **Approval gate:** User confirms final alignment. "Ready to build?"
 

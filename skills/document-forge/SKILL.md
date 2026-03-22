@@ -19,6 +19,22 @@ Templates and quality standards for every document type in the napkin-to-spec pi
 8. **Honest limitations.** For every feature deferred to a later version, generate a limitations entry: what's the gap, what's the workaround, when is it planned.
 9. **Release tiers as hard gates.** Release tiers (R1, R2, R3...) aren't just labels — all stories in R1 must complete before any R2 story starts. Generate blocking relationships accordingly.
 10. **Persona coverage matrix.** After generating stories, produce a matrix showing which personas are served by which stories. Flag any persona with fewer than 3 stories.
+11. **Integration testing.** Every sprint adding visible features must include at least one integration story (1–3 SP) wiring subsystems together. No sprint plan is complete without it.
+
+---
+
+## Product Axioms
+
+Non-negotiable properties that must be true at every sprint boundary. These trace to test cases the same way requirements do. Verify every sprint.
+
+| ID | Axiom | Verification |
+|----|-------|-------------|
+| AX-001 | **App launches.** The application starts and displays non-default output on all target platforms. | Lights-on story AC + TC-SYS-ADV-001 |
+| AX-002 | **Core function works.** The application performs its primary function end-to-end with observable output. | Golden path E2E test |
+| AX-003 | **Component outputs are compatible.** Every subsystem's output is accepted by its downstream consumer without format conversion, silent coercion, or data loss. | Integration tests + TC-SYS-ADV-002 |
+| AX-004 | **Walking skeleton is observable.** At least one user-facing workflow is exercisable from entry point to visible result. | Sprint demo with actual application output |
+
+Axioms are not aspirational — they are hard gates. A sprint that breaks an axiom is not done regardless of story completion.
 
 ---
 
@@ -241,6 +257,10 @@ Organize stories as a 2D map: horizontal = user activities (backbone), vertical 
 ## Activity N: [Activity Name]
 
 ### R1 — Walking Skeleton
+
+The first story in R1 is always a **"lights on" story**: the application launches and displays non-default output. AC: "Application launches and displays non-default output." This story must complete before other R1 stories and validates AX-001.
+
+- US-[PERSONA]-[NNN]: Lights on — app launches with visible output `[TAG1, TAG2]`
 - US-[PERSONA]-[NNN]: [Story title] `[TAG1, TAG2]`
 
 ### R2 — v1 GA
@@ -249,7 +269,7 @@ Organize stories as a 2D map: horizontal = user activities (backbone), vertical 
 
 ### Acceptance Criteria Patterns
 
-Use these five verifiable AC formats:
+Use these seven verifiable AC formats:
 
 | Pattern | Template | Example |
 |---------|----------|---------|
@@ -258,6 +278,8 @@ Use these five verifiable AC formats:
 | **Structural** | component produces artifact | Parser emits Arrow RecordBatch with schema metadata |
 | **Negative** | action does NOT cause outcome | Deleting a source does NOT delete previously ingested events |
 | **Count/Existence** | collection.count OP N | Dashboard displays >= 1 anomaly indicator per entity |
+| **Integration** | Output of A fed to B produces C | Parser output fed to renderer produces visible chart |
+| **System** | User performs action, observes result | User launches app and sees dashboard with default data |
 
 ---
 
@@ -344,10 +366,16 @@ Saga > Epic > Story > Task. Sagas are strategic initiatives; epics are feature c
 **Goal:** [One sentence — what's demo-able at sprint end]
 **Duration:** [N weeks]
 
+## Sprint-Level Acceptance Criteria
+
+[One sentence describing the user-facing delta: what can a user see or do at the end of this sprint that they couldn't before?]
+
 ## Stories
 
 | ID | Story | Epic | Size | Owner |
 |----|-------|------|------|-------|
+
+Every sprint that adds visible features must include at least one integration story (1–3 SP) wiring subsystems together. If the story table above contains no integration story, add one before sprint commitment.
 
 ## Dependencies Resolved This Sprint
 
@@ -361,6 +389,11 @@ Saga > Epic > Story > Task. Sagas are strategic initiatives; epics are feature c
 
 - [ ] All stories meet acceptance criteria
 - [ ] Tests passing
+- [ ] Application builds on all targets without errors
+- [ ] Application launches and displays non-default output (AX-001)
+- [ ] Application performs its core function end-to-end (AX-002)
+- [ ] At least one integration test crosses a subsystem boundary and passes
+- [ ] Demo artifacts include evidence of actual application output (screenshot, recording, or log)
 - [ ] [sprint-specific criteria]
 ```
 
@@ -386,6 +419,16 @@ Visual or table representation of epic dependencies. Which epics block which. Cr
 ## Test Strategy
 
 [Approach for this area: what's automated vs. manual, what tools, what environments]
+
+### Tier Requirements
+
+By Sprint 1, the test plan must include at least one test per tier:
+
+- **Unit:** At least one unit test per subsystem
+- **Integration:** At least one test crossing a subsystem boundary
+- **E2E:** At least one golden path scenario from user entry point to observable output
+
+The golden path E2E scenario generates a corresponding R1 story in the backlog. Integration test cases must link to backlog stories — if no story covers the integration boundary, one must be generated during sprint planning.
 
 ## Test Cases
 
@@ -429,6 +472,36 @@ Visual or table representation of epic dependencies. Which epics block which. Cr
 **Expected Result:** [system handles gracefully — no crash, no data corruption, no information leak]
 **Priority:** P[0-3]
 ```
+
+### System-Level Adversarial Cases
+
+Beyond per-area adversarial tests, generate system-level cases that test cross-component failure:
+
+```markdown
+### TC-SYS-ADV-001: Cold Launch — No Input
+
+**Type:** System Adversarial
+**Attack Vector:** null state
+**Preconditions:** Fresh install, no user data, no configuration beyond defaults
+**Steps:**
+1. Launch application
+2. Observe output
+**Expected Result:** Application displays non-default output (splash screen, onboarding, empty state — NOT a white screen, crash, or hung process)
+**Priority:** P0
+
+### TC-SYS-ADV-002: Component Interface Mismatch
+
+**Type:** System Adversarial
+**Attack Vector:** integration boundary
+**Preconditions:** All subsystems pass their own unit tests
+**Steps:**
+1. Feed output of Component A into Component B using actual (not mocked) interfaces
+2. Observe result
+**Expected Result:** Component B accepts Component A's output and produces valid output. No format mismatches, no silent data corruption, no type coercion surprises.
+**Priority:** P0
+```
+
+For each project, generate additional system-level adversarial cases from the integration map: identify every boundary where one subsystem's output feeds another's input. Each boundary gets at least one TC-SYS-ADV case.
 
 ---
 

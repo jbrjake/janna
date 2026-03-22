@@ -30,10 +30,10 @@ Phase 0 (Reading/Tarot) → Phase 1 (Blueprint/PRDs)
                     → Phase 6 (Assembly/Dev Team)
                         → Phase 7 (Forge/Feedback Rounds) → PRD revision
                             → Phase 8 (Pitch + Manifesto)
-                                → Phase 9 (Map/User Stories)
+                                → Phase 9 (Map/User Stories + Integration Gap Analysis)
                                     → Phase 10 (Gauntlet/Test Plan)
-                                        → Phase 11 (Sprint/Agile)
-                                            → Phase 12 (Mirror/Cross-Review)
+                                        → Phase 11 (Sprint/Agile + Test-Plan Bridge)
+                                            → Phase 12 (Mirror/Cross-Review + Product Completeness)
 ```
 
 ## Phase I/O Summary
@@ -49,10 +49,10 @@ Phase 0 (Reading/Tarot) → Phase 1 (Blueprint/PRDs)
 | 6 | The Assembly | PRDs + overview | `docs/dev-team/**` | persona-weaver, spec-critic (perspective critique) |
 | 7 | The Forge | PRDs + dev team | `docs/dev-team/feedback/**`, revised PRDs | spec-critic (Round 1 per team member) |
 | 8 | The Pitch | All artifacts | `docs/pitch-deck/*`, `docs/dev-team/who-we-are.md` | spec-critic (perspective critique) |
-| 9 | The Map | All artifacts + personas | `docs/user-stories/*.md` | spec-critic (perspective critique) |
-| 10 | The Gauntlet | Stories + PRDs + arch | `docs/test-plan/*.md` | spec-critic (perspective critique) |
-| 11 | The Sprint | Stories + PRDs (+ test plan in Full) | `docs/agile/**` | spec-critic (perspective critique) |
-| 12 | The Mirror | All artifacts | Review reports, updates to all docs | spec-critic (cross-review) |
+| 9 | The Map | All artifacts + personas | `docs/user-stories/*.md` + integration gap analysis | spec-critic (perspective critique) |
+| 10 | The Gauntlet | Stories + PRDs + arch | `docs/test-plan/*.md` (incl. tier requirements, system-level adversarial) | spec-critic (perspective critique) |
+| 11 | The Sprint | Stories + PRDs + test plan + integration stories from gap analysis | `docs/agile/**` (7 AC patterns, sprint-level DoD, test-plan bridge) | spec-critic (perspective critique) |
+| 12 | The Mirror | All artifacts | Review reports, updates to all docs, product completeness check | spec-critic (cross-review) |
 
 ## Approval Gate Prompts
 
